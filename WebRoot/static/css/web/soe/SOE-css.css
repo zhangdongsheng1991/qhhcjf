@@ -1,0 +1,308 @@
+﻿@charset "utf-8";
+
+body,div,p,span,a,img,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,input,button{
+	margin:0;
+	padding:0;
+	list-style:none;
+	
+}
+
+i{
+	 font-style:normal	
+}
+	
+button{
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+body{
+	font-size:12px;
+	font-family:Microsoft Yahei;
+	color:#1c4e7f;
+}
+
+
+.top{
+	height: 80px;
+	line-height: 80px;
+	background:#FFF;
+}
+	
+.top_box{
+	width: 1200px;
+	height:80px;
+	margin: 0 auto;
+}
+
+.logo{
+	height:0px;
+	width:466px;
+	padding-top:62px;
+	overflow:hidden;
+	background:url(/static/img/web/logo.png) no-repeat ;
+	float:left;
+	margin-top:10px;
+}
+
+
+.banner {
+    background: url(/static/img/web/soe/1.png) no-repeat 50%;
+    height: 551px;
+}
+
+.conter{
+	width:100%;
+}
+
+.img1{
+	width:100%;
+	vertical-align: top;
+}
+
+
+.but-box{
+	width:100%;
+	height:150px;
+	background:#2c567c;
+}
+
+.PE-btn{
+	width:230px;
+	height:70px;
+	position:relative; 
+	left:50%;
+	margin-left:-110px;
+	background:url(/static/img/web/soe/but.png);
+	cursor:pointer;
+}
+
+
+
+/*弹窗*/
+
+.pop-by {
+    background: url(/static/img/web/wealth/60-sha.png) repeat;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9998;
+    display: none;
+}
+
+.pop-mnc {
+    width: 420px;
+    height: 315px;
+	border: 1px solid #1c4e7f;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    top: 30%;
+    margin-left: -210px;
+    background: #d5e5f4;
+    display: none
+}
+
+.pop-tt {
+    font-size:40px;
+    width: 420px;
+    height: 73px;
+	text-align:center;
+	line-height:73px;
+}
+
+.pop-tt span {
+    color: #f74d10;
+}
+
+.pop-hide {
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    background: url(/static/img/web/soe/close.png) no-repeat center;
+    width: 50px;
+    height: 50px
+}
+
+.pop-hide img {
+    margin-top: 5px
+}
+
+.succ-hide {
+    top: 136px;
+    background: url(popHide.png) no-repeat 0 bottom
+}
+
+.pop-form li {
+    padding-left: 33px;
+    height: 44px;
+    margin: 20px 0
+}
+
+.pop-form li span {
+}
+
+.pop-inp {
+    outline: none;
+    padding: 0;
+    font-size: 14px;
+    color: #fff;
+    text-indent: 1em;
+    font-family: Arial,'Microsoft YaHei';
+    border: 1px solid #dadada;
+    padding-left: 40px;
+}
+
+
+.succ-main {
+    margin-top: 210px;
+    line-height: 30px;
+    color: #333
+}
+
+.name-tip {
+    clear: both;
+    line-height: 25px;
+    height: 25px;
+    display: block;
+    color: red;
+    font-size: 12px;
+}
+
+/*.phone {background-position: 20px center;}*/
+.golden {
+    position: absolute;
+    width: 171px;
+    height: 82px;
+    left: 50%;
+    margin-left: -85px;
+    top: -82px;
+    background: url("gold.png") no-repeat left top;
+}
+
+.pop-succ {
+    width: 420px;
+    height: 315px;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    top: 30%;
+    margin-left: -210px;
+    background: #f5f5f5;
+    display: none
+}
+
+.pop-succ h3 {
+    line-height: 70px;
+    background: #4268cf;
+    color: #fff;
+    height: 70px;
+    border-radius: 0;
+    color: #fff;
+}
+
+.pop-succ h4 {
+    padding: 25px 0;
+    text-align: center;
+}
+
+.pop-succ p {
+    line-height: 32px;
+    text-align: center;
+}
+
+.succ h3 {
+    background: url(../images/yuys-top.jpg) no-repeat top center;
+    width: 420px;
+    height: 107px
+}
+
+.succ p {
+    font-size: 16px;
+    color: #333;
+    line-height: 36px;
+    margin-top: 30px
+}
+
+.succ p span {
+    color: #b68818
+}
+
+/*#yuyue_phone1 { width:173px;height:38px;padding-left: 65px;font-size: 14px;color: #333;*/
+/*outline: none; }*/
+#yuyue_name {
+    width: 228px;
+    line-height: 44px;
+    background: #d5e5f4;
+    border: 0;
+    outline: none;
+    height: 38px;
+    padding: 0;
+    font-size: 16px;
+    color: #333;
+    text-indent: 1em;
+    font-family: Arial,'Microsoft YaHei';
+    border: 1px solid #1c4e7f;
+    padding-left: 20px;
+}
+
+#yuyue_phone {
+    width: 228px;
+    line-height: 44px;
+    background: #d5e5f4;
+    border: 0;
+    outline: none;
+    height: 38px;
+    padding: 0;
+    font-size: 16px;
+    color: #333;
+    text-indent: 1em;
+    font-family: Arial,'Microsoft YaHei';
+    border: 1px solid #1c4e7f;
+    padding-left: 20px;
+}
+
+.phone-i1 {
+    font-size: 18px;
+    color: #1c4e7f;
+    float: left;
+    margin-top: 7px
+}
+
+.name-i1 {
+    font-size: 18px;
+    color: #1c4e7f;
+    float: left;
+    margin-top: 7px
+}
+
+#yuyue_submit1 {
+    background: url(/static/img/web/soe/but.png) no-repeat center;
+    display: block;
+    width: 230px;
+    height: 70px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin-left: 70px;
+    margin-top: 15px;
+	color:#FFF;
+	font-size: 18px;
+	font-weight: bold;
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+

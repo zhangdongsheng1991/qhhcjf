@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="QuestionnairetitleMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd" useGeneratedKeys="true" keyProperty="ID">
+		insert into td_questionnairetitle(
+			ID	
+		<if test="QUESTIONNAIREID !=null">
+			,QUESTIONNAIREID
+		</if>
+		<if test="NAME !=null">
+			,NAME
+		</if>
+		<if test="NUMBER !=null">
+			,NUMBER
+		</if>
+		) values (
+			#{ID}
+			<if test="QUESTIONNAIREID !=null">
+			,#{QUESTIONNAIREID}
+			</if>
+			<if test="NAME !=null">
+			,#{NAME}
+			</if>
+			<if test="NUMBER !=null">
+			,#{NUMBER}
+			</if>
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from td_questionnairetitle
+		where 
+			ID = #{ID}
+	</delete>
+	
+	<!-- 删除-->
+	<delete id="deletes" parameterType="String">
+		delete from td_questionnairetitle
+		where 
+			QUESTIONNAIREID = #{QUESTIONNAIREID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  td_questionnairetitle a
+		<set>
+			<if test="QUESTIONNAIREID != null">
+				a.QUESTIONNAIREID = #{QUESTIONNAIREID},
+			</if>
+			<if test="NAME != null">
+				a.NAME = #{NAME},
+			</if>
+			<if test="NUMBER != null">
+				a.NUMBER = #{NUMBER},
+			</if>
+		</set>
+			where 
+				a.ID = #{ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.QUESTIONNAIREID,
+			a.NAME,
+			a.NUMBER
+		from 
+			td_questionnairetitle a
+		where 1 = 1 
+			and a.ID = #{ID}
+	</select>
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findByParam" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.QUESTIONNAIREID,
+			a.NAME,
+			a.NUMBER
+		from 
+			td_questionnairetitle a 
+			where 1=1
+			<if test="ID != null and ID != ''">
+				and a.ID = #{ID}
+			</if>
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.QUESTIONNAIREID,
+			a.NAME,
+			a.NUMBER
+		from 
+			td_questionnairetitle a 
+			where 1=1
+	</select>
+	
+	<!-- 列表 -->
+	<select id="applistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.QUESTIONNAIREID,
+			a.NAME,
+			a.NUMBER
+		from 
+			td_questionnairetitle a 
+			where 1=1
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+			a.ID,
+			a.QUESTIONNAIREID,
+			a.NAME,
+			a.NUMBER
+		from 
+			td_questionnairetitle a 
+			where 1=1
+			<if test="QUESTIONNAIREID != null and QUESTIONNAIREID != ''">
+				and a.QUESTIONNAIREID = #{QUESTIONNAIREID}
+			</if>
+			order by NUMBER 
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from td_questionnairetitle
+		where 
+			ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

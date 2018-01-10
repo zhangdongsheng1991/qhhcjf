@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="InstitutionMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd" useGeneratedKeys="true" keyProperty="ID">
+		insert into td_institution(
+			ID	
+		<if test="NAME !=null">
+			,NAME
+		</if>
+		<if test="IMGURL !=null">
+			,IMGURL
+		</if>
+		<if test="CTDATE !=null">
+			,CTDATE
+		</if>
+		<if test="AR !=null">
+			,AR
+		</if>
+		<if test="PPR !=null">
+			,PPR
+		</if>
+		<if test="CAPITAL !=null">
+			,CAPITAL
+		</if>
+		<if test="SHAREHOLDER !=null">
+			,SHAREHOLDER
+		</if>
+		<if test="CORPORATION !=null">
+			,CORPORATION
+		</if>
+		<if test="LOCATION !=null">
+			,LOCATION
+		</if>
+		<if test="FOUNDINGTIME !=null">
+			,FOUNDINGTIME
+		</if>
+		<if test="VIEWS !=null">
+			,VIEWS
+		</if>
+		<if test="CHAIRMAN !=null">
+			,CHAIRMAN
+		</if>
+		<if test="INTRODUCTION !=null">
+			,INTRODUCTION
+		</if>
+		<if test="FULLNAME !=null">
+			,FULLNAME
+		</if>
+		<if test="LISTED !=null">
+			,LISTED
+		</if>
+		<if test="AUM !=null">
+			,AUM
+		</if>
+		<if test="MANAGER !=null">
+			,MANAGER
+		</if>
+		<if test="M_SHAREHOLDER !=null">
+			,M_SHAREHOLDER
+		</if>
+		<if test="COMMENT !=null">
+			,COMMENT
+		</if>
+		<if test="ISTRUST !=null">
+			,ISTRUST
+		</if>
+		<if test="RANKING !=null">
+			,RANKING
+		</if>
+		) values (
+			#{ID}
+			<if test="NAME !=null">
+			,#{NAME}
+			</if>
+			<if test="IMGURL !=null">
+			,#{IMGURL}
+			</if>
+			<if test="CTDATE !=null">
+			,#{CTDATE}
+			</if>
+			<if test="AR !=null">
+			,#{AR}
+			</if>
+			<if test="PPR !=null">
+				,#{PPR}
+			</if>
+			<if test="CAPITAL !=null">
+				,#{CAPITAL}
+			</if>
+			<if test="SHAREHOLDER !=null">
+				,#{SHAREHOLDER}
+			</if>
+			<if test="CORPORATION !=null">
+				,#{CORPORATION}
+			</if>
+			<if test="LOCATION !=null">
+				,#{LOCATION}
+			</if>
+			<if test="FOUNDINGTIME !=null">
+				,#{FOUNDINGTIME}
+			</if>
+			<if test="VIEWS !=null">
+				,#{VIEWS}
+			</if>
+			<if test="CHAIRMAN !=null">
+				,#{CHAIRMAN}
+			</if>
+			<if test="INTRODUCTION !=null">
+				,#{INTRODUCTION}
+			</if>
+			<if test="FULLNAME !=null">
+				,#{FULLNAME}
+			</if>
+			<if test="LISTED !=null">
+				,#{LISTED}
+			</if>
+			<if test="AUM !=null">
+				,#{AUM}
+			</if>
+			<if test="MANAGER !=null">
+				,#{MANAGER}
+			</if>
+			<if test="M_SHAREHOLDER !=null">
+				,#{M_SHAREHOLDER}
+			</if>
+			<if test="COMMENT !=null">
+				,#{COMMENT}
+			</if>
+			<if test="ISTRUST !=null">
+				,#{ISTRUST}
+			</if>
+			<if test="RANKING !=null">
+				,#{RANKING}
+			</if>
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from td_institution
+		where 
+			ID = #{ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  td_institution a
+		<set>
+			<if test="NAME != null">
+				a.NAME = #{NAME},
+			</if>
+			<if test="IMGURL != null">
+				a.IMGURL = #{IMGURL},
+			</if>
+			<if test="CTDATE != null">
+				a.CTDATE = #{CTDATE},
+			</if>
+			<if test="AR !=null">
+				a.AR = #{AR},
+			</if>
+			<if test="PPR !=null">
+				a.PPR = #{PPR},
+			</if>
+			<if test="CAPITAL !=null">
+				a.CAPITAL = #{CAPITAL},
+			</if>
+			<if test="SHAREHOLDER !=null">
+				a.SHAREHOLDER = #{SHAREHOLDER},
+			</if>
+			<if test="CORPORATION !=null">
+				a.CORPORATION = #{CORPORATION},
+			</if>
+			<if test="LOCATION !=null">
+				a.LOCATION = #{LOCATION},
+			</if>
+			<if test="FOUNDINGTIME !=null">
+				a.FOUNDINGTIME = #{FOUNDINGTIME},
+			</if>
+			<if test="VIEWS !=null">
+				a.VIEWS = #{VIEWS},
+			</if>
+			<if test="CHAIRMAN !=null">
+				a.CHAIRMAN = #{CHAIRMAN},
+			</if>
+			<if test="INTRODUCTION !=null">
+				a.INTRODUCTION = #{INTRODUCTION},
+			</if>
+			<if test="FULLNAME !=null">
+				a.FULLNAME = #{FULLNAME},
+			</if>
+			<if test="LISTED !=null">
+				a.LISTED = #{LISTED},
+			</if>
+			<if test="AUM !=null">
+				a.AUM = #{AUM},
+			</if>
+			<if test="MANAGER !=null">
+				a.MANAGER = #{MANAGER},
+			</if>
+			<if test="M_SHAREHOLDER !=null">
+				a.M_SHAREHOLDER = #{M_SHAREHOLDER},
+			</if>
+			<if test="COMMENT !=null">
+				a.COMMENT = #{COMMENT},
+			</if>
+			<if test="ISTRUST !=null">
+				a.ISTRUST = #{ISTRUST},
+			</if>
+			<if test="RANKING !=null">
+				a.RANKING = #{RANKING}
+			</if>
+			
+		</set>
+			where 
+				a.ID = #{ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.NAME,
+			a.IMGURL,
+			a.CTDATE,
+			a.AR,
+			a.PPR,
+			a.CAPITAL,
+			a.SHAREHOLDER,
+			a.CORPORATION,
+			a.LOCATION,
+			a.FOUNDINGTIME,
+			a.VIEWS,
+			a.CHAIRMAN,
+			a.INTRODUCTION,
+			a.FULLNAME,
+			a.LISTED,
+			a.AUM,
+			a.MANAGER,
+			a.M_SHAREHOLDER,
+			a.COMMENT,
+			a.ISTRUST,
+			a.RANKING
+		from 
+			td_institution a
+		where 1 = 1 
+			and a.ID = #{ID}
+	</select>
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findByParam" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.NAME,
+			a.IMGURL,
+			a.CTDATE,
+			a.AR,
+			a.PPR,
+			a.CAPITAL,
+			a.SHAREHOLDER,
+			a.CORPORATION,
+			a.LOCATION,
+			a.FOUNDINGTIME,
+			a.VIEWS,
+			a.CHAIRMAN,
+			a.INTRODUCTION,
+			a.FULLNAME,
+			a.LISTED,
+			a.AUM,
+			a.MANAGER,
+			a.M_SHAREHOLDER,
+			a.COMMENT,
+			a.ISTRUST,
+			a.RANKING
+		from 
+			td_institution a 
+			where 1=1
+			<if test="ID != null and ID != ''">
+				and a.ID = #{ID}
+			</if>
+			<if test="NAME != null and NAME != ''">
+				and a.NAME = #{NAME}
+			</if>
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.IMGURL,
+			a.CTDATE,
+			a.AR,
+			a.PPR,
+			a.CAPITAL,
+			a.SHAREHOLDER,
+			a.CORPORATION,
+			a.LOCATION,
+			a.FOUNDINGTIME,
+			a.VIEWS,
+			a.CHAIRMAN,
+			a.INTRODUCTION,
+			a.FULLNAME,
+			a.LISTED,
+			a.AUM,
+			a.MANAGER,
+			a.M_SHAREHOLDER,
+			a.COMMENT,
+			a.ISTRUST,
+			a.RANKING
+		from 
+			td_institution a 
+			where 1=1 
+			<if test="pd.NAME != null and pd.NAME != ''">
+				AND a.NAME LIKE CONCAT(CONCAT('%',#{pd.NAME},'%'))
+			</if>
+			order by a.CTDATE DESC
+	</select>
+	
+	<!-- 列表 -->
+	<select id="applistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.IMGURL,
+			a.CTDATE,
+			a.AR,
+			a.PPR,
+			a.CAPITAL,
+			a.SHAREHOLDER,
+			a.CORPORATION,
+			a.LOCATION,
+			a.FOUNDINGTIME,
+			a.VIEWS,
+			a.CHAIRMAN,
+			a.INTRODUCTION,
+			a.FULLNAME,
+			a.LISTED,
+			a.AUM,
+			a.MANAGER,
+			a.M_SHAREHOLDER,
+			a.COMMENT,
+			a.ISTRUST,
+			a.RANKING
+		from 
+			td_institution a 
+			where 1=1
+			<if test="pd.LOCATION != null and pd.LOCATION != ''">
+				AND a.LOCATION LIKE CONCAT(CONCAT('%', #{pd.LOCATION}),'%')
+			</if>
+			<if test="pd.LISTED != null">
+				<if test="pd.LISTED=='未上市'">
+					AND (a.LISTED = '否' or a.LISTED='' or a.LISTED='NULL')
+				</if>
+				<if test="pd.LISTED=='已上市'">
+					AND a.LISTED = '是'
+				</if>
+			</if>
+			<if test="pd.ISTRUST != null and pd.ISTRUST != ''">
+				<if test="pd.ISTRUST=='信托公司'">
+					AND a.ISTRUST = '是'
+				</if>
+				<if test="pd.ISTRUST=='非信托公司'">
+					AND (a.ISTRUST = '否' or a.ISTRUST = '')
+				</if>
+			</if>
+			<if test="pd.SHAREHOLDER != null and pd.SHAREHOLDER != ''">
+				AND a.SHAREHOLDER  LIKE CONCAT(CONCAT('%', #{pd.SHAREHOLDER}),'%')
+			</if>
+			order by a.ISTRUST DESC
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.IMGURL,
+			a.CTDATE,
+			a.AR,
+			a.PPR,
+			a.CAPITAL,
+			a.SHAREHOLDER,
+			a.CORPORATION,
+			a.LOCATION,
+			a.FOUNDINGTIME,
+			a.VIEWS,
+			a.CHAIRMAN,
+			a.INTRODUCTION,
+			a.FULLNAME,
+			a.LISTED,
+			a.AUM,
+			a.MANAGER,
+			a.M_SHAREHOLDER,
+			a.COMMENT,
+			a.ISTRUST,
+			a.RANKING
+		from 
+			td_institution a 
+			where 1=1
+	</select>
+	<select id="listAllXT" parameterType="pd" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.IMGURL,
+			a.CTDATE,
+			a.AR,
+			a.PPR,
+			a.CAPITAL,
+			a.SHAREHOLDER,
+			a.CORPORATION,
+			a.LOCATION,
+			a.FOUNDINGTIME,
+			a.VIEWS,
+			a.CHAIRMAN,
+			a.INTRODUCTION,
+			a.FULLNAME,
+			a.LISTED,
+			a.AUM,
+			a.MANAGER,
+			a.M_SHAREHOLDER,
+			a.COMMENT,
+			a.ISTRUST,
+			a.RANKING
+		from 
+			td_institution a 
+			where 1=1 AND a.ISTRUST='是'
+	</select>
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from td_institution
+		where 
+			ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+	
+	<select id="list_fy"  parameterType="pd" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.IMGURL,
+			a.CTDATE,
+			a.AR,
+			a.PPR,
+			a.CAPITAL,
+			a.SHAREHOLDER,
+			a.CORPORATION,
+			a.LOCATION,
+			a.FOUNDINGTIME,
+			a.VIEWS,
+			a.CHAIRMAN,
+			a.INTRODUCTION,
+			a.FULLNAME,
+			a.LISTED,
+			a.AUM,
+			a.MANAGER,
+			a.M_SHAREHOLDER,
+			a.COMMENT,
+			a.ISTRUST,
+			a.RANKING
+		from 
+			td_institution a
+			 order by a.CTDATE DESC  
+			limit #{begin},#{pageSize}
+	</select>
+	<select id="getProductsByCompany" parameterType="page" resultType="pd">
+		select 
+			a.ID,
+			a.PRODUCTNAME,
+			a.PRODUCTREFERRED,
+			a.RETURNSBENCHMARK,
+			a.RETURNSBENCHMARKMAX,
+			a.INVESTMENTSTARTING,
+			a.PRODUCTDEADLINE,
+			a.PRODUCTREVIEWS,
+			a.THEISSUER,
+			b.NAME THEISSUERNAME,
+			b.IMGURL THEISSUERIMGURL,
+			a.EXPECTISSUANCE,
+			a.INTERESTDISTRIBUTIONSTATE,
+			c.NAME TINTERESTDISTRIBUTIONSTATENAME,
+			a.TRUSTTYPE,
+			d.NAME TRUSTTYPENAME,
+			a.PRODUCTSTATUS,
+			e.NAME PRODUCTSTATUSNAME,
+			a.INVESTMENTSTARTINGSTATE,
+			a.PRODUCTDEADLINESTATE,
+			a.RETURNSBENCHMARKSTATE,
+			a.DETAILS,
+			a.SORT,
+			a.CTDATE,
+			a.UPDATE,
+			a.TYPE
+		from 
+			td_product a 
+			left join td_institution b on a.THEISSUER = b.ID 
+			left join td_conditiontwo c on a.INTERESTDISTRIBUTIONSTATE = c.ID 
+			left join td_conditiontwo d on a.TRUSTTYPE = d.ID 
+			left join td_conditiontwo e on a.PRODUCTSTATUS = e.ID 
+		where 1 = 1 
+			and a.THEISSUER  = #{pd.ID}
+	</select>
+	<select id="listAllSearch" parameterType="pd" resultType="pd">
+		select 
+			*
+		from 
+			td_institution a
+			<if test="condition!=null and condition!=''">
+				${condition} 
+			</if> 
+	</select>
+	
+	<select id="getLocation" parameterType="pd" resultType="java.lang.String">
+		select DISTINCT location from td_institution group by location
+	</select>
+</mapper>

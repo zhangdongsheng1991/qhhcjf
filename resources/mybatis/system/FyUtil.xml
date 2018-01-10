@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="FyUtil">
+	<select id="list_fy"  parameterType="pd" resultType="pd">
+		select
+			<if test="columns!= null and columns != ''">
+				${columns} 
+			</if>
+			<if test="columns== null or columns == ''">
+				* 
+			</if> 
+		from 
+			${tablename} a 
+			<if test="condition!=null and condition!=''">
+				${condition} 
+			</if> 
+			<if test="order!= null and order != ''">
+				${order} 
+			</if> 
+			limit #{begin},#{pageSize}
+	</select>
+</mapper>

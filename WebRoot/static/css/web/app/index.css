@@ -1,0 +1,54 @@
+﻿
+
+
+
+.m_index_xintuo{  background:#fff; clear:both;}
+.m_index_xintuo .m_xintuo_title{ width:100%; height:44px;}
+.m_index_xintuo .m_xintuo_title .m_xintuo_title_line{ width:3px; height:20px; margin-top:12px; float:left; margin-left:10px; background:#2cb9db;}
+.m_index_xintuo .m_xintuo_title .m_xintuo_title_pro{ float:left; font-size:20px; margin-top:8px; height:20px; margin-left:10px;  color:#000;}
+.m_index_xintuo .m_xintuo_title .m_xintuo_title_more{ float:right; font-size:17px; margin-top:10px; height:20px; margin-right:10px; color:#000;}
+.m_index_xintuo .m_xintuo_intro{ background:#ffffff;}
+.m_index_xintuo .m_xintuo_intro .m_xintuo_intro_list{ padding-left:2%;}
+.m_index_xintuo .m_xintuo_intro .m_xintuo_intro_list .m_xintuo_intro_top{}
+.m_index_xintuo .m_xintuo_intro .m_xintuo_intro_list .m_xintuo_intro_top .m_xintuo_intro_title{ width:65%; float:left;  font-size:18px; line-height:24px; margin-top:15px; margin-bottom:10px; color:#000; font-weight:bold; overflow:hidden;}
+.m_index_xintuo .m_xintuo_intro .m_xintuo_intro_list .m_xintuo_intro_top .m_xintuo_intro_less{ float:right; margin-right:3%; font-size:20px; color:#ff6c00; padding:3px 5px; margin-top:15px; }
+.m_index_xintuo .m_xintuo_intro .m_xintuo_intro_list .m_xintuo_intro_bottom{ clear:both;}
+.m_index_xintuo .m_xintuo_intro .m_xintuo_intro_list .m_xintuo_intro_bottom .m_xintuo_intro_bottom_left{ width:80%; float:right; font-size:14px;}
+.m_index_xintuo .m_xintuo_intro .m_xintuo_intro_list .m_xintuo_intro_bottom .m_xintuo_intro_bottom_left .m_xintuo_intro_bottom_floor{ width:100%; line-height:32px;}
+.m_index_xintuo .m_xintuo_intro .m_xintuo_intro_list .m_xintuo_intro_bottom .m_xintuo_intro_bottom_left .m_xintuo_intro_bottom_floor .m_xintuo_intro_bottom_half{ width:50%; float:left;}
+.m_index_xintuo .m_xintuo_intro .m_xintuo_intro_list .m_xintuo_intro_bottom .m_xintuo_intro_bottom_right{ width:15%; float:left; margin-top: 10px;}
+.m_index_xintuo .m_xintuo_intro .m_xintuo_intro_list .m_xintuo_intro_bottom .m_xintuo_intro_bottom_right .m_xintuo_intro_bottom_bi{ text-align:center; font-size:14px; color:#ff6c00;}
+.m_index_xintuo .m_xintuo_intro .m_xintuo_intro_list .m_xintuo_intro_bottom .m_xintuo_intro_bottom_right .m_xintuo_intro_bottom_bi span{ font-size:26px;}
+.m_index_xintuo .m_xintuo_intro .m_xintuo_intro_list .m_xintuo_intro_bottom .m_xintuo_intro_bottom_right .m_xintuo_intro_bottom_shouyi{ text-align:center;}
+
+
+
+/* Banner */
+.main_visual{height:130px;border-top:1px solid #d7d7d7;overflow:hidden;position:relative;}
+.main_image{height:130px;overflow:hidden;position:relative;}
+.main_image ul{width:9999px;height:130px;overflow:hidden;}
+.main_image li{float:left;width:100%;height:130px;}
+.main_image li span{display:block;width:100%;height:130px}
+.main_image li a{display:block;width:100%;height:130px}
+.main_image li .img_1{background:url('../images/img_main_1.jpg') center top no-repeat}
+.main_image li .img_2{background:url('../images/img_main_2.jpg') center top no-repeat}
+.main_image li .img_3{background:url('../images/img_main_3.jpg') center top no-repeat}
+.main_image li .img_4{background:url('../images/img_main_4.jpg') center top no-repeat}
+.main_image li .img_5{background:url('../images/img_main_5.jpg') center top no-repeat}
+
+div.flicking_con{position:absolute;bottom:8px;left:56%;z-index:999;height:21px;margin:0 0 0 -50px;}
+div.flicking_con a{float:left;width:21px;height:21px;margin:0;padding:0;background: url(../../../img/web/app/btn_main_img.png) 0 0 no-repeat;display:block;text-indent:-1000px}
+div.flicking_con a.on{background-position:0 -21px}
+#btn_prev,#btn_next{z-index:1111;position:absolute;display:block;width:24px!important;height:24px!important;top:50%;margin-top:-12px;filter:alpha(opacity=70); /*IE滤镜，透明度50%*/-moz-opacity:0.7; /*Firefox私有，透明度50%*/opacity:0.7;/*其他，透明度50%*/}
+#btn_prev{left:10px;}
+/* background:url(../../../img/web/app/hover_left.png) no-repeat left top; */
+#btn_next{right:10px;}
+/* background:url(../../../img/web/app/hover_right.png) no-repeat right top; */
+
+
+
+/*关于我们*/
+.m_aboutus_ititle{ margin-left:3%; margin-right:3%;}
+.m_aboutus_intro{ margin-left:3%; margin-right:3%; background:#fff; padding:10px; line-height:24px; font-size:16px; color:#666666;}
+.m_aboutus_intro p{ margin-bottom:12px; text-indent:2em;}
+

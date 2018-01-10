@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ActivityApplyMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into td_activity_apply(
+			ID	
+		<if test="NAME !=null">
+			,NAME
+		</if>
+		<if test="PHONE !=null">
+			,PHONE
+		</if>
+		<if test="INVESTMENTTHRESHOLD !=null">
+			,INVESTMENTTHRESHOLD
+		</if>
+		<if test="RETURNSBENCHMARK !=null">
+			,RETURNSBENCHMARK
+		</if>
+		<if test="PRODUCTDEADLINE !=null">
+			,PRODUCTDEADLINE
+		</if>
+		<if test="PAYINTERESTWAY !=null">
+			,PAYINTERESTWAY
+		</if>
+		<if test="INVESTMENTFIELD !=null">
+			,INVESTMENTFIELD
+		</if>
+		<if test="SHAREHOLDERSBACKGROUND !=null">
+			,SHAREHOLDERSBACKGROUND
+		</if>
+		<if test="REGISTEREDCAPITAL !=null">
+			,REGISTEREDCAPITAL
+		</if>
+		<if test="TOTALASSETMANAGEMENT !=null">
+			,TOTALASSETMANAGEMENT
+		</if>
+		<if test="TRUSTNAME !=null">
+			,TRUSTNAME
+		</if>
+		<if test="CTDATE !=null">
+			,CTDATE
+		</if>
+		<if test="UPDATE !=null">
+			,UPDATE
+		</if>
+		<if test="STATUS !=null">
+			,STATUS
+		</if>
+		<if test="CHANNEL !=null">
+			,CHANNEL
+		</if>
+		<if test="CHANNELURL !=null">
+			,CHANNELURL
+		</if>
+		<if test="CITY !=null">
+			,CITY
+		</if>
+		<if test="IP !=null">
+			,IP
+		</if>
+		<if test="_PORT !=null">
+			,_PORT
+		</if>
+		<if test="PCORPHONE!=null">
+			,PCORPHONE
+		</if>
+		) values (
+			#{ID}
+			<if test="NAME !=null">
+			,#{NAME}
+			</if>
+			<if test="PHONE !=null">
+			,#{PHONE}
+			</if>
+			<if test="INVESTMENTTHRESHOLD !=null">
+			,#{INVESTMENTTHRESHOLD}
+			</if>
+			<if test="RETURNSBENCHMARK !=null">
+			,#{RETURNSBENCHMARK}
+			</if>
+			<if test="PRODUCTDEADLINE !=null">
+			,#{PRODUCTDEADLINE}
+			</if>
+			<if test="PAYINTERESTWAY !=null">
+			,#{PAYINTERESTWAY}
+			</if>
+			<if test="INVESTMENTFIELD !=null">
+			,#{INVESTMENTFIELD}
+			</if>
+			<if test="SHAREHOLDERSBACKGROUND !=null">
+			,#{SHAREHOLDERSBACKGROUND}
+			</if>
+			<if test="REGISTEREDCAPITAL !=null">
+			,#{REGISTEREDCAPITAL}
+			</if>
+			<if test="TOTALASSETMANAGEMENT !=null">
+			,#{TOTALASSETMANAGEMENT}
+			</if>
+			<if test="TRUSTNAME !=null">
+			,#{TRUSTNAME}
+			</if>
+			<if test="CTDATE !=null">
+			,#{CTDATE}
+			</if>
+			<if test="UPDATE !=null">
+			,#{UPDATE}
+			</if>
+			<if test="STATUS !=null">
+			,#{STATUS}
+			</if>
+			<if test="CHANNEL !=null">
+			,#{CHANNEL}
+			</if>
+			<if test="CHANNELURL !=null">
+				,#{CHANNELURL}
+			</if>
+			<if test="CITY !=null">
+				,#{CITY}
+			</if>
+			<if test="IP !=null">
+				,#{IP}
+			</if>
+			<if test="_PORT !=null">
+				,#{_PORT}
+			</if>
+			<if test="PCORPHONE !=null">
+				,#{PCORPHONE}
+			</if>
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from td_activity_apply
+		where 
+			ID = #{ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  td_activity_apply a
+		<set>
+			<if test="NAME != null">
+				a.NAME = #{NAME},
+			</if>
+			<if test="PHONE != null">
+				a.PHONE = #{PHONE},
+			</if>
+			<if test="INVESTMENTTHRESHOLD != null">
+				a.INVESTMENTTHRESHOLD = #{INVESTMENTTHRESHOLD},
+			</if>
+			<if test="RETURNSBENCHMARK != null">
+				a.RETURNSBENCHMARK = #{RETURNSBENCHMARK},
+			</if>
+			<if test="PRODUCTDEADLINE != null">
+				a.PRODUCTDEADLINE = #{PRODUCTDEADLINE},
+			</if>
+			<if test="PAYINTERESTWAY !=null">
+				a.PAYINTERESTWAY = #{PAYINTERESTWAY},
+			</if>
+			<if test="INVESTMENTFIELD !=null">
+				a.INVESTMENTFIELD = #{INVESTMENTFIELD},
+			</if>
+			<if test="SHAREHOLDERSBACKGROUND != null">
+				a.SHAREHOLDERSBACKGROUND = #{SHAREHOLDERSBACKGROUND},
+			</if>
+			<if test="REGISTEREDCAPITAL != null">
+				a.REGISTEREDCAPITAL = #{REGISTEREDCAPITAL},
+			</if>
+			<if test="TOTALASSETMANAGEMENT != null">
+				a.TOTALASSETMANAGEMENT = #{TOTALASSETMANAGEMENT},
+			</if>
+			<if test="TRUSTNAME != null">
+				a.TRUSTNAME = #{TRUSTNAME},
+			</if>
+			<if test="CTDATE != null">
+				a.CTDATE = #{CTDATE},
+			</if>
+			<if test="UPDATE != null">
+				a.UPDATE = #{UPDATE},
+			</if>
+			<if test="STATUS != null">
+				a.STATUS = #{STATUS},
+			</if>
+			<if test="CHANNEL !=null">
+				a.CHANNEL=#{CHANNEL},
+			</if>
+			<if test="CHANNELURL !=null">
+				a.CHANNELURL=#{CHANNELURL},
+			</if>
+			<if test="CITY !=null">
+				a.CITY=#{CITY},
+			</if>
+			<if test="IP !=null">
+				a.IP=#{IP},
+			</if>
+			<if test="_PORT !=null">
+				a._PORT=#{_PORT}
+			</if>
+			<if test="PCORPHONE !=null">
+				a.PCORPHONE=#{PCORPHONE}
+			</if>
+		</set>
+			where 
+				a.ID = #{ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.NAME,
+			a.PHONE,
+			a.INVESTMENTTHRESHOLD,
+			a.RETURNSBENCHMARK,
+			a.PRODUCTDEADLINE,
+			a.PAYINTERESTWAY,
+			a.INVESTMENTFIELD,
+			a.SHAREHOLDERSBACKGROUND,
+			a.REGISTEREDCAPITAL,
+			a.TOTALASSETMANAGEMENT,
+			a.TRUSTNAME,
+			a.CTDATE,
+			a.UPDATE,
+			a.STATUS,
+			a.CHANNEL,
+			a.CHANNELURL,
+			a._PORT,
+			a.PCORPHONE,
+			a.CITY
+		from 
+			td_activity_apply a
+		where 1 = 1 
+			and a.ID = #{ID}
+	</select>
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findByParam" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.NAME,
+			a.PHONE,
+			a.INVESTMENTTHRESHOLD,
+			a.RETURNSBENCHMARK,
+			a.PRODUCTDEADLINE,
+			a.PAYINTERESTWAY,
+			a.INVESTMENTFIELD,
+			a.SHAREHOLDERSBACKGROUND,
+			a.REGISTEREDCAPITAL,
+			a.TOTALASSETMANAGEMENT,
+			a.TRUSTNAME,
+			a.CTDATE,
+			a.UPDATE,
+			a.STATUS,
+			a.CHANNEL,
+			a.CHANNELURL,
+			a._PORT,
+			a.PCORPHONE,
+			a.CITY
+		from 
+			td_activity_apply a 
+			where 1=1
+			<if test="ID != null and ID != ''">
+				and a.ID = #{ID}
+			</if>
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.PHONE,
+			a.INVESTMENTTHRESHOLD,
+			a.RETURNSBENCHMARK,
+			a.PRODUCTDEADLINE,
+			a.PAYINTERESTWAY,
+			a.INVESTMENTFIELD,
+			a.SHAREHOLDERSBACKGROUND,
+			a.REGISTEREDCAPITAL,
+			a.TOTALASSETMANAGEMENT,
+			a.TRUSTNAME,
+			a.CTDATE,
+			a.UPDATE,
+			a.STATUS,
+			a.CHANNEL,
+			a.CHANNELURL,
+			a._PORT,
+			a.PCORPHONE,
+			a.CITY
+		from 
+			td_activity_apply a 
+			where 1=1
+			<if test="pd.STATUS != null and pd.STATUS != ''">
+				and a.STATUS = #{pd.STATUS}
+			</if>
+			order by a.CTDATE DESC
+	</select>
+	
+	<!-- 列表 -->
+	<select id="applistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.PHONE,
+			a.INVESTMENTTHRESHOLD,
+			a.RETURNSBENCHMARK,
+			a.PRODUCTDEADLINE,
+			a.PAYINTERESTWAY,
+			a.INVESTMENTFIELD,
+			a.SHAREHOLDERSBACKGROUND,
+			a.REGISTEREDCAPITAL,
+			a.TOTALASSETMANAGEMENT,
+			a.TRUSTNAME,
+			a.CTDATE,
+			a.UPDATE,
+			a.STATUS,
+			a.CHANNEL,
+			a.CHANNELURL,
+			a._PORT,
+			a.PCORPHONE,
+			a.CITY
+		from 
+			td_activity_apply a 
+			where 1=1
+			order by a.CTDATE DESC
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.PHONE,
+			a.INVESTMENTTHRESHOLD,
+			a.RETURNSBENCHMARK,
+			a.PRODUCTDEADLINE,
+			a.PAYINTERESTWAY,
+			a.INVESTMENTFIELD,
+			a.SHAREHOLDERSBACKGROUND,
+			a.REGISTEREDCAPITAL,
+			a.TOTALASSETMANAGEMENT,
+			a.TRUSTNAME,
+			a.CTDATE,
+			a.UPDATE,
+			a.STATUS,
+			a.CHANNEL,
+			a.CHANNELURL,
+			a._PORT,
+			a.PCORPHONE,
+			a.CITY
+		from 
+			td_activity_apply a 
+			where 1=1
+			order by a.CTDATE DESC
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from td_activity_apply
+		where 
+			ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

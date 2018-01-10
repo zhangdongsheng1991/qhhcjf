@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="PrivateEquityMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd" useGeneratedKeys="true" keyProperty="ID">
+		insert into td_private_equity(
+			ID	
+		<if test="PROJECTFULLNAME !=null">
+			,PROJECTFULLNAME
+		</if>
+		<if test="REGULATORYAGENCY !=null">
+			,REGULATORYAGENCY
+		</if>
+		<if test="DURATION !=null">
+			,DURATION
+		</if>
+		<if test="TARGETSCALE !=null">
+			,TARGETSCALE
+		</if>
+		<if test="INVESTMENTTHRESHOLD !=null">
+			,INVESTMENTTHRESHOLD
+		</if>
+		<if test="INVESTMENTORIENTATION !=null">
+			,INVESTMENTORIENTATION
+		</if>
+		<if test="WHETHERORNOTTOBUY !=null">
+			,WHETHERORNOTTOBUY
+		</if>
+		<if test="ORGANIZATIONFORM !=null">
+			,ORGANIZATIONFORM
+		</if>
+		<if test="RECRUITMENTSTATUS !=null">
+			,RECRUITMENTSTATUS
+		</if>
+		<if test="MANAGEMENTEXPENSE !=null">
+			,MANAGEMENTEXPENSE
+		</if>
+		<if test="EXPERTCOMMENT !=null">
+			,EXPERTCOMMENT
+		</if>
+		) values (
+			#{ID}
+			<if test="PROJECTFULLNAME !=null">
+			,#{PROJECTFULLNAME}
+			</if>
+			<if test="REGULATORYAGENCY !=null">
+			,#{REGULATORYAGENCY}
+			</if>
+			<if test="DURATION !=null">
+			,#{DURATION}
+			</if>
+			<if test="TARGETSCALE !=null">
+			,#{TARGETSCALE}
+			</if>
+			<if test="INVESTMENTTHRESHOLD !=null">
+			,#{INVESTMENTTHRESHOLD}
+			</if>
+			<if test="INVESTMENTORIENTATION !=null">
+			,#{INVESTMENTORIENTATION}
+			</if>
+			<if test="WHETHERORNOTTOBUY !=null">
+			,#{WHETHERORNOTTOBUY}
+			</if>
+			<if test="ORGANIZATIONFORM !=null">
+			,#{ORGANIZATIONFORM}
+			</if>
+			<if test="RECRUITMENTSTATUS !=null">
+			,#{RECRUITMENTSTATUS}
+			</if>
+			<if test="MANAGEMENTEXPENSE !=null">
+			,#{MANAGEMENTEXPENSE}
+			</if>
+			<if test="EXPERTCOMMENT !=null">
+			,#{EXPERTCOMMENT}
+			</if>
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from td_private_equity
+		where 
+			ID = #{ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  td_private_equity
+		<set>
+			<if test="PROJECTFULLNAME != null">
+				PROJECTFULLNAME = #{PROJECTFULLNAME},
+			</if>
+			<if test="REGULATORYAGENCY != null">
+				REGULATORYAGENCY = #{REGULATORYAGENCY},
+			</if>
+			<if test="DURATION != null">
+				DURATION = #{DURATION},
+			</if>
+			<if test="TARGETSCALE != null">
+				TARGETSCALE = #{TARGETSCALE},
+			</if>
+			<if test="INVESTMENTTHRESHOLD != null">
+				INVESTMENTTHRESHOLD = #{INVESTMENTTHRESHOLD},
+			</if>
+			<if test="INVESTMENTORIENTATION != null">
+				INVESTMENTORIENTATION = #{INVESTMENTORIENTATION},
+			</if>
+			<if test="WHETHERORNOTTOBUY != null">
+				WHETHERORNOTTOBUY = #{WHETHERORNOTTOBUY},
+			</if>
+			<if test="ORGANIZATIONFORM != null">
+				ORGANIZATIONFORM = #{ORGANIZATIONFORM},
+			</if>
+			<if test="RECRUITMENTSTATUS != null">
+				RECRUITMENTSTATUS = #{RECRUITMENTSTATUS},
+			</if>
+			<if test="MANAGEMENTEXPENSE != null">
+				MANAGEMENTEXPENSE = #{MANAGEMENTEXPENSE},
+			</if>
+			<if test="EXPERTCOMMENT != null">
+				EXPERTCOMMENT = #{EXPERTCOMMENT},
+			</if>
+		</set>
+			where 
+				ID = #{ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.PROJECTFULLNAME,
+			a.REGULATORYAGENCY,
+			a.DURATION,
+			a.TARGETSCALE,
+			a.INVESTMENTTHRESHOLD,
+			a.INVESTMENTORIENTATION,
+			a.WHETHERORNOTTOBUY,
+			a.ORGANIZATIONFORM,
+			a.RECRUITMENTSTATUS,
+			a.MANAGEMENTEXPENSE,
+			a.EXPERTCOMMENT
+		from 
+			td_private_equity a
+		where 1 = 1 
+			and a.ID = #{ID}
+	</select>
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findByParam" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.PROJECTFULLNAME,
+			a.REGULATORYAGENCY,
+			a.DURATION,
+			a.TARGETSCALE,
+			a.INVESTMENTTHRESHOLD,
+			a.INVESTMENTORIENTATION,
+			a.WHETHERORNOTTOBUY,
+			a.ORGANIZATIONFORM,
+			a.RECRUITMENTSTATUS,
+			a.MANAGEMENTEXPENSE,
+			a.EXPERTCOMMENT
+		from 
+			td_private_equity a 
+		where 1 = 1 
+		 ORDER BY a.ID DESC
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.PROJECTFULLNAME,
+			a.REGULATORYAGENCY,
+			a.DURATION,
+			a.TARGETSCALE,
+			a.INVESTMENTTHRESHOLD,
+			a.INVESTMENTORIENTATION,
+			a.WHETHERORNOTTOBUY,
+			a.ORGANIZATIONFORM,
+			a.RECRUITMENTSTATUS,
+			a.MANAGEMENTEXPENSE,
+			a.EXPERTCOMMENT 
+		from 
+			td_private_equity a
+			where 1 = 1 
+			<if test="pd.RECRUITMENTSTATUS != null and pd.RECRUITMENTSTATUS != ''">
+				AND a.RECRUITMENTSTATUS = #{pd.RECRUITMENTSTATUS}
+			</if>
+			<if test="pd.MANAGEMENTEXPENSE != null and pd.MANAGEMENTEXPENSE != ''">
+				AND a.MANAGEMENTEXPENSE = #{pd.MANAGEMENTEXPENSE}
+			</if>
+			<if test="pd.EXPERTCOMMENT != null and pd.EXPERTCOMMENT != ''">
+				AND a.EXPERTCOMMENT = #{pd.EXPERTCOMMENT}
+			</if>
+			<if test="pd.TARGETSCALESTATES != null and pd.TARGETSCALESTATES != ''"> 
+			
+				<foreach item="item" index="index" collection="pd.TARGETSCALESTATES" open="and " separator="and" close=" ">
+				  find_in_set("${item}",a.TARGETSCALESTATE)
+				</foreach>
+			</if>
+			<if test="pd.INVESTMENTTHRESHOLDSTATES != null and pd.INVESTMENTTHRESHOLDSTATES != ''">
+				<foreach item="item" index="index" collection="pd.INVESTMENTTHRESHOLDSTATES" open="and " separator="and" close=" ">
+				  find_in_set("${item}",a.INVESTMENTTHRESHOLDSTATE)
+				</foreach>
+			</if>
+			<if test="pd.DURATIONSTATES != null and pd.DURATIONSTATES != ''">
+			<foreach item="item" index="index" collection="pd.DURATIONSTATES" open="and " separator="and" close=" ">
+				  find_in_set("${item}",a.DURATIONSTATE)
+				</foreach>
+			</if>
+			ORDER BY a.PROJECTFULLNAME DESC
+	</select>
+	
+	<!-- 列表 -->
+	<select id="applistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.PROJECTFULLNAME,
+			a.REGULATORYAGENCY,
+			a.DURATION,
+			a.TARGETSCALE,
+			a.INVESTMENTTHRESHOLD,
+			a.INVESTMENTORIENTATION,
+			a.WHETHERORNOTTOBUY,
+			a.ORGANIZATIONFORM,
+			a.RECRUITMENTSTATUS,
+			a.MANAGEMENTEXPENSE,
+			a.EXPERTCOMMENT
+		from 
+			td_private_equity a  
+			where 1 = 1 
+			 ORDER BY a.ID DESC
+	</select>
+	
+	
+	<!-- 浮动收益右 -->
+	<select id="appFloatlistRight" parameterType="page" resultType="pd">
+		SELECT
+			a.PROJECTFULLNAME,
+			a.REGULATORYAGENCY,
+			a.TARGETSCALE,
+			a.DURATION,
+			a.INVESTMENTORIENTATION,
+			a.EXPERTCOMMENT,
+			a.INVESTMENTTHRESHOLD
+		FROM td_private_equity a LIMIT 4
+	</select>
+	
+	<!-- 浮动收益左 -->
+	<select id="appFloatlistLeft" parameterType="page" resultType="pd">
+		SELECT
+			a.PROJECTFULLNAME,
+			a.REGULATORYAGENCY,
+			a.TARGETSCALE,
+			a.DURATION,
+			a.INVESTMENTORIENTATION,
+			a.EXPERTCOMMENT,
+			a.INVESTMENTTHRESHOLD
+		FROM td_private_equity a LIMIT 1
+	</select>
+	
+ 	<!-- 私募首页列表-->
+	<select id="appPrivateEquityList" parameterType="page" resultType="pd">
+		SELECT  a.PROJECTFULLNAME,
+				a.TARGETSCALE,
+				a.DURATION,
+				a.INVESTMENTORIENTATION,
+				a.INVESTMENTTHRESHOLD,
+				a.EXPERTCOMMENT
+ 		FROM td_private_equity a LIMIT 4
+	</select>
+	
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+			a.ID,
+			a.PROJECTFULLNAME,
+			a.REGULATORYAGENCY,
+			a.DURATION,
+			a.TARGETSCALE,
+			a.INVESTMENTTHRESHOLD,
+			a.INVESTMENTORIENTATION,
+			a.WHETHERORNOTTOBUY,
+			a.ORGANIZATIONFORM,
+			a.RECRUITMENTSTATUS,
+			a.MANAGEMENTEXPENSE
+		from 
+			td_private_equity a 
+			where 1 = 1 
+			 ORDER BY a.ID DESC
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from td_private_equity
+		where 
+			ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

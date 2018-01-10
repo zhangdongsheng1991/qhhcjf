@@ -1,0 +1,436 @@
+
+body,div,p,span,a,img,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,input,button{
+	margin:0;
+	padding:0;
+	list-style:none;
+	
+}
+
+i {
+    font-style: normal
+}
+
+button{
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+body{
+	font-size:24px;
+	font-family:Microsoft Yahei;
+	color:#cab072;
+	background:#0d0d0f;
+}
+
+a{
+	text-decoration:none;
+	
+}
+
+.daohang{
+	color:#000;
+	font-size:18px;
+	
+}
+
+.daohang:hover{
+	color:#cab072;
+}
+
+
+
+.top{
+	height: 100px;
+	background:#FFF;
+}
+	
+.top_box{
+	width: 1200px;
+	height:100px;
+	margin: 0 auto;
+}
+
+.logo{
+	height:0px;
+	width:466px;
+	padding-top:62px;
+	overflow:hidden;
+	background:url(/static/img/web/logo.png) no-repeat ;
+	float:left;
+	margin-top:10px;
+}
+
+
+.trust_list1{
+	width:560px;
+	height:100px;
+	float:right;
+}
+
+.trust_list1 li{
+	float:left;
+	margin:27px 30px;
+	
+}
+
+.banner {
+    background: url(/static/img/web/truts_company/banner-xintuo.png) no-repeat 50%;
+    height: 600px
+}
+
+
+
+.Lead{
+	width:1000px;
+	height:244px;
+	margin:0 auto;
+	padding:40px 100px 100px;
+}
+
+.Lead h3{
+	font-size:48px;
+	margin:20px 0;
+}
+
+.Lead p{
+	text-indent:4.5em;
+	line-height:50px;
+	font-family:SimSun;
+}
+
+
+.tiaoxuan{
+	width:100%;
+	height:565px;
+	background:url(/static/img/web/truts_company/tiaoxuan.png) no-repeat 50% ;
+}
+
+
+.biaoti1{
+	width:809px;
+	height:180px;
+	margin: 100px auto;
+	background:url(/static/img/web/truts_company/biaoti1.png) no-repeat ;
+}
+
+.xintuochanping{
+	width:1200px;
+	height:440px;
+	margin:0 auto;
+	margin-bottom:80px;
+}
+
+
+.Company_title{
+	width:100%;
+	height:40px;
+	background:#d89534;
+	padding:20px 0;
+	text-align:center;
+}
+
+
+.tubiao{
+	width:250px;
+	height:40px;
+}
+
+.xintuochanping_kuang{
+	width:190px;
+	height:360px;
+	background:#FFF;
+	padding:0px 55px;
+	text-align: center;
+	float:left;
+}
+
+.con_1{
+	width:190px;
+	height:59px;
+	line-height:60px;
+	border-bottom:1px dashed #999999;
+}
+
+.con_1 a{
+	color:#cab072;
+	font-size:24px;
+}
+
+.con_2{
+	width:190px;
+	height:70px;
+	padding:20px 0px;
+}
+
+.con_2_1{
+	font-size:36px;
+	height:40px;
+	line-height:40px;
+}
+
+.con_2_2{
+	font-size:16px;
+	height:30px;
+	line-height:30px;
+	color:#747474
+}
+
+.con_3{
+	width:190px;
+	height:80px;
+	padding:10px 0px;	
+}
+
+
+.con_3_1{
+	height:24px;
+	line-height:24px;
+	font-size:16px;
+}
+
+.touzi1{
+	color:#747474;
+}
+.touzi2{
+	color:#333;
+}
+
+
+
+
+.PE-btn {
+    margin: 0 auto;
+    display: block;
+    width: 184px;
+    height: 53px;
+    background: url(/static/img/web/truts_company/PE-btn.png) no-repeat;
+	color:#FFF;
+	font-size:18px;
+	font-weight:bold;
+}
+
+
+/*弹窗*/
+
+.pop-by {
+    background: url(/static/img/web/truts_company/60-sha.png) repeat;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9998;
+    display: none
+}
+
+.pop-mnc {
+    width: 420px;
+    height: 315px;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    top: 30%;
+    margin-left: -210px;
+    background:#FFF ;
+    display: none;
+}
+
+.pop-tt {
+    font-size:40px;
+    width: 420px;
+    height: 73px;
+	text-align:center;
+	line-height:73px;
+}
+
+.pop-tt span {
+    color: #f74d10;
+}
+
+.pop-hide {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: url(/static/img/web/truts_company/close1.png) no-repeat center;
+    width: 25px;
+    height: 25px
+}
+
+.pop-hide img {
+    margin-top: 5px
+}
+
+.succ-hide {
+    top: 136px;
+    background: url(popHide.png) no-repeat 0 bottom
+}
+
+.pop-form li {
+    padding-left: 33px;
+    height: 44px;
+    margin: 20px 0
+}
+
+.pop-form li span {
+}
+
+.pop-inp {
+    outline: none;
+    padding: 0;
+    font-size: 14px;
+    color: #fff;
+    text-indent: 1em;
+    font-family: Arial,'Microsoft YaHei';
+    border: 1px solid #dadada;
+    padding-left: 40px;
+}
+
+
+.succ-main {
+    margin-top: 210px;
+    line-height: 30px;
+    color: #333
+}
+
+.name-tip {
+    clear: both;
+    line-height: 25px;
+    height: 25px;
+    display: block;
+    color: red;
+    font-size: 12px;
+}
+
+/*.phone {background-position: 20px center;}*/
+.golden {
+    position: absolute;
+    width: 171px;
+    height: 82px;
+    left: 50%;
+    margin-left: -85px;
+    top: -82px;
+    background: url("gold.png") no-repeat left top;
+}
+
+.pop-succ {
+    width: 420px;
+    height: 315px;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    top: 30%;
+    margin-left: -210px;
+    background: #f5f5f5;
+    display: none
+}
+
+.pop-succ h3 {
+    line-height: 70px;
+    background: #4268cf;
+    color: #fff;
+    height: 70px;
+    border-radius: 0;
+    color: #fff;
+}
+
+.pop-succ h4 {
+    padding: 25px 0;
+    text-align: center;
+}
+
+.pop-succ p {
+    line-height: 32px;
+    text-align: center;
+}
+
+.succ h3 {
+    background: url(../images/yuys-top.jpg) no-repeat top center;
+    width: 420px;
+    height: 107px
+}
+
+.succ p {
+    font-size: 16px;
+    color: #333;
+    line-height: 36px;
+    margin-top: 30px
+}
+
+.succ p span {
+    color: #b68818
+}
+
+/*#yuyue_phone1 { width:173px;height:38px;padding-left: 65px;font-size: 14px;color: #333;*/
+/*outline: none; }*/
+#yuyue_name {
+    width: 228px;
+    line-height: 44px;
+    background: #333;
+    border: 0;
+    outline: none;
+    height: 38px;
+    padding: 0;
+    font-size: 16px;
+    color: #FFF;
+    text-indent: 1em;
+    font-family: Arial,'Microsoft YaHei';
+    border: 1px solid #000;
+    padding-left: 20px;
+}
+
+#yuyue_phone {
+    width: 228px;
+    line-height: 44px;
+    background: #333;
+    border: 0;
+    outline: none;
+    height: 38px;
+    padding: 0;
+    font-size: 16px;
+    color: #FFF;
+    text-indent: 1em;
+    font-family: Arial,'Microsoft YaHei';
+    border: 1px solid #000;
+    padding-left: 20px;
+}
+
+.phone-i1 {
+    font-size: 18px;
+    color: #000;
+    float: left;
+    margin-top: 7px
+}
+
+.name-i1 {
+    font-size: 18px;
+    color: #000;
+    float: left;
+    margin-top: 7px
+}
+
+#yuyue_submit1 {
+    background: url(/static/img/web/truts_company/PE-btn.png) no-repeat center;
+    display: block;
+    width: 184px;
+    height: 54px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin-left: 70px;
+    margin-top: 15px;
+	color:#FFF;
+	font-size: 18px;
+	font-weight: bold;
+
+	
+}
+
+
+
+
+
+
+
+
+

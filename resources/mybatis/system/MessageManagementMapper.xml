@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MessageManagementMapper">
+	<update id="minusReading" parameterType="pd">
+		update td_reading 
+		<set>
+			READINGDATE = #{READINGDATE},
+			STATE = 1
+		</set>
+		where messageid = #{messageid} and userid=#{userid}
+	</update>
+	<select id="listMessages" parameterType="com.fh.entity.system.MessageManagement" resultType="com.fh.entity.system.MessageManagement">
+		select * from td_message where 1=1 and (ctdate between #{ctdate} and #{sendtime}) 
+		<if test="status !=''">
+			and status=#{status}
+		</if>		
+		<if test="status==''">
+		</if>
+		<if test="messagetype !=''">
+			and messagetype=#{messagetype}
+		</if>
+		<if test="messagetype ==''">
+		</if>
+		order by CTDATE DESC
+		<if test="pageNumber!=0">
+			limit ${(pageNumber-1)*pageSize},${pageSize}
+		</if>
+	</select>
+	<select id="listMessagesCount" parameterType="com.fh.entity.system.MessageManagement" resultType="java.lang.Integer">
+		select count(1) from td_message where 1=1 and (ctdate between #{ctdate} and #{sendtime}) 
+		<if test="status !=''">
+			and status=#{status}
+		</if>		
+		<if test="status==''">
+		</if>
+		<if test="messagetype !=''">
+			and messagetype=#{messagetype}
+		</if>
+		<if test="messagetype ==''">
+		</if>
+	</select>
+	
+	<select id="findMessageById" parameterType="java.lang.String" resultType="com.fh.entity.system.MessageManagement">
+		select * from td_message where id=#{id}
+	</select>
+	<select id="findReadingByMessageId" parameterType="java.util.Map" resultType="com.fh.entity.system.Reading">
+		select * from td_reading where messageid = #{messageid} order by sendtime desc,readingdate desc 
+		<if test="pageNumber!=0">
+			limit ${(pageNumber-1)*pageSize},${pageSize}
+		</if>
+	</select>
+	<select id="findReadingCountByMessageId" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select count(1) from td_reading where messageid = #{messageid}
+	</select>
+	
+	
+	<!-- 新增-->
+	<insert id="saveMessage" parameterType="com.fh.entity.system.MessageManagement" useGeneratedKeys="true" keyProperty="ID">
+		insert into td_message(
+			ID	
+		<if test="messagetype !=null">
+			,MESSAGETYPE
+		</if>
+		<if test="subject !=null">
+			,SUBJECT
+		</if>
+		<if test="messagecontent !=null">
+			,MESSAGECONTENT
+		</if>
+			,SENDTIME
+		<if test="status !=null">
+			,STATUS
+		</if>
+		<if test="ctdate !=null">
+			,CTDATE
+		</if>
+		<if test="productids !=null">
+			,PRODUCTIDS
+		</if>
+		) values (
+			#{id}
+			<if test="messagetype !=null">
+			,#{messagetype}
+			</if>
+			<if test="subject !=null">
+			,#{subject}
+			</if>
+			<if test="messagecontent !=null">
+			,#{messagecontent}
+			</if>
+			,#{sendtime}
+			<if test="status !=null">
+			,#{status}
+			</if>
+			<if test="ctdate !=null">
+			,#{ctdate}
+			</if>
+			<if test="productids !=null">
+			,#{productids}
+			</if>
+		)
+	</insert>
+	<!-- 修改 -->
+	<update id="updateMessage" parameterType="com.fh.entity.system.MessageManagement">
+		update  td_message a
+		<set>
+			<if test="messagetype !=null">
+				a.messagetype = #{messagetype},
+			</if>
+			<if test="subject !=null">
+			a.subject = #{subject},
+			</if>
+			<if test="messagecontent !=null">
+			a.messagecontent=#{messagecontent},
+			</if>
+			a.sendtime=#{sendtime},
+			<if test="status !=null">
+			a.status=#{status},
+			</if>
+			<if test="ctdate !=null">
+			a.ctdate=#{ctdate},
+			</if>
+			<if test="productids !=null">
+			a.productids=#{productids}
+			</if>
+		</set>
+			where 
+				a.ID = #{id}
+	</update>
+	<insert id="addReading" parameterType="com.fh.entity.system.Reading">
+		insert into td_reading(
+			ID	
+		<if test="messageid !=null">
+			,messageid
+		</if>
+		<if test="userid !=null">
+			,userid
+		</if>
+		<if test="sendtime !=null">
+			,sendtime
+		</if>
+		<if test="state !=null">
+			,state
+		</if>
+		<if test="messagetype !=null">
+			,messagetype
+		</if>
+		
+		) values (
+			#{id}
+			<if test="messageid !=null">
+			,#{messageid}
+			</if>
+			<if test="userid !=null">
+			,#{userid}
+			</if>
+			<if test="sendtime !=null">
+			,#{sendtime}
+			</if>
+			<if test="state !=null">
+			,#{state}
+			</if>
+			<if test="messagetype !=null">
+			,#{messagetype}
+			</if>
+		)
+	</insert>
+	<!-- 删除-->
+	<delete id="deleteReading" parameterType="java.lang.String">
+		delete from td_reading
+		where 
+			messageid = #{id}
+	</delete>
+	
+	<!-- 删除-->
+	<delete id="deleteMessage" parameterType="java.lang.String">
+		delete from td_message  where ID in 
+			<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                  #{item}
+             </foreach>
+	</delete>
+	<delete id="deleteAllReading" parameterType="java.lang.String">
+		delete from td_reading  where messageid in 
+			<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                  #{item}
+             </foreach>
+	</delete>
+	<!--<delete id="deletetagbyid" parameterType="pd">
+		delete from td_news_tag
+		where 
+			ID = #{ID}
+	</delete>-->	
+	<!--
+	<update id="edittag" parameterType="pd">
+		update  td_news_tag a
+		<set>
+			<if test="TAGNAME != null">
+				a.TAGNAME = #{TAGNAME},
+			</if>
+			<if test="TAGURL != null">
+				a.TAGURL = #{TAGURL},
+			</if>
+		</set>
+			where 
+				a.ID = #{TAGID}
+	</update>-->
+	<!-- 修改
+	<update id="editSidIsNull" parameterType="pd">
+		update  td_news a
+				set  a.SID = null
+			where 
+				a.ID = #{ID}
+	</update>
+	 -->
+	<!-- 修改 
+	<update id="editXidIsNull" parameterType="pd">
+		update  td_news a
+				set  a.XID = null
+			where 
+				a.ID = #{ID}
+	</update>
+	-->
+	
+	<!-- 通过ID获取数据
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.NAME,
+			a.DETAILED,
+			a.IMG,
+			a.PVIEWS,
+			a.CTDATE,
+			a.SOURCE,
+			a.TYPE,
+			a.COMMENT,
+			a.SID,
+			a.XID,
+			if(b.NAME is not null,b.NAME,'没有上一页了') SNAME,
+			if(c.NAME is not null,c.NAME,'没有下一页了') XNAME,
+			(case    
+				when a.TYPE = '1' then "股权投资" 
+				when a.TYPE = '2' then "阳光私募" 
+				when a.TYPE = '3' then "信托资管" 
+				when a.TYPE = '4' then "海外保险"   
+				when a.TYPE = '5' then "财经要闻"   
+			end) TYPENAME
+		from 
+			td_news a left join td_news b on a.SID = b.ID 
+			left join td_news c on a.XID = c.ID 
+		where 1 = 1 
+			and a.ID = #{ID}
+	</select> -->
+		<!-- 通过ID获取数据 
+	<select id="findByNewsId" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.TAGNAME,
+			a.TAGURL,
+			a.NEWS_ID
+		from 
+			td_news_tag a where a.NEWS_ID = #{ID}
+	</select>-->
+	<!-- 通过ID获取数据
+	<select id="findByParam" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.NAME,
+			a.DETAILED,
+			a.IMG,
+			a.PVIEWS,
+			a.CTDATE,
+			a.SOURCE,
+			a.TYPE,
+			a.COMMENT,
+			a.SID,
+			a.XID,
+			(case    
+				when a.TYPE = '1' then "股权投资" 
+				when a.TYPE = '2' then "阳光私募" 
+				when a.TYPE = '3' then "信托资管" 
+				when a.TYPE = '4' then "海外保险"   
+				when a.TYPE = '5' then "财经要闻"  
+			end) TYPENAME
+		from 
+			td_news a 
+			where 1=1
+			<if test="ID != null and ID != ''">
+				and a.ID = #{ID}
+			</if>
+			<if test="NAME != null and NAME != ''">
+				and a.NAME = #{NAME}
+			</if>
+	</select>
+	 -->
+	<!-- 根据TYPE获取最后一次添加的数据 
+	<select id="lastAdd" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.NAME,
+			a.DETAILED,
+			a.IMG,
+			a.PVIEWS,
+			a.CTDATE,
+			a.SOURCE,
+			a.TYPE,
+			a.COMMENT,
+			a.SID,
+			a.XID
+		from 
+			td_news a 
+			where 1=1
+				and a.TYPE = #{TYPE}
+			order by CTDATE DESC limit 0,1
+	</select>
+	-->
+	<!-- 根据TYPE获取数据集合 
+	<select id="getTypeListAll" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.NAME,
+			a.DETAILED,
+			a.IMG,
+			a.PVIEWS,
+			a.CTDATE,
+			a.SOURCE,
+			a.TYPE,
+			a.COMMENT,
+			a.SID,
+			a.XID
+		from 
+			td_news a 
+			where 1=1
+				and a.TYPE = #{TYPE}
+			order by CTDATE  
+	</select>
+	-->
+	<!-- 通过ID获取数据
+	<select id="getNewsList" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.NAME,
+			a.DETAILED,
+			a.IMG,
+			a.PVIEWS,
+			a.CTDATE,
+			DATE_FORMAT(a.CTDATE,'%Y-%m-%d') YMH,
+			a.SOURCE,
+			a.TYPE,
+			a.COMMENT,
+			a.SID,
+			a.XID,
+			(case    
+				when a.TYPE = '1' then "股权投资" 
+				when a.TYPE = '2' then "阳光私募" 
+				when a.TYPE = '3' then "信托资管" 
+				when a.TYPE = '4' then "海外保险"  
+				when a.TYPE = '5' then "财经要闻"   
+			end) TYPENAME
+		from 
+			td_news a 
+			where 1=1 
+			<if test="TYPE != null and TYPE != ''">
+				AND a.TYPE = #{TYPE}
+				order by a.CTDATE DESC  
+			</if>
+			<if test="TYPE == null and TYPE == ''">
+				order by a.PVIEWS DESC  
+			</if>
+			LIMIT 0,10 
+	</select>
+	<select id="getTagList" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.TAGNAME,
+			a.TAGURL,
+			a.NEWS_ID
+		from 
+			td_news_tag a 
+			where NEWS_ID = #{ID}
+	</select> -->
+	<!-- 通过ID获取数据 
+	<select id="getNewsIndexList" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.NAME,
+			a.DETAILED,
+			a.IMG,
+			a.PVIEWS,
+			a.CTDATE,
+			DATE_FORMAT(a.CTDATE,'%Y-%m-%d') YMH,
+			a.SOURCE,
+			a.TYPE,
+			a.COMMENT,
+			a.SID,
+			a.XID,
+			(case    
+				when a.TYPE = '1' then "股权投资" 
+				when a.TYPE = '2' then "阳光私募" 
+				when a.TYPE = '3' then "信托资管" 
+				when a.TYPE = '4' then "海外保险"  
+				when a.TYPE = '5' then "财经要闻"   
+			end) TYPENAME
+		from 
+			td_news a 
+			where 1=1 
+			<if test="TYPE != null and TYPE != ''">
+				AND a.TYPE = ${TYPE}
+			</if>
+			<if test="TYPES != null and TYPES != ''">
+				AND a.TYPE != 5
+			</if>
+			order by a.CTDATE DESC  
+			LIMIT 0,5 
+	</select>
+	
+	-->
+	
+	<!-- 列表 
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.DETAILED,
+			a.IMG,
+			a.PVIEWS,
+			a.CTDATE,
+			a.SOURCE,
+			a.TYPE,
+			a.COMMENT,
+			a.SID,
+			a.XID,
+			(case    
+				when a.TYPE = '1' then "股权投资" 
+				when a.TYPE = '2' then "阳光私募" 
+				when a.TYPE = '3' then "信托资管" 
+				when a.TYPE = '4' then "海外保险" 
+				when a.TYPE = '5' then "财经要闻"    
+			end) TYPENAME
+		from 
+			td_news a 
+			where 1=1
+			<if test="pd.SOURCE != null and pd.SOURCE != ''">
+				and a.SOURCE = #{pd.SOURCE}
+			</if>
+			order by a.CTDATE DESC
+	</select>
+	-->
+	<!-- 列表 
+	<select id="applistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.DETAILED,
+			a.IMG,
+			a.PVIEWS,
+			a.CTDATE,
+			a.SOURCE,
+			a.TYPE,
+			a.COMMENT,
+			a.SID,
+			a.XID,
+			(case    
+				when a.TYPE = '1' then "股权投资" 
+				when a.TYPE = '2' then "阳光私募" 
+				when a.TYPE = '3' then "信托资管" 
+				when a.TYPE = '4' then "海外保险"   
+				when a.TYPE = '5' then "财经要闻"  
+			end) TYPENAME
+		from 
+			td_news a 
+			where 1=1
+			<if test="TYPE != null and TYPE != ''">
+				AND a.TYPE = #{TYPE}
+			</if>
+			order by a.CTDATE DESC
+	</select>
+	-->
+	<!-- 列表 
+	<select id="getList" parameterType="pd" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.DETAILED,
+			a.IMG,
+			a.PVIEWS,
+			a.CTDATE,
+			a.SOURCE,
+			a.TYPE,
+			a.COMMENT,
+			a.SID,
+			a.XID,
+			(case    
+				when a.TYPE = '1' then "股权投资" 
+				when a.TYPE = '2' then "阳光私募" 
+				when a.TYPE = '3' then "信托资管" 
+				when a.TYPE = '4' then "海外保险"   
+				when a.TYPE = '5' then "财经要闻"  
+			end) TYPENAME
+		from 
+			td_news a 
+			where 1=1 
+			<if test="TYPE != null and TYPE != ''">
+				AND a.TYPE = #{TYPE}
+			</if>
+			order by a.CTDATE DESC 
+			limit 0,4
+	</select>
+	-->
+	<!-- 列表(全部) 
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.DETAILED,
+			a.IMG,
+			a.PVIEWS,
+			a.CTDATE,
+			a.SOURCE,
+			a.TYPE,
+			a.COMMENT,
+			a.SID,
+			a.XID,
+			(case    
+				when a.TYPE = '1' then "股权投资" 
+				when a.TYPE = '2' then "阳光私募" 
+				when a.TYPE = '3' then "信托资管" 
+				when a.TYPE = '4' then "海外保险" 
+				when a.TYPE = '5' then "财经要闻"    
+			end) TYPENAME
+		from 
+			td_news a 
+			where 1=1
+			<if test="TYPE != null and TYPE != ''">
+				AND a.TYPE = #{TYPE}
+				order by a.CTDATE DESC  
+			</if>
+			<if test="TYPE == null and TYPE == ''">
+				order by a.PVIEWS DESC  
+			</if>
+	</select>
+	-->
+	<!-- 批量删除
+	<delete id="deleteAll" parameterType="String">
+		delete from td_news
+		where 
+			ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	<select id="getHotNewsList" parameterType="pd" resultType="pd">
+		select 
+			* 
+		from td_news t 
+		where 4&gt;(select 
+				count(*) 
+				from td_news 
+				where t.TYPE=TYPE 
+				and PVIEWS&gt;t.PVIEWS) 
+		and PVIEWS!=0 order by TYPE,PVIEWS desc
+	</select> -->
+</mapper>

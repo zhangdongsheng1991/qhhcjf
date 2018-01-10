@@ -1,0 +1,31 @@
+.wenda_type{
+	text-align:center;
+	border:1px solid black;
+	width:355px;
+	height:41px;
+	line-height:41px;
+	font-size:16px;
+	cursor:pointer;
+	background-color:#FFF;
+}
+
+dt,dd{
+	border-bottom:1px solid #b5b5b5;
+	height:40px;
+	text-algin:center; 
+	line-height:40px;
+	cursor:pointer;
+}
+
+.wenda_body,.wenda_body div{
+	float:left;
+}
+
+.check{
+	 width:10px; height:30px; line-height:30px; text-align:center;	
+	
+}
+#ys{
+	 width:10px; height:30px; line-height:30px; text-align:center;	
+	
+}

@@ -1,0 +1,477 @@
+@charset "utf-8";
+
+body,div,p,span,a,img,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,input,button{
+	margin:0;
+	padding:0;
+	list-style:none;
+	
+}
+
+button{
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+body{
+	font-size:12px;
+	font-family:Microsoft Yahei;
+	color:#f1f1f1;
+	background:#1f1a17;
+}
+
+a{
+	color:#FFF;
+	text-decoration:none;
+	
+}
+
+
+
+.top{
+	height: 80px;
+	line-height: 80px;
+	background:#FFF;
+}
+	
+.top_box{
+	width: 1200px;
+	height:80px;
+	margin: 0 auto;
+}
+
+.logo{
+	height:0px;
+	width:466px;
+	padding-top:62px;
+	overflow:hidden;
+	background:url(/static/img/web/logo.png) no-repeat ;
+	float:left;
+	margin-top:10px;
+}
+
+
+.banner {
+    background: url(/static/img/web/wealth/banner.png) no-repeat 50%;
+    height: 723px
+}
+
+.content{
+	width:1200px;
+	margin:0 auto;
+	padding-top:80px;
+}
+
+.content_1{
+	height:976px;
+}
+
+
+.biaoti{
+	width:418px;
+	height:85px;
+	background:url(/static/img/web/wealth/biaotilan.png);
+	font-size:30px;
+	color:#000000;
+	padding-left:70px;	
+	line-height:80px;
+}
+
+.PE-example{
+	width:1096px;
+	height:831px;
+	margin:30px auto;
+}
+
+.content_2{
+	height:520px;
+}
+
+
+.what-PE{
+	height:431px;
+}
+
+.content_3{
+	height:535px;
+}
+
+.PE-money{
+	height:370px;
+	margin:30px 122px;
+}
+
+
+.content_4{
+	height:1040px;
+}
+
+
+.PE-follow{
+	height:540px;
+	margin:50px 0px;
+}
+
+
+.minister-say{
+	width:1021px;
+	height:305px;
+	margin:0 auto; 	
+}
+
+
+.content_5{
+	height:795px;	
+}
+
+.PE-star{
+	width:1200px;
+	height:460px;
+	margin:80px 0;
+}
+
+
+.PE-star-btn{
+	width:486px;
+	height:82px;
+	margin:0px 355px;
+	font-size:30px;
+	background:url(/static/img/web/wealth/star-btn.png);
+	color:#FFF;
+	font-weight:bold;
+
+}
+
+
+.content_6{
+	height:670px;
+}
+
+
+.project-box{
+	height:435px;
+	width:1200px;
+	margin-top:70px;
+	margin-bottom:30px;
+}
+
+
+.project-Frame-1{
+	width:378px;
+	height:433px;
+	border: #ffc84a 1px solid;
+	float:left;
+}
+
+.project-Frame-2{
+	width:356px;
+	height:411px;
+	border: #ffc84a 1px solid;
+	margin:10px;
+}
+
+.project-Frame{
+	margin:0 30px;
+}
+
+
+.project-name {
+    margin: 50px auto 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ffc84a;
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    width: 350px;
+}
+
+.project-exp {
+
+}
+
+.project-exp p {
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+.project-bg {
+    margin: 50px auto;
+    overflow: hidden;
+}
+
+.project-bg li {
+    float: left;
+}
+
+.pro-prv, .pro-next {
+    width: 175px;
+}
+
+.pro-bold {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.pro-bold span {
+    margin-left: 4px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.pro-normal {
+    text-align: center;
+    font-size: 14px;
+    color: white;
+}
+
+
+.item-mid {
+    margin: 0 28px;
+}
+
+.PE-btn {
+    margin: 0 auto;
+    display: block;
+    width: 184px;
+    height: 53px;
+    background: url(/static/img/web/wealth/PE-btn.png) no-repeat;
+	color:#FFF;
+	font-size:18px;
+	font-weight:bold;
+}
+
+
+/*弹窗*/
+
+.pop-by {
+    background: url(/static/img/web/wealth/60-sha.png) repeat;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9998;
+    display: none
+}
+
+.pop-mnc {
+    width: 420px;
+    height: 315px;
+	border: 1px solid #ffc84a;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    top: 30%;
+    margin-left: -210px;
+    background: #1f1a17;
+    display: none
+}
+
+.pop-tt {
+    font-size:40px;
+    width: 420px;
+    height: 73px;
+	text-align:center;
+	line-height:73px;
+}
+
+.pop-tt span {
+    color: #f74d10;
+}
+
+.pop-hide {
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    background: url(/static/img/web/wealth/close.png) no-repeat center;
+    width: 50px;
+    height: 50px
+}
+
+.pop-hide img {
+    margin-top: 5px
+}
+
+.succ-hide {
+    top: 136px;
+    background: url(/static/img/web/wealth/popHide.png) no-repeat 0 bottom
+}
+
+.pop-form li {
+    padding-left: 33px;
+    height: 44px;
+    margin: 20px 0
+}
+
+.pop-form li span {
+}
+
+.pop-inp {
+    outline: none;
+    padding: 0;
+    font-size: 14px;
+    color: #fff;
+    text-indent: 1em;
+    font-family: Arial,'Microsoft YaHei';
+    border: 1px solid #dadada;
+    padding-left: 40px;
+}
+
+
+.succ-main {
+    margin-top: 210px;
+    line-height: 30px;
+    color: #333
+}
+
+.name-tip {
+    clear: both;
+    line-height: 25px;
+    height: 25px;
+    display: block;
+    color: red;
+    font-size: 12px;
+}
+
+/*.phone {background-position: 20px center;}*/
+.golden {
+    position: absolute;
+    width: 171px;
+    height: 82px;
+    left: 50%;
+    margin-left: -85px;
+    top: -82px;
+    background: url("/static/img/web/wealth/gold.png") no-repeat left top;
+}
+
+.pop-succ {
+    width: 420px;
+    height: 315px;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    top: 30%;
+    margin-left: -210px;
+    background: #f5f5f5;
+    display: none
+}
+
+.pop-succ h3 {
+    line-height: 70px;
+    background: #4268cf;
+    color: #fff;
+    height: 70px;
+    border-radius: 0;
+    color: #fff;
+}
+
+.pop-succ h4 {
+    padding: 25px 0;
+    text-align: center;
+}
+
+.pop-succ p {
+    line-height: 32px;
+    text-align: center;
+}
+
+.succ h3 {
+    background: url(../images/yuys-top.jpg) no-repeat top center;
+    width: 420px;
+    height: 107px
+}
+
+.succ p {
+    font-size: 16px;
+    color: #333;
+    line-height: 36px;
+    margin-top: 30px
+}
+
+.succ p span {
+    color: #b68818
+}
+
+/*#yuyue_phone1 { width:173px;height:38px;padding-left: 65px;font-size: 14px;color: #333;*/
+/*outline: none; }*/
+#yuyue_name {
+    width: 228px;
+    line-height: 44px;
+    background: #1f1a17;
+    border: 0;
+    outline: none;
+    height: 38px;
+    padding: 0;
+    font-size: 16px;
+    color: #b0b0b0;
+    text-indent: 1em;
+    font-family: Arial,'Microsoft YaHei';
+    border: 1px solid #ffc84a;
+    padding-left: 20px;
+}
+
+#yuyue_phone {
+    width: 228px;
+    line-height: 44px;
+    background: #1f1a17;
+    border: 0;
+    outline: none;
+    height: 38px;
+    padding: 0;
+    font-size: 16px;
+    color: #b0b0b0;
+    text-indent: 1em;
+    font-family: Arial,'Microsoft YaHei';
+    border: 1px solid #ffc84a;
+    padding-left: 20px;
+}
+
+.phone-i1 {
+    font-size: 18px;
+    color: #FFF;
+    float: left;
+    margin-top: 7px
+}
+
+.name-i1 {
+    font-size: 18px;
+    color: #FFF;
+    float: left;
+    margin-top: 7px
+}
+
+#yuyue_submit1 {
+    background: url(/static/img/web/wealth/PE-btn.png) no-repeat center;
+    display: block;
+    width: 184px;
+    height: 54px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin-left: 70px;
+    margin-top: 15px;
+	color:#FFF;
+	font-size: 18px;
+	font-weight: bold;
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

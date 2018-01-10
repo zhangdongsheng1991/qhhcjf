@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="UserManageMentMapper">
+	<!-- 新增用户 -->
+	<insert id="saveUser" parameterType="com.fh.entity.system.UserManageMent" flushCache="false">
+		insert into td_user (
+			ID,
+			U_NAME,
+			U_SEX,
+			U_EMAIL,
+			U_PHONE,
+			U_PWD,
+			REGISTERDATE,
+			R_YEAR,
+			R_MONTH,
+			LAST_LOGIN,
+			IP
+		) values (
+			#{id},
+			#{u_name},
+			#{u_sex},
+			#{u_email},
+			#{u_phone},
+			#{u_pwd},
+			#{registerdate},
+			#{r_year},
+			#{r_month},
+			#{last_login},
+			#{ip}
+		)
+	</insert>
+	<!-- update -->
+	<update id="updateUser" parameterType="com.fh.entity.system.UserManageMent">
+		update  td_user
+		<set>
+			<if test="disable != null">
+				disable = #{disable}
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	<update id="updateUserByU_phone" parameterType="com.fh.entity.system.UserManageMent">
+		update  td_user
+		<set>
+			<if test="u_name != null">
+				u_name = #{u_name},
+			</if>
+			<if test="u_sex != null">
+				u_sex = #{u_sex}
+			</if>
+		</set>
+		where u_phone=#{u_phone}
+	</update>
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="com.fh.entity.system.UserManageMent" resultType="com.fh.entity.system.UserManageMent">
+		select
+			ID,
+			U_NAME,
+			U_SEX,
+			U_EMAIL,
+			U_PHONE,
+			U_PWD,
+			REGISTERDATE,
+			R_YEAR,
+			R_MONTH,
+			LAST_LOGIN,
+			IP,
+			DISABLE,
+			LOGINCOUNT
+		from 
+			td_user 
+			where 1 = 1 
+			ORDER BY REGISTERDATE DESC
+	</select>
+	
+	<select id="findUserById" parameterType="java.lang.String" resultType="com.fh.entity.system.UserManageMent">
+		select
+			ID,
+			U_NAME,
+			U_SEX,
+			U_EMAIL,
+			U_PHONE,
+			U_PWD,
+			REGISTERDATE,
+			R_YEAR,
+			R_MONTH,
+			LAST_LOGIN,
+			IP,
+			DISABLE,
+			LOGINCOUNT
+		from td_user where ID=#{id} 
+	</select>
+	<select id="findUsersByYear" parameterType="java.lang.String" resultType="com.fh.entity.system.UserManageMent">
+		select
+			ID,
+			U_NAME,
+			U_SEX,
+			U_EMAIL,
+			U_PHONE,
+			U_PWD,
+			REGISTERDATE,
+			R_YEAR,
+			R_MONTH,
+			LAST_LOGIN,
+			IP,
+			DISABLE,
+			LOGINCOUNT
+		from td_user where R_YEAR=#{id}  ORDER BY REGISTERDATE DESC
+	</select>
+	<select id="findUsersByYearMonth" parameterType="pd" resultType="com.fh.entity.system.UserManageMent">
+		select
+			ID,
+			U_NAME,
+			U_SEX,
+			U_EMAIL,
+			U_PHONE,
+			U_PWD,
+			REGISTERDATE,
+			R_YEAR,
+			R_MONTH,
+			LAST_LOGIN,
+			IP,
+			DISABLE,
+			LOGINCOUNT
+		from td_user where R_MONTH=#{month} AND R_YEAR=#{year} ORDER BY REGISTERDATE DESC
+	</select>
+	<!-- 判断用户名和密码 -->
+	<select id="getUserInfo" parameterType="pd" resultType="pd" useCache="false"><!-- insert update delete (flushCache="true/false") -->
+		select * from td_user 
+		where 1=1
+	  	and	(
+	  		(U_PHONE = #{PHONE} and U_PWD = #{PASSWORD})
+	  		or
+	  		(U_EMAIL = #{PHONE} and U_PWD = #{PASSWORD})
+	  		) 
+	  	and DISABLE = 0
+	</select>
+	<!-- 更新登录时间 -->
+	<update id="updateLastLoginAndLoginCount" parameterType="pd" flushCache="false">
+		update td_user set 
+		LAST_LOGIN = #{LAST_LOGIN},LOGINCOUNT = (LOGINCOUNT+1) 
+		where ID = #{ID}
+	</update>
+	<select id="checkphone" parameterType="java.lang.String" resultType="java.lang.String">
+		select id from td_user where u_phone=#{phone}
+	</select>
+	<!-- 更新tempid -->
+	<update id="updateTempId" parameterType="com.fh.entity.system.UserManageMent" flushCache="false">
+		update td_user set 
+		TEMP_ID = #{temp_id} 
+		where U_PHONE = #{u_phone}
+	</update>
+	<!-- 更新tempid -->
+	<select id="getTempIdCount" parameterType="java.lang.String" resultType="java.lang.Integer" flushCache="false">
+		select TEMP_ID from td_user 
+		where U_PHONE = #{phone}
+	</select>
+	<select id="getPhoneByTempId" parameterType="java.lang.String" resultType="java.lang.String" flushCache="false">
+		select U_PHONE from td_user 
+		where TEMP_ID = #{k}
+	</select>
+	<!-- 更新tempid2 -->
+	<update id="updateTempId2" parameterType="pd" flushCache="false">
+		update td_user set 
+		TEMP_ID2 = #{temp_id2} 
+		where U_PHONE = #{u_phone}
+	</update>
+	<!-- 更新tempid2 -->
+	<select id="getTempId2" parameterType="java.lang.String" resultType="com.fh.entity.system.UserManageMent" flushCache="false">
+		select * from td_user 
+		where TEMP_ID2 = #{key}
+	</select>
+	
+	<!-- 更新tempid2 -->
+	<update id="updatePwd" parameterType="pd" flushCache="false">
+		update td_user set 
+		U_PWD = #{u_pwd} ,TEMP_ID2 = '1'
+		where U_PHONE = #{u_phone}
+	</update>
+	
+	<select id="findMessageByPhone" parameterType="java.lang.String" resultType="com.fh.entity.system.Reading">
+		select * from td_reading where (SENDTIME between DATE_SUB(sysdate(), INTERVAL 7 DAY) AND sysdate()) and state='0' and userid = #{PHONE} order by sendtime desc 
+	</select>
+	
+	<select id="findUserByPhone" parameterType="java.lang.String" resultType="com.fh.entity.system.UserManageMent">
+		select * from td_user where u_phone=#{phone}
+	</select>
+	
+	<update id="initFindpwd" parameterType="java.lang.String">
+		update td_user set findpwdcounts=0,findpwdtime1 = '' where u_phone=#{phone}
+	</update>
+	
+	<update id="updateFindPwdCounts" parameterType="java.lang.String">
+		update td_user set findpwdcounts=findpwdcounts+1,findpwdtime1 = sysdate() where u_phone=#{phone}
+	</update>
+	<select id="getLoginCount" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select logincount from td_user where u_phone=#{phone}
+	</select>
+</mapper>

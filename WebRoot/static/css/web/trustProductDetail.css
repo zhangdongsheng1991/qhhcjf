@@ -1,0 +1,234 @@
+/*  create by guojingfeng  */
+/*  公共样式-start  */
+body {
+    color: #333;
+}
+.icon-title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+}
+.position-relative {
+    position: relative;
+}
+.align-center {
+    text-align: center;
+}
+/*  公共样式-end  */
+/*  理财师推荐-start  */
+.recommend-title {
+    margin-top: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.recommend-title .recommend-title-icon{
+    width: 20px;
+    height: 18px;
+    top: 8px;
+    background: url(../../images/trust/icon_financial_planner.png) no-repeat;
+}
+.recommend-title h3{
+    display: inline-block;
+    line-height: 36px;
+    font-size: 18px;
+}
+.financial-planner-list {
+    border: 1px solid #e1e1e1;
+    padding: 20px 16px 0;
+    background: #fff;
+}
+.financial-planner-list::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.financial-planner {
+    float: left;
+    width: 50%;
+    margin-bottom: 30px;
+}
+.financial-planner img {
+    width: 104px;
+    height: 104px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.financial-planner-name {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: normal;
+}
+.financial-planner-post {
+    line-height: 24px;
+}
+.btn {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 6px 24px;
+    border: 1px solid #f49703;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #f49703;
+    line-height: 14px;
+}
+.btn:hover {
+    background-color: #f49703;
+    color: #fff;
+}
+/*  理财师推荐-end  */
+/*  基本信息问答-start  */
+.question-and-answer {
+    margin: 25px 0;
+}
+.question-and-answer .question{
+    margin-bottom: 15px;
+}
+.question-and-answer .answer {
+    padding: 20px 30px 20px 10px;
+    background-color: #e7f6ff;
+    line-height: 24px;
+}
+    /*  基本信息问答-end  */
+/*  产品发行商简介-start  */
+.abstract-title {
+    position: relative;
+    padding-left: 48px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #00a0e9;
+}
+.abstract-title .abstract-title-icon {
+    top: 4px;
+    width: 38px;
+    height: 20px;
+    background: url("../../images/trust/abstract_title_icon.png") no-repeat;
+}
+.abstract-title h2 {
+    line-height: 28px;
+    color: #29a2e9;
+}
+.abstract-description {
+    padding: 30px;
+    text-indent: 2em;
+    border: 1px solid #e1e1e1;
+    border-top: none;
+    line-height: 32px;
+    background: #fff;
+}
+/*  产品发行商简介-end  */
+/*  公司简介-start  */
+.company-message {
+    padding: 34px 0 50px;
+    background-color: #fff;
+    border: 1px solid #d2d2d2;
+    border-top: none;
+}
+.company-abstract {
+    margin: 0 auto;
+}
+.company-intro-title {
+    margin: 0;
+    height: 50px;
+    background: url("../../images/trust/icon_company_intro_title.png") no-repeat center center;
+    color: #fff;
+    line-height: 50px;
+}
+.company-info-icons {
+    margin-top: 65px;
+}
+.info-icons {
+    display: inline-block;
+    margin: 0 50px;
+}
+.info-icons .company-info-bg{
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    padding: 28px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #f1f6f9;
+    font-size: 0;
+}
+.info-icons img{
+    width: 60px;
+    height: 60px;
+}
+.info-icons .company-info-desc {
+    margin-top: 14px;
+    font-size: 18px;
+    line-height: 20px;
+}
+.info-icons .company-certificate-icon {
+    width: 260px;
+    height: 180px;
+    padding: 5px;
+    border: 1px solid #e1e1e1;
+}
+.info-icons .company-certificate-icon img{
+    width: 100%;
+    height: 100%;
+}
+.company-certificate {
+    margin-top: 60px;
+}
+.company-certificate-icons {
+    margin-top: 44px;
+}
+/*  公司简介-end  */
+/*  推荐产品-start  */
+.production-recommend {
+    margin: 15px 0;
+}
+#trust_index_introduce .trust_index_introduce_li{
+    margin: 0 10px;
+    padding: 0 19px;
+    width: 240px;
+    height: 280px;
+    overflow: hidden;
+}
+.trust_index_introduce_li_title {
+    -webkit-transition: color .3s;
+    -moz-transition: color .3s ;
+    -ms-transition: color .3s ;
+    -o-transition: color .3s ;
+    transition: color .3s ;
+}
+.trust-index-introduce-li-title-a:hover {
+    color: #ff9600;
+}
+.production-recommend-icon {
+    width: 24px;
+    height: 24px;
+    background: url("../../images/trust/icon_recommend.png");
+}
+.production-recommend-title {
+    padding-left: 30px;
+    font-size: 20px;
+    line-height: 24px;
+    color: #f49703;
+}
+.production-recommend-desc {
+    padding-top: 10px;
+    height: 48px;
+    border-top: 1px dashed #999;
+    line-height: 24px;
+}
+.trust-index-introduce-li-title-icon {
+    width: 34px;
+}
+.trust-index-introduce-li-title-icon img {
+    width: 34px;
+    height: 34px;
+}
+.trust-index-introduce-li-title {
+    width: 191px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*  推荐产品-end  */

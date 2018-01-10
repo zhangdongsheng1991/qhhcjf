@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="productAppointmentMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into td_productappointment(
+			ID	
+		<if test="NAME !=null">
+			,NAME
+		</if>
+		<if test="PHONE !=null">
+			,PHONE
+		</if>
+		<if test="MONEY !=null">
+			,MONEY
+		</if>
+		<if test="TYPE !=null">
+			,TYPE
+		</if>
+		<if test="PRODUCTID !=null">
+			,PRODUCTID
+		</if>
+		<if test="CTDATE !=null">
+			,CTDATE
+		</if>
+		<if test="UPDATE !=null">
+			,UPDATE
+		</if>
+		<if test="STATUS !=null">
+			,STATUS
+		</if>
+		<if test="CHANNEL !=null">
+			,CHANNEL
+		</if>
+		<if test="CHANNELURL !=null">
+			,CHANNELURL
+		</if>
+		<if test="CITY !=null">
+			,CITY
+		</if>
+		<if test="IP !=null">
+			,IP
+		</if>
+		<if test="_PORT !=null">
+			,_PORT
+		</if>
+		<if test="PCORPHONE!=null">
+			,PCORPHONE
+		</if>
+		) values (
+			#{ID}
+			<if test="NAME !=null">
+			,#{NAME}
+			</if>
+			<if test="PHONE !=null">
+			,#{PHONE}
+			</if>
+			<if test="MONEY !=null">
+			,#{MONEY}
+			</if>
+			<if test="TYPE !=null">
+			,#{TYPE}
+			</if>
+			<if test="PRODUCTID !=null">
+			,#{PRODUCTID}
+			</if>
+			<if test="CTDATE !=null">
+			,#{CTDATE}
+			</if>
+			<if test="UPDATE !=null">
+			,#{UPDATE}
+			</if>
+			<if test="STATUS !=null">
+			,#{STATUS}
+			</if>
+			<if test="CHANNEL !=null">
+			,#{CHANNEL}
+			</if>
+			<if test="CHANNELURL !=null">
+				,#{CHANNELURL}
+			</if>
+			<if test="CITY !=null">
+				,#{CITY}
+			</if>
+			<if test="IP !=null">
+				,#{IP}
+			</if>
+			<if test="_PORT !=null">
+				,#{_PORT}
+			</if>
+			<if test="PCORPHONE !=null">
+				,#{PCORPHONE}
+			</if>
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from td_productappointment
+		where 
+			ID = #{ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  td_productappointment a
+		<set>
+			<if test="NAME != null">
+				a.NAME = #{NAME},
+			</if>
+			<if test="PHONE != null">
+				a.PHONE = #{PHONE},
+			</if>
+			<if test="MONEY != null">
+				a.MONEY = #{MONEY},
+			</if>
+			<if test="TYPE != null">
+				a.TYPE = #{TYPE},
+			</if>
+			<if test="PRODUCTID != null">
+				a.PRODUCTID = #{PRODUCTID},
+			</if>
+			<if test="CTDATE != null">
+				a.CTDATE = #{CTDATE},
+			</if>
+			<if test="UPDATE != null">
+				a.UPDATE = #{UPDATE},
+			</if>
+			<if test="STATUS != null">
+				a.STATUS = #{STATUS},
+			</if>
+			<if test="CHANNEL !=null">
+				a.CHANNEL=#{CHANNEL},
+			</if>
+			<if test="CHANNELURL !=null">
+				a.CHANNELURL=#{CHANNELURL},
+			</if>
+			<if test="CITY !=null">
+				a.CITY=#{CITY},
+			</if>
+			<if test="IP !=null">
+				a.IP=#{IP},
+			</if>
+			<if test="_PORT !=null">
+				a._PORT=#{_PORT}
+			</if>
+			<if test="PCORPHONE !=null">
+				a.PCORPHONE=#{PCORPHONE}
+			</if>
+		</set>
+			where 
+				a.ID = #{ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.NAME,
+			a.PHONE,
+			a.MONEY,
+			a.TYPE,
+			a.PRODUCTID,
+			a.CTDATE,
+			a.UPDATE,
+			a.STATUS,
+			a.CITY,
+			a.CHANNEL,
+			a.CHANNELURL,
+			a._PORT,
+			a.PCORPHONE
+		from 
+			td_productappointment a
+		where 1 = 1 
+			and a.ID = #{ID}
+	</select>
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findByParam" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.NAME,
+			a.PHONE,
+			a.MONEY,
+			a.TYPE,
+			a.PRODUCTID,
+			a.CTDATE,
+			a.UPDATE,
+			a.STATUS,
+			a.CITY,
+			a.CHANNEL,
+			a.CHANNELURL,
+			a._PORT,
+			a.PCORPHONE
+		from 
+			td_productappointment a 
+			where 1=1
+			<if test="ID != null and ID != ''">
+				and a.ID = #{ID}
+			</if>
+			<if test="NAME != null and NAME != ''">
+				and a.NAME = #{NAME}
+			</if>
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.PHONE,
+			a.MONEY,
+			a.TYPE,
+			a.PRODUCTID,
+			a.CTDATE,
+			a.UPDATE,
+			a.STATUS,
+			a.CITY,
+			a.CHANNEL,
+			a.CHANNELURL,
+			a._PORT,
+			a.PCORPHONE,
+			(case    
+				when a.TYPE = '1' then (select b.PRODUCTREFERRED from td_product b where a.PRODUCTID = b.ID )  
+				when a.TYPE = '2' then (select b.PRODUCTREFERRED from td_product_stable b where a.PRODUCTID = b.ID )
+			end) PRODUCTNAME
+		from 
+			td_productappointment a 
+			where 1=1
+			<if test="pd.STATUS != null and pd.STATUS != ''">
+				and a.STATUS = #{pd.STATUS}
+			</if>
+			order by a.CTDATE DESC
+	</select>
+	
+	<!-- 列表 -->
+	<select id="applistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.PHONE,
+			a.MONEY,
+			a.TYPE,
+			a.PRODUCTID,
+			a.CTDATE,
+			a.UPDATE,
+			a.STATUS,
+			a.CITY,
+			a.CHANNEL,
+			a.CHANNELURL,
+			a._PORT,
+			a.PCORPHONE,
+			(case    
+				when a.TYPE = '1' then (select b.PRODUCTREFERRED from td_product b where a.PRODUCTID = b.ID )  
+				when a.TYPE = '2' then (select b.PRODUCTREFERRED from td_product_stable b where a.PRODUCTID = b.ID )
+			end) PRODUCTNAME
+		from 
+			td_productappointment a 
+			where 1=1
+			order by a.CTDATE DESC
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.PHONE,
+			a.MONEY,
+			a.TYPE,
+			a.PRODUCTID,
+			a.CTDATE,
+			a.UPDATE,
+			a.STATUS,
+			a.CITY,
+			a.CHANNEL,
+			a.CHANNELURL,
+			a._PORT,
+			a.PCORPHONE,
+			(case    
+				when a.TYPE = '1' then (select b.PRODUCTREFERRED from td_product b where a.PRODUCTID = b.ID )  
+				when a.TYPE = '2' then (select b.PRODUCTREFERRED from td_product_stable b where a.PRODUCTID = b.ID )
+			end) PRODUCTNAME
+		from 
+			td_productappointment a 
+			where 1=1 order by a.CTDATE DESC
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from td_productappointment
+		where 
+			ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

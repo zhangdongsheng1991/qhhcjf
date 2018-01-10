@@ -1,0 +1,115 @@
+.account-category{
+	padding: 20px;
+}
+.account-category:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+.account-category ul{
+	float:left;
+	list-style: none;
+}
+.account-category ul li{
+	overflow:hidden;
+	float: left;
+	padding-left: 30px;
+	font-size: 18px;
+	font-weight: bold;
+	color:#f49703;
+}
+.account-info{
+	float: left;
+    width: 500px;
+    background-color: #fff;
+    padding: 20px 5px 0 15px;
+    
+}
+
+.item{
+	display: block;
+    margin-bottom: 20px;
+    line-height: 30px;
+    font-size: 15px;
+}
+
+.form .item {
+    display: block;
+    margin-bottom: 20px;
+    line-height: 30px;
+}
+
+.form .item:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.form .item span.label {
+    float: left;
+    height: 18px;
+    line-height: 18px;
+    padding: 6px 0;
+    width: 100px;
+    text-align: right;
+}
+.fl {
+    float: left;
+}
+
+.form em {
+    color: #e4393c;
+}
+em, i, u {
+    font-style: normal;
+}
+
+.form .itxt, .form .text {
+    height: 18px;
+    width: 127px;
+    padding: 5px 23px 5px 5px;
+}
+.form .area, .form .itxt, .form .sele, .form .selt {
+    line-height: 18px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    float: none;
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+}
+
+
+.ftx-05, .ftx05 {
+    color: #005ea7;
+}
+.ml5 {
+    margin-left: 5px;
+}
+.ml5 {
+    margin-left: 5px;
+}
+a {
+    text-decoration: none;
+    color: #666655;
+}
+a {
+    text-decoration: none;
+    color: #666655;
+}
+.form .item {
+    line-height: 30px;
+}
+.tijiao1{
+	 margin-top:20px;
+	 border-radius: 5px;
+	 width:70px;
+	 height:40px;
+	 background:#f49703;
+	 float: left;
+	 line-height: 40px;
+	 font-size: 16px;
+	 text-align: center;
+	 color:white;
+	 cursor: pointer;
+}

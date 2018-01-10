@@ -1,0 +1,74 @@
+body,div,p,span,a,img,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,input,button{
+	margin:0;
+	padding:0;
+	list-style:none;  
+	border:0px;
+}
+
+
+body{
+	font-size:18px;
+	font-family:Microsoft Yahei;
+	width:100%;
+	height:750px;
+	background:url(../../../img/web/guidancePage/bg.jpg) no-repeat;
+	background-size: 100% 100%;
+	min-width: 1200px;
+	
+}
+
+
+.G_box{
+	width:1200px;
+	margin:50px auto;
+
+}
+
+
+.G_box .G_logo{
+	width:335px;
+	height:66px;
+	background:url(../../../img/web/guidancePage/logo.png) no-repeat;
+}
+
+.G_box .G_con{
+	margin:150px auto 100px;
+	height:150px;
+	background:#F00;
+	background:url(../../../img/web/guidancePage/huancheng.png) no-repeat center;
+}
+
+
+.G_box .G_btn{
+	width:450px;
+	height:100px;
+	margin:0 auto;
+	overflow:hidden;
+}
+
+.G_box .G_btn button{
+	width:200px;
+	height:45px;
+	font-size:18px;
+	cursor:pointer;
+	border-radius: 5px;
+	box-shadow:0px 4px 25px #888888;
+	
+}
+
+.G_box .G_btn button:hover{
+	background:#f49703;
+}
+
+
+#touzi{
+	float:left;
+}
+
+#rongzi{
+	float:right;
+}
+
+
+
+

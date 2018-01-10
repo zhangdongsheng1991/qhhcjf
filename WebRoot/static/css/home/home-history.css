@@ -1,0 +1,268 @@
+.breadcrumb {
+ height:20px;
+ padding:10px 0 4px 6px;
+ margin-bottom:10px;
+ overflow:hidden;
+ line-height:20px;
+ vertical-align:baseline
+}
+.breadcrumb h1,.breadcrumb strong {
+ display:inline;
+ font-weight:700;
+ line-height:20px;
+ font-size:18px;
+ font-family:"microsoft yahei"
+}
+
+#content-history{
+ width:100%;
+ padding-bottom:50px;
+ background:#f7f7f7
+}
+#content-history .m{
+ width:1210px;
+ margin:0 auto
+}
+.nav-history {
+ padding-top:24px;
+ margin-bottom:36px;
+ overflow:hidden
+}
+#content-history .nav-history .main-curr a {
+ color:#fff
+}
+#content-history .nav-history .main-curr {
+ background:url(//misc.360buyimg.com/mall/history/1.0.0/css/i/icon-history.png) no-repeat 0 0
+}
+.nav-history .nh-left {
+ float:left;
+ width:96px;
+ height:40px;
+ margin-right:40px;
+ line-height:40px;
+ font-weight:700;
+ text-align:center;
+ cursor:pointer
+}
+
+
+.nav-history ul {
+ position:relative;
+ width:800px;
+ height:30px;
+ padding-top:10px;
+ color:#666;
+ overflow:hidden
+}
+.nav-history ul li {
+ float:left;
+ position:relative;
+ margin-right:30px;
+ padding:0 6px;
+ margin-bottom:10px;
+ height:24px;
+ line-height:24px;
+ text-align:center;
+ white-space:nowrap
+}
+.nav-history ul li a:hover {
+ text-decoration:none
+}
+.nav-history ul li.nh-cur {
+ background:#f36863;
+ border-radius:12px
+}
+.nav-history ul li.nh-cur a {
+ color:#fff
+}
+
+.goods-content {
+ width:1210px;
+ margin:0 auto;
+ position:relative;
+ overflow:hidden
+}
+
+#content-history .goods-item,#same-wrap .goods-item {
+ width:width: 1204px;
+}
+.goods-item .mt {
+ position:relative;
+ height:58px;
+ line-height:30px;
+ padding-left:96px
+}
+.goods-item .mt h2 {
+ float:left;
+ font-size:18px;
+ font-weight:400
+}
+.goods-item .mt strong {
+ float:left;
+ font-weight:400;
+ font-size:12px;
+ color:#999;
+ padding:4px 0 0 16px
+}
+.goods-item .mt span {
+ float:left;
+ padding:4px 0 0 16px;
+ font-size:12px;
+ color:#999;
+ cursor:pointer
+}
+.goods-item .mt i {
+ position:absolute;
+ left:43px;
+ top:0;
+ width:20px;
+ height:38px;
+ background:url(//misc.360buyimg.com/mall/history/1.0.0/css/i/p-line02.jpg) no-repeat
+}
+.goods-item .mt i.line-cur {
+ background:url(//misc.360buyimg.com/mall/history/1.0.0/css/i/p-line03.jpg) no-repeat
+}
+.goods-item .mc {
+ position:relative;
+ padding-left:82px;
+ overflow:hidden
+}
+.goods-item ul {
+ width:100%;
+ padding-bottom:10px;
+ overflow:hidden
+}
+.goods-item li {
+ float:left;
+ position:relative;
+ width:200px;
+ height:230px;
+ padding-top:8px;
+ margin-right:35px;
+ margin-bottom:20px;
+ border:2px solid #fff;
+ background:#fff;
+ text-align:center;
+ vertical-align:top
+}
+.goods-item .p-hover {
+ border:2px solid #d1d1d1
+}
+.goods-item .p-hover .p-label {
+ visibility:visible
+}
+.goods-item .p-img {
+ padding:8px 0
+}
+.goods-item .p-price {
+ height:30px;
+ line-height:20px;
+ font-size:15px;
+ color:#333
+}
+.goods-item .p-price i {
+ font-style:normal
+}
+.goods-item .p-price span {
+ display:none
+}
+.goods-item .p-same {
+ height:38px;
+ line-height:15px
+}
+.goods-item .p-del {
+ width:35px;
+ height:35px;
+ background:url(//misc.360buyimg.com/mall/history/1.0.0/css/i/p-del.png) no-repeat;
+ position:absolute;
+ top:0;
+ right:0;
+ cursor:pointer
+}
+.goods-item .p-label {
+ visibility:hidden;
+ padding:3px 10px;
+ white-space:nowrap;
+ height:20px;
+ line-height:20px;
+ background:#f7f7f7;
+ position:absolute;
+ top:10px;
+ left:10px
+}
+.goods-item .deleted .cover {
+ display:block
+}
+.goods-item .deleted .p-same {
+ display:none
+}
+.goods-item .cover {
+ width:250px;
+ height:192px;
+ padding-top:130px;
+ position:absolute;
+ left:-2px;
+ top:-2px;
+ background:#fff;
+ opacity:.9;
+ filter:alpha(opacity=90);
+ zoom:1
+}
+.goods-item .cover a {
+ display:block;
+ cursor:pointer;
+ height:1.5em;
+ line-height:1.5em;
+ padding:0 10px;
+ overflow:hidden;
+ color:#000
+}
+.goods-item .cover span {
+ color:#999
+}
+
+.p-line,.p-line-red {
+ position:absolute;
+ left:52px;
+ top:20px;
+ width:2px;
+ height:100%;
+ background:#d7d7d7
+}
+.p-line-red {
+ height:0;
+ _font-size:0;
+ background:#f36863
+}
+.good-bottom {
+ width:990px;
+ padding-top:60px;
+ height:100px;
+ margin:0 auto;
+ text-align:center;
+}
+	
+.hide{
+display:none
+}
+
+.w{
+	width:1210px;
+	margin:0 auto
+}
+body{
+	font:12px/150% tahoma,arial,Microsoft YaHei,Hiragino Sans GB,"\u5b8b\u4f53",sans-serif;
+	-webkit-font-smoothing:antialiased;
+	color:#666;background:#fff
+}
+
+a{
+	color:#666;
+	text-decoration:none
+}
+a:hover{
+	color:#f30213
+}
+
+
+

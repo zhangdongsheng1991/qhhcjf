@@ -1,0 +1,685 @@
+/*��ȨͶ�� ��ҳ*/
+
+
+#equity_Tab {
+	FONT-SIZE: 12px; MARGIN: 0px auto; WIDTH: 990px; height:40px;
+}
+#equity_Tab ul{ margin:0px; padding:0px;}
+#equity_Tab .tagsequityMore{ WIDTH: 50px; height:40px; line-height:40px; text-align:center; float:left;}
+#tagsequity {
+	margin:0px auto; WIDTH: 940px; height:40px; text-align:center; float:left;
+}
+#tagsequity li {
+	 FLOAT: left; liST-STYLE-TYPE: none;
+}
+#tagsequity .tagsequityBg0 {
+	BACKGROUND: url(../images/img_trust_index_tab_01.jpg) no-repeat right top; width:125px; height: 40px; color:#333333;
+}
+#tagsequity .tagsequityBg1 {
+	BACKGROUND: url(../images/img_trust_index_tab_01.jpg) no-repeat right top; width:125px; height: 40px; color:#333333;
+}
+#tagsequity .tagsequityBg2 {
+	BACKGROUND: url(../images/img_trust_index_tab_01.jpg) no-repeat right top;; width:125px; height: 40px; color:#333333;
+}
+#tagsequity .tagsequityBg3 {
+	BACKGROUND: url(../images/img_trust_index_tab_01.jpg) no-repeat right top; width:125px; height: 40px; 
+}
+#tagsequity .selectTag0 {
+	BACKGROUND-POSITION: left top; POSITION: relative; BACKGROUND: url(../images/img_trust_index_bluetab_01.jpg) no-repeat center top; height: 40px; 
+}
+#tagsequity .selectTag0 .tab_title{
+    color:#3a8eff;
+}
+#tagsequity .selectTag1 {
+	BACKGROUND-POSITION: left top; POSITION: relative; BACKGROUND: url(../images/img_trust_index_bluetab_01.jpg) no-repeat center top; height: 40px; color:#3a8eff;
+}
+#tagsequity .selectTag1 .tab_title{
+    color:#3a8eff;
+}
+#tagsequity .selectTag2 {
+	BACKGROUND-POSITION: left top; POSITION: relative; BACKGROUND: url(../images/img_trust_index_bluetab_01.jpg) no-repeat center top; height: 40px; color:#3a8eff;
+}
+#tagsequity .selectTag2 .tab_title{
+    color:#3a8eff;
+}
+#tagsequity .selectTag3 {
+	BACKGROUND-POSITION: left top; POSITION: relative; BACKGROUND: url(../images/img_trust_index_bluetab_01.jpg) no-repeat center top; height: 40px; color:#3a8eff;
+}
+#tagsequity .selectTag3 .tab_title{
+    color:#3a8eff;
+}
+#tabAllequity_Tabtent{
+	
+}
+#tagequity_Tabtent {
+	 BACKGROUND-COLOR: #fff; WIDTH: 990px; margin:0px auto;
+}
+.tagequity_Tabtent {
+	 DISPLAY: none; 
+}
+#tagequity_Tabtent div.selectTag {
+	DISPLAY: block
+}
+
+#equity_index_introduce .equity_index_introduce_li{width:590px; height:160px; border:1px solid #e1e1e1;}
+#equity_index_introduce .equity_index_introduce_li_over{width:590px; height:160px; border:1px solid #ff9800;}
+#equityindex_fund_list .equityindex_fund_list_li{ width:190px; height:265px; border:1px solid #e1e1e1;}
+#equityindex_fund_list .equityindex_fund_list_li_over{ width:188px; height:263px; border:2px solid #ff9800;}
+#equityindex_fund_list .equityindex_fund_list_li .equityindex_fund_list_li_color{ color:#00aeff;}
+#equityindex_fund_list .equityindex_fund_list_li .equityindex_fund_list_li_color_over{ color:#ff9800;}
+#equityindex_fund_list .equityindex_fund_list_li .equityindex_fund_list_li_border{  border:1px solid #00aeff;}
+#equityindex_fund_list .equityindex_fund_list_li .equityindex_fund_list_li_border_over{ border:1px solid #ff9800;}
+
+.pro_tab_bd{ border:1px solid #e1e1e1;}
+.pro_tab_bd .tab_con {
+	display: none;
+	background-color: #fff
+}
+
+.pro_tab_bd .tab_con.active {
+	display: block
+}
+.simu_report_wrap .report_detail .detail_img{float:left;width:90px;height:110px;}
+.simu_report_wrap .report_detail .detail_img img{width:90px;height:110px;}
+.simu_report_wrap_ws {
+	padding: 15px 0 25px
+}
+
+.simu_report_wrap_ws .report_list {
+	float: left;
+	width: 568px;
+	padding: 0
+}
+
+.simu_report_wrap_ws .report_list_2 {
+	float: left;
+	width: 609px;
+	border-left: 1px solid #e1e1e1
+}
+
+.simu_report_wrap_ws .report_item {
+	float: none;
+	width: 549px;
+	border: none;
+	margin-top:20px;
+	padding-left: 40px
+}
+.simu_report_wrap_ws .report_item_first {
+	margin-top:0px;
+}
+.report_item .circle_1
+{
+    width:4px;
+    height:4px;
+    float:left;
+    margin:16px 10px 0 0;
+    background:url(../images/icon_4.png) no-repeat;
+}
+.report_item .date
+{
+    float:right;
+    font-size:14px;
+    color:#999999;
+    }
+
+.msg_list .circle_2
+{
+    margin:0px 15px 0px 0px;    
+    background:url(../images/icon_5.png) no-repeat;
+    width:4px;
+    height:4px;
+}
+.msg_list .msg_txt
+{
+    width:325px;
+    height:36px;
+    line-height:36px;
+    font-size:14px;
+    color:#525252;
+    overflow:hidden;
+}
+.pe_pro_list .pro_item {
+	margin-bottom: 15px;
+	padding: 30px 30px 30px 20px;
+	background-color: #fff;
+	border: 1px solid #e1e1e1;
+	cursor: pointer
+}
+
+.pe_pro_list .pro_item:hover {
+	background-color: #fefefe
+}
+
+.pe_pro_list .pro_item_inner {
+	height: 130px
+}
+
+.pe_pro_list .item_col_01 {
+	float: left;
+	width: 400px;
+	padding: 15px 15px 15px 0;
+	border-right: 1px dashed #e1e1e1;
+	height: 100px
+}
+
+.pe_pro_list .item_col_01 .figure_wrap {
+	float: left;
+	margin-right: 15px
+}
+
+.pe_pro_list .item_col_01 .figure_wrap .figure {
+	width: 100px;
+	height: 100px
+}
+
+.pe_pro_list .item_col_01 .heading {
+	height: 24px;
+	line-height: 24px;
+	padding-top: 8px;
+	position: relative
+}
+
+.pe_pro_list .item_col_01 .heading .title {
+	float: left;
+	display: block;
+	max-width: 190px;
+	font-size: 16px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.pe_pro_list .item_col_01 .heading .pe_bubble_02 {
+	float: left;
+	margin-top: 1px;
+	margin-left: 5px;
+	display:block;
+	padding:1px 15px 2px 26px;
+	background:url(../images/label_002.png) no-repeat;
+	font-size:14px;
+	color:#f60;
+	height:18px;
+	line-height:18px;
+	border-right:1px solid #f60;
+}
+
+.pe_pro_list .item_col_01 .comment {
+	line-height: 20px;
+	margin-top: 15px;
+	color:#666666;
+}
+
+.pe_pro_list .item_col_02 {
+	float: left;
+	width: 190px;
+	padding-top: 15px;
+	line-height: 30px;
+	height: 114px;
+	padding-left: 26px;
+	border-right: 1px dashed #e1e1e1
+}
+
+.pe_pro_list .item_col_02 .c_1 {
+	text-align: left;
+	color: #999;
+	width: 100px;
+}
+
+.pe_pro_list .item_col_02 .c_2 {
+	text-align: left;
+	color:#666666;
+}
+
+.pe_pro_list .item_col_03 {
+	float: right;
+	width: 150px;
+	height: 129px;
+	padding-left: 40px;
+	text-align: right
+}
+
+.pe_pro_list .item_col_03 .heading {
+	color: #999;
+	line-height: 24px;
+	padding-top: 7px
+}
+
+.pe_pro_list .item_col_03 .returns {
+	font: 400 35px/39px Tahoma,Arial,Gadget,sans-serif;
+	color: #f60;
+	padding-bottom: 7px
+}
+
+.pe_pro_list .item_col_03 .returns .small {
+	font-size: 30px
+}
+
+.pe_pro_list .item_col_03 .uc_btn_small .ui_ico {
+	margin-right: 5px;
+	vertical-align: -5px
+}
+.pe_pro_list .pevc_reserve_btn
+{
+    width:110px;
+    height:32px;
+    line-height:32px;
+    font-size:14px; 
+    background:#00aeff;
+}
+
+.equitylist_input_bg
+{
+    background:#fff;
+    width:170px;
+    height:40px;
+    color:#999999;
+    padding-left:10px;
+    }
+
+
+.simu_booking_head {
+	font-size: 20px;
+	line-height: 52px;
+	padding: 12px 0 0;
+	height: 58px
+}
+
+.simu_booking_head .lead {
+	font-size: 35px;
+	padding-right: 18px
+}
+
+.simu_booking_form {
+	padding: 20px 0
+}
+
+.simu_booking_form .input_wrap {
+	float: left;
+	line-height: 40px;
+	padding-right: 30px
+}
+
+.simu_booking_form .input_control,.simu_booking_form .input_label {
+	float: left
+}
+
+.simu_booking_form .input_control .input_txt {
+	background-color: #fff;
+	width: 204px;
+	height: 19px;
+	line-height: normal;
+	padding: 10px 10px 9px;
+	border: 1px solid #f60;
+	border-radius: 5px
+}
+
+.simu_booking_form .btn_booking {
+	float: left;
+	line-height: 38px;
+	background-color: #ff6;
+	width: 134px;
+	height: 38px;
+	border: 1px solid #f60;
+	display: block;
+	color: #f60;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 16px
+}
+
+.simu_topic_container {
+	padding-bottom: 35px
+}
+
+.simu_topic_banner {
+	height: 350px;
+	background: url(../../img/simu/topic/banner.png) center top no-repeat #F60
+}
+
+.simu_topic_list .topic_item {
+	margin-top: 40px
+}
+
+.simu_topic_list .topic_hd {
+	height: 40px;
+	line-height: 40px
+}
+
+.simu_topic_list .topic_hd .hd_left {
+	float: left;
+	width: 5px;
+	height: 20px;
+	margin: 10px;
+	background-color: #f60
+}
+
+.simu_topic_list .topic_hd .txt {
+	float: left;
+	font: 700 18px/40px '\5FAE\8F6F\96C5\9ED1';
+	color: #3d9fe1
+}
+
+.simu_topic_list .topic_bd img {
+	width: 1180px
+}
+
+.simu_topic_paination {
+	margin-top: 35px;
+	padding: 15px 0;
+	border: 1px solid #e1e1e1;
+	background-color: #fff;
+	text-align: center
+}
+
+.simu_xet_main {
+	background: #fff;
+	border: 1px solid #E1E1E1;
+	border-top: none
+}
+
+.simu_xet_box .box_hd {
+	border-top: 2px solid #3D9FE1;
+	border-bottom: 1px solid #E1E1E1;
+	background: #FAFAFA;
+	padding: 13px 0 13px 30px;
+	height: 24px
+}
+
+.simu_xet_box .box_title {
+	border-left: 5px solid #3D9FE1;
+	padding-left: 16px;
+	height: 24px;
+	font: 700 20px/24px '\5FAE\8F6F\96C5\9ED1';
+	color: #333
+}
+
+.simu_xet_box .box_bd {
+	padding: 20px 0 0
+}
+
+.simu_xet_box .item_list {
+	overflow: hidden
+}
+
+.simu_xet_box .item {
+	border-bottom: 1px dashed #E1E1E1;
+	margin-bottom: -1px;
+	padding: 15px 30px
+}
+
+.simu_xet_box .item .item_tit {
+	font-size: 14px;
+	color: #3D9FE0;
+	cursor: pointer
+}
+
+.simu_xet_box .item .item_tit .list_icon {
+	float: left;
+	background: url(../../img/simu/xet_list_icon.png) no-repeat;
+	margin: 2px 10px 0 0;
+	width: 17px;
+	height: 17px
+}
+
+.simu_xet_box .item .item_cont {
+	display: none;
+	padding: 14px 0 10px 50px;
+	line-height: 32px
+}
+
+.simu_search_article {
+	border: 1px solid #e1e1e1;
+	border-top: none;
+	background-color: #fff
+}
+
+.simu_search_article .article_list {
+	padding: 20px 30px
+}
+
+.simu_search_article .article_list li {
+	float: left;
+	width: 100%;
+	min-height: 36px;
+	line-height: 36px
+}
+
+.simu_search_article .article_list a {
+	float: left;
+	color: #525252
+}
+
+.simu_search_article .article_list a:hover {
+	color: #f60
+}
+
+.simu_search_article .article_list .dot {
+	float: left;
+	margin-right: 10px;
+	color: #f60
+}
+
+.simu_search_article .article_list .date_issued {
+	float: right;
+	width: 80px;
+	color: #999
+}
+
+.simu_search_article .article_list_1 {
+	padding: 0 30px
+}
+
+.simu_search_article .article_list_1 li {
+	padding: 10px 0 20px;
+	border-bottom: 1px dashed #e1e1e1
+}
+
+.simu_search_article .article_list_1 li.last_item {
+	border-bottom: none
+}
+
+.simu_search_article .article_list_1 .article_con {
+	float: left;
+	padding-left: 15px;
+	line-height: 21px;
+	color: #999
+}
+
+.simu_search_interview {
+	background-color: #fff
+}
+
+.simu_search_interview .simu_interview_list .interview_info {
+	width: 877px
+}
+
+.simu_search_bar {
+	padding: 50px 0 25px
+}
+
+.simu_search_bar .search_wrap {
+	position: relative;
+	z-index: 10;
+	width: 500px;
+	margin: 0 auto
+}
+
+.simu_search_bar .search_form {
+	width: 498px;
+	height: 48px;
+	border: 1px solid #3D9FE1;
+	background-color: #fff
+}
+
+.simu_search_bar .search_form .input_wrap {
+	float: left;
+	width: 400px;
+	height: 24px;
+	padding: 12px;
+	background-color: #fff
+}
+
+.simu_search_bar .search_form .input_txt {
+	width: 400px;
+	height: 24px;
+	border: none;
+	line-height: 24px
+}
+
+.simu_search_bar .search_form .input_search {
+	float: right;
+	width: 20px;
+	height: 20px;
+	padding: 14px 20px;
+	background-color: #3D9FE1
+}
+
+.simu_search_bar .search_form .ui_search {
+	float: left
+}
+
+.simu_search_bar .search_fastlist {
+	height: 36px;
+	line-height: 36px;
+	overflow: hidden
+}
+
+.simu_search_bar .search_fastlist a {
+	margin-right: 15px;
+	color: #999
+}
+
+.simu_search_bar .search_fastlist a:hover {
+	color: #f60
+}
+
+.simu_search_bar .search_autocomplete {
+	display: none;
+	position: absolute;
+	top: 51px;
+	left: 0;
+	z-index: 11
+}
+
+.simu_search_bar .search_autocomplete.active {
+	display: block
+}
+
+.simu_search_bar .autocomplete_box {
+	width: 438px;
+	height: auto;
+	border: 1px solid #efefef;
+	box-shadow: 3px 3px 5px #efefef,-3px -3px 10px #efefef
+}
+
+.simu_search_bar .autocomplete_item {
+	height: 40px;
+	background-color: #fff;
+	font-size: 16px;
+	line-height: 40px;
+	cursor: pointer;
+	vertical-align: top
+}
+
+.simu_search_bar .autocomplete_txt {
+	float: left;
+	width: 265px;
+	padding-left: 14px;
+	height: 39px;
+	border-bottom: 1px solid #efefef
+}
+
+.simu_search_bar .autocomplete_type {
+	float: right;
+	width: 145px;
+	padding-right: 14px;
+	font-size: 14px;
+	color: #999;
+	text-align: right
+}
+
+.simu_search_bar .autocomplete_item.highlight,.simu_search_bar .autocomplete_item:hover {
+	background-color: #efefef
+}
+
+.simu_search_bar .autocomplete_item.highlight .autocomplete_txt,.simu_search_bar .autocomplete_item:hover .autocomplete_txt {
+	color: #3d9fe1
+}
+
+.simu_modal_content {
+	padding: 30px 0
+}
+
+.simu_fastnav_wrap {
+	width: 1180px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 999
+}
+
+.simu_fastnav_wrap .fastnav_container {
+	width: 125px;
+	min-height: 280px;
+	position: absolute;
+	top: 0;
+	left: -145px
+}
+
+.simu_fastnav {
+	width: 125px;
+	border: 1px solid #e1e1e1;
+	background-color: #fff
+}
+
+.simu_fastnav .fastnav_hd {
+	height: 38px;
+	border-bottom: 1px solid #e1e1e1;
+	background-color: #fafafa;
+	line-height: 40px;
+	text-align: center;
+	color: #3D9FE1
+}
+
+.simu_fastnav .fastnav_item {
+	border-bottom: 1px dashed #e1e1e1
+}
+
+.simu_fastnav .fastnav_item a {
+	display: block;
+	height: 24px;
+	padding: 7px 0 7px 7px;
+	line-height: 24px;
+	color: #525252
+}
+
+.simu_fastnav .fastnav_item a:hover,.simu_fastnav .fastnav_item_active a {
+	color: #f60
+}
+
+.simu_fastnav .fastnav_item .nav_ico {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url(../images/equity_what_02.png) no-repeat;
+	vertical-align: middle
+}
+
+.simu_fastnav .fastnav_item .txt {
+	display: inline-block;
+	margin-left:5px;
+}
+
+.simu_fastnav .fastnav_item_active {
+	background-color: #fafafa
+}
+
+.simu_fastnav .fastnav_item a:hover .nav_ico,.simu_fastnav .fastnav_item_active .nav_ico {
+	background: url(../images/equity_what_01.png) no-repeat
+}
+
+.simu_fastnav .fastnav_item_last {
+	border-bottom: none
+}
+
+
+

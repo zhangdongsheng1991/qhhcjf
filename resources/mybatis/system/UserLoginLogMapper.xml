@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserLoginLogMapper">
+	<insert id="addUserLoginLog" parameterType="com.fh.entity.system.UserLoginLog">
+		insert into td_loginlog (ID
+			<if test="u_phone !=null">
+				,u_phone
+			</if>
+			<if test="logincount !=null">
+				,logincount
+			</if>
+			<if test="logintime !=null">
+				,logintime
+			</if>
+			<if test="loginout !=null">
+				,loginout
+			</if>
+		) values (
+				#{id}
+			<if test="u_phone !=null">
+				,#{u_phone}
+			</if>
+			<if test="logincount !=null">
+				,#{logincount}
+			</if>
+			<if test="logintime !=null">
+				,#{logintime}
+			</if>
+			<if test="loginout !=null">
+				,#{loginout}
+			</if>
+		)
+	</insert>
+	
+	<insert id="addOperationRecords" parameterType="com.fh.entity.system.OperationRecords">
+		insert into td_operationrecords (ID
+			<if test="operation_staff !=null">
+				,operation_staff
+			</if>
+			<if test="operating_time !=null">
+				,operating_time
+			</if>
+			<if test="operate !=null">
+				,operate
+			</if>
+			<if test="logincount !=null">
+				,logincount
+			</if>
+			<if test="comment !=null">
+				,comment
+			</if>
+			<if test="productid !=null">
+				,productid
+			</if>
+		) values (
+				#{id}
+			<if test="operation_staff !=null">
+				,#{operation_staff}
+			</if>
+			<if test="operating_time !=null">
+				,#{operating_time}
+			</if>
+			<if test="operate !=null">
+				,#{operate}
+			</if>
+			<if test="logincount !=null">
+				,#{logincount}
+			</if>
+			<if test="comment !=null">
+				,#{comment}
+			</if>
+			<if test="productid !=null">
+				,#{productid}
+			</if>
+		)
+	</insert>
+	
+	<select id="findLoginLogByPhone" parameterType="java.lang.String" resultType="com.fh.entity.system.UserLoginLog">
+		select * from td_loginlog where u_phone=#{phone}
+		order by logintime desc
+	</select>
+	
+	<select id="findOperationRecordsByLoginCount" parameterType="java.util.Map" resultType="com.fh.entity.system.OperationRecords">
+		select * from td_operationrecords where operation_staff=#{u_phone} and logincount=#{logincount}
+		 order by operating_time desc
+	</select>
+</mapper>

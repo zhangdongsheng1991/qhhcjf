@@ -1,0 +1,175 @@
+<%@page pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<!DOCTYPE html>
+<html>
+<head>
+	<base href="<%=basePath%>">
+	<title>Basic Form - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="static/css/easyui/easyui.css">
+	<link rel="stylesheet" type="text/css" href="static/css/easyui/icon.css">
+	<link rel="stylesheet" type="text/css" href="static/css/easyui/demo.css">
+	<script type="text/javascript" src="static/js/easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="static/js/easyui/jquery.easyui.min.js"></script>
+	<script>
+		$(function(){
+			if(${productlist!=null&&!productlist.isEmpty()}){
+				$("#addproduct").css("display","block");
+				$("#product_table").css("display","block");
+			}
+			$("#messagetype").change(function(){
+				if($("#messagetype").val()==0){
+					$("#addproduct").css("display","block");
+					$("#product_table").css("display","block");
+				}else{
+					$("#addproduct").css("display","none");
+					$("#product_table").css("display","none");
+				}
+			});
+			
+			$("#addproduct").click(function(){
+				if($("input[name='ids']").length==0){
+					window.open("messagemanagement/productlist","产品列表","height=600, width=600, top=50%, left=600px");
+				}else{
+					var idsstr="";
+					var ids = $("input[name='ids']");	
+					for(var i=0;i<ids.length;i++){
+						idsstr += ids[i].value+"-";
+					}
+					window.open("messagemanagement/productlist?idstr="+idsstr,"产品列表","height=600, width=600, top=50%, left=600px");
+				}
+			});
+		})
+	</script>
+</head>
+<body>
+	<button style="top: 30px;position: relative;left: 30px;" onclick="window.history.go(-1)">返回</button>
+	<div style="margin:20px 0;"></div>
+	<div style="width:100%;margin:30px">
+	<div class="easyui-panel" title="&nbsp;&nbsp;&nbsp;&nbsp;编辑用户" style="width:900px;height:500px">
+		<div style="padding:10px 60px 20px 60px">
+		<div>
+		<c:if test="${info=='保存成功'}">
+			<img src="static/img/web/register_img/tick.png" />保存成功
+			<br/>
+		</c:if>
+		<c:if test="${info=='发布成功'}">
+			<img src="static/img/web/register_img/tick.png" />发布成功
+			<br/>
+		</c:if>
+		<c:if test="${info=='操作成功'}">
+			<img src="static/img/web/register_img/tick.png" />操作成功
+			<br/>
+		</c:if>
+		</div>
+	    <form id="Form1" action="messagemanagement/saveMessage" method="post">
+	    	<input type="hidden" name="id" value="${mm.id }" />
+	    	<input id="status" type="hidden" name="status" value="${mm.status }" />
+	    	<table id="message_table" cellpadding="5">
+				<tr>
+					<td>消息类型</td>
+					<td>
+						<select id="messagetype" name="messagetype" onchange="isproductinfo()" data-options="required:true">
+							<option <c:if test='${mm.messagetype==1}'>selected="selected"</c:if>  value="1">系统消息</option>
+							<option <c:if test='${mm.messagetype==0}'>selected="selected"</c:if>  value="0">产品消息</option>
+						</select>
+					</td>
+					
+				</tr>
+				<tr>
+					<td>消息标题</td>
+					<td>
+						<input type="text" name="subject" value="${mm.subject }" data-options="required:true"/>
+					</td>
+	    		</tr>
+	    		<tr>
+	    			<td>消息内容</td>
+					<td>
+						<input  type="text" name="messagecontent" value="${mm.messagecontent }" data-options="required:true"/>
+					</td>
+				</tr>
+				<tr >
+					<td colspan="2">
+						<input id="addproduct" type="button" value="添加产品" style="display:none"/>
+					</td>
+				</tr>
+	    	</table>
+	    	
+	    	
+	    	<table id="product_table" cellpadding="5">
+	    		<c:if test="${productlist!=null}">	
+		    		<c:forEach var="product" items="${productlist}">
+		    			<tr class='${product.ID}'>
+							<td style='display:none'><input name='ids' type='hidden' value='${product.ID}'/></td>
+							<td>产品类型</td>
+							<td>
+								<c:if test="${product.TYPE eq '1' }">信托</c:if>
+								<c:if test="${product.TYPE eq '2' }">资管</c:if>
+								<c:if test="${product.TYPE eq '3' }">契约</c:if>
+							</td>
+						</tr>
+						<tr class='${product.ID}'>
+							<td>发行机构</td><td>${product.THEISSUERNAME}</td>
+						</tr>
+						<tr class='${product.ID}'>
+							<td>产品简称</td><td>${product.PRODUCTREFERRED}</td>
+						</tr>
+		    		</c:forEach>
+		    	</c:if>
+	    	</table>
+	    </form>
+	    <div style="text-align:center;padding:5px;width:120px;height:40px">
+	    	<c:if test="${mm.status=='1'||mm.status==null}">
+	    		<a href="javascript:void(0)"  style="width:50px;height:40px" class="easyui-linkbutton" onclick="submitForm('1')">
+	    			保存
+	    		</a>
+	    		<a href="javascript:void(0)"  style="width:50px;height:40px" class="easyui-linkbutton" onclick="submitForm('0')">
+	    			发布
+	    		</a>
+	    	</c:if>
+	    	<c:if test="${mm.status=='0'}">
+	    		<a href="javascript:void(0)"  style="width:50px;height:40px" class="easyui-linkbutton" onclick="submitForm('1')">
+	    			撤回
+	    		</a>
+	    	</c:if>
+	    	
+	    	
+	    </div>
+	  
+	    </div>
+	    </div>
+	</div>
+	<script>
+		/* function ss(){
+			window.open("messagemanagement/showuser","_blank","height=500,width=400,left=650,top=170, scrollbars=no,location=no");
+		} */
+		function createproduct(id,typename,theissuername,productreferred){
+			var table = $('#product_table');
+			table.append("<tr class='"+id+"'>"+
+							"<td style='display:none'><input name='ids' type='hidden' value='"+id+"'/></td><td>产品类型</td>"+
+							"<td>"+typename+"</td>"+
+						"</tr>"+
+						"<tr class='"+id+"'>"+
+							"<td>发行机构</td><td>"+theissuername+"</td>"+
+						"</tr>"+
+						"<tr class='"+id+"'>"+
+							"<td>产品简称</td><td>"+productreferred+"</td>"+
+						"</tr>")
+		}
+		function removeproduct(id){
+			$("."+id).remove();
+		}
+		function submitForm(t){
+			$("#status").val(t)	;
+			$("#Form1").submit();
+		}
+		function clearForm(){
+			$('#Form1').form('clear');
+		}
+	</script>
+</body>
+</html>

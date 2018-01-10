@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ConditionTwoMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd" useGeneratedKeys="true" keyProperty="ID">
+		insert into td_conditiontwo(
+			ID	
+		<if test="CONDTIONID !=null">
+			,CONDTIONID
+		</if>
+		<if test="NAME !=null">
+			,NAME
+		</if>
+		<if test="SORT !=null">
+			,SORT
+		</if>
+		) values (
+			#{ID}
+			<if test="CONDTIONID !=null">
+			,#{CONDTIONID}
+			</if>
+			<if test="NAME !=null">
+			,#{NAME}
+			</if>
+			<if test="SORT !=null">
+			,#{SORT}
+			</if>
+			
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from td_conditiontwo
+		where 
+			ID = #{ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  td_conditiontwo
+		<set>
+			<if test="CONDTIONID != null">
+				CONDTIONID = #{CONDTIONID},
+			</if>
+			<if test="NAME != null">
+				NAME = #{NAME},
+			</if>
+			<if test="SORT != null">
+				SORT = #{SORT},
+			</if>
+		</set>
+			where 
+				ID = #{ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.CONDTIONID,
+			a.NAME,
+			a.SORT,
+			b.NAME CONDITIONNAME
+		from 
+			td_conditiontwo a left join td_condition b on a.CONDTIONID = b.ID
+		where 1 = 1 
+			and a.ID = #{ID}
+	</select>
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findByParam" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.CONDTIONID,
+			a.NAME,
+			a.SORT,
+			b.NAME CONDITIONNAME
+		from 
+			td_conditiontwo a left join td_condition b on a.CONDTIONID = b.ID
+		where 1 = 1 
+		ORDER BY b.SORT,a.SORT
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.CONDTIONID,
+			a.NAME,
+			a.SORT,
+			b.NAME CONDITIONNAME
+		from 
+			td_conditiontwo a left join td_condition b on a.CONDTIONID = b.ID
+			where 1 = 1 
+			<if test="pd.CONDTIONID != null and pd.CONDTIONID != ''">
+				AND a.CONDTIONID = #{pd.CONDTIONID}
+			</if>
+			ORDER BY b.SORT,a.SORT
+	</select>
+	
+	<!-- 列表 -->
+	<select id="applistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.CONDTIONID,
+			a.NAME,
+			a.SORT,
+			b.NAME CONDITIONNAME
+		from 
+			td_conditiontwo a left join td_condition b on a.CONDTIONID = b.ID
+			where 1 = 1 
+			ORDER BY b.SORT,a.SORT
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+			a.ID,
+			a.CONDTIONID,
+			a.NAME,
+			a.SORT,
+			b.NAME CONDITIONNAME
+		from 
+			td_conditiontwo a left join td_condition b on a.CONDTIONID = b.ID
+			where 1 = 1 
+			ORDER BY b.SORT,a.SORT
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="ParamListAll" parameterType="pd" resultType="pd">
+		select
+			a.ID,
+			a.CONDTIONID,
+			a.NAME,
+			a.SORT,
+			b.NAME CONDITIONNAME
+		from 
+			td_conditiontwo a left join td_condition b on a.CONDTIONID = b.ID
+			where 1 = 1 
+				AND a.CONDTIONID = #{CONDTIONID}
+			ORDER BY b.SORT,a.SORT 
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from td_conditiontwo
+		where 
+			ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

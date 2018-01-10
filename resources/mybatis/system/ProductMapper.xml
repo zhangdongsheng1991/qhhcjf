@@ -1,0 +1,1132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ProductMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd" useGeneratedKeys="true" keyProperty="ID">
+		insert into td_product(
+			ID	
+		<if test="PRODUCTNAME !=null">
+			,PRODUCTNAME
+		</if>
+		<if test="PRODUCTREFERRED !=null">
+			,PRODUCTREFERRED
+		</if>
+		<if test="RETURNSBENCHMARK !=null">
+			,RETURNSBENCHMARK
+		</if>
+		<if test="RETURNSBENCHMARKMAX !=null">
+			,RETURNSBENCHMARKMAX
+		</if>
+		<if test="INVESTMENTSTARTING !=null">
+			,INVESTMENTSTARTING
+		</if>
+		<if test="PRODUCTDEADLINE !=null">
+			,PRODUCTDEADLINE
+		</if>
+		<if test="PRODUCTREVIEWS !=null">
+			,PRODUCTREVIEWS
+		</if>
+		<if test="THEISSUER !=null">
+			,THEISSUER
+		</if>
+		<if test="EXPECTISSUANCE !=null">
+			,EXPECTISSUANCE
+		</if>
+		<if test="INTERESTDISTRIBUTIONSTATE !=null">
+			,INTERESTDISTRIBUTIONSTATE
+		</if>
+		<if test="TRUSTTYPE !=null">
+			,TRUSTTYPE
+		</if>
+		<if test="PRODUCTSTATUS !=null">
+			,PRODUCTSTATUS
+		</if>
+		<if test="INVESTMENTSTARTINGSTATE !=null">
+			,INVESTMENTSTARTINGSTATE
+		</if>
+		<if test="PRODUCTDEADLINESTATE !=null">
+			,PRODUCTDEADLINESTATE
+		</if>
+		<if test="RETURNSBENCHMARKSTATE !=null">
+			,RETURNSBENCHMARKSTATE
+		</if>
+		<if test="DETAILS !=null">
+			,DETAILS
+		</if>
+		<if test="SORT != '' ">
+			,SORT
+		</if>
+		<if test="CTDATE !=null">
+			,CTDATE
+		</if>
+		<if test="UPDATE !=null">
+			,UPDATE
+		</if>
+		<if test="TYPE !=null">
+			,TYPE
+		</if>
+		) values (
+			#{ID}
+			<if test="PRODUCTNAME !=null">
+			,#{PRODUCTNAME}
+			</if>
+			<if test="PRODUCTREFERRED !=null">
+			,#{PRODUCTREFERRED}
+			</if>
+			<if test="RETURNSBENCHMARK !=null">
+			,#{RETURNSBENCHMARK}
+			</if>
+			<if test="RETURNSBENCHMARKMAX !=null">
+			,#{RETURNSBENCHMARKMAX}
+			</if>
+			<if test="INVESTMENTSTARTING !=null">
+			,#{INVESTMENTSTARTING}
+			</if>
+			<if test="PRODUCTDEADLINE !=null">
+			,#{PRODUCTDEADLINE}
+			</if>
+			<if test="PRODUCTREVIEWS !=null">
+			,#{PRODUCTREVIEWS}
+			</if>
+			<if test="THEISSUER !=null">
+			,#{THEISSUER}
+			</if>
+			<if test="EXPECTISSUANCE !=null">
+			,#{EXPECTISSUANCE}
+			</if>
+			<if test="INTERESTDISTRIBUTIONSTATE !=null">
+			,#{INTERESTDISTRIBUTIONSTATE}
+			</if>
+			<if test="TRUSTTYPE !=null">
+			,#{TRUSTTYPE}
+			</if>
+			<if test="PRODUCTSTATUS !=null">
+			,#{PRODUCTSTATUS}
+			</if>
+			<if test="INVESTMENTSTARTINGSTATE !=null">
+			,#{INVESTMENTSTARTINGSTATE}
+			</if>
+			<if test="PRODUCTDEADLINESTATE !=null">
+			,#{PRODUCTDEADLINESTATE}
+			</if>
+			<if test="RETURNSBENCHMARKSTATE !=null">
+			,#{RETURNSBENCHMARKSTATE}
+			</if>
+			<if test="DETAILS !=null">
+			,#{DETAILS}
+			</if>
+			<if test="SORT != '' ">
+			,#{SORT}
+			</if>
+			<if test="CTDATE !=null">
+			,#{CTDATE}
+			</if>
+			<if test="UPDATE !=null">
+			,#{UPDATE}
+			</if>
+			<if test="TYPE !=null">
+			,#{TYPE}
+			</if>
+			
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from td_product
+		where 
+			ID = #{ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  td_product
+		<set>
+			<if test="PRODUCTNAME != null">
+				PRODUCTNAME = #{PRODUCTNAME},
+			</if>
+			<if test="PRODUCTREFERRED != null">
+				PRODUCTREFERRED = #{PRODUCTREFERRED},
+			</if>
+			<if test="RETURNSBENCHMARK != null">
+				RETURNSBENCHMARK = #{RETURNSBENCHMARK},
+			</if>
+			<if test="RETURNSBENCHMARKMAX != null">
+				RETURNSBENCHMARKMAX = #{RETURNSBENCHMARKMAX},
+			</if>
+			<if test="INVESTMENTSTARTING != null">
+				INVESTMENTSTARTING = #{INVESTMENTSTARTING},
+			</if>
+			<if test="PRODUCTDEADLINE != null">
+				PRODUCTDEADLINE = #{PRODUCTDEADLINE},
+			</if>
+			<if test="PRODUCTREVIEWS != null">
+				PRODUCTREVIEWS = #{PRODUCTREVIEWS},
+			</if>
+			<if test="THEISSUER != null">
+				THEISSUER = #{THEISSUER},
+			</if>
+			<if test="EXPECTISSUANCE != null">
+				EXPECTISSUANCE = #{EXPECTISSUANCE},
+			</if>
+			<if test="INTERESTDISTRIBUTIONSTATE != null">
+				INTERESTDISTRIBUTIONSTATE = #{INTERESTDISTRIBUTIONSTATE},
+			</if>
+			<if test="TRUSTTYPE != null">
+				TRUSTTYPE = #{TRUSTTYPE},
+			</if>
+			<if test="PRODUCTSTATUS != null">
+				PRODUCTSTATUS = #{PRODUCTSTATUS},
+			</if>
+			<if test="INVESTMENTSTARTINGSTATE != null">
+				INVESTMENTSTARTINGSTATE = #{INVESTMENTSTARTINGSTATE},
+			</if>
+			<if test="PRODUCTDEADLINESTATE != null">
+				PRODUCTDEADLINESTATE = #{PRODUCTDEADLINESTATE},
+			</if>
+			<if test="RETURNSBENCHMARKSTATE != null">
+				RETURNSBENCHMARKSTATE = #{RETURNSBENCHMARKSTATE},
+			</if>
+			<if test="DETAILS != null">
+				DETAILS = #{DETAILS},
+			</if>
+			<if test="SORT != ''">
+				SORT = #{SORT},
+			</if>
+			<if test="CTDATE != null">
+				CTDATE = #{CTDATE},
+			</if>
+			<if test="UPDATE != null">
+				UPDATE = #{UPDATE},
+			</if>
+			<if test="TYPE != null">
+				TYPE = #{TYPE},
+			</if>
+		</set>
+			where 
+				ID = #{ID}
+	</update>
+	
+	<!-- 修改 -->
+	<update id="editSort" parameterType="pd">
+		update  td_product
+			set 
+				SORT = null
+			where 
+				ID = #{ID}  
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.PRODUCTNAME,
+			a.PRODUCTREFERRED,
+			a.RETURNSBENCHMARK,
+			a.RETURNSBENCHMARKMAX,
+			a.INVESTMENTSTARTING,
+			a.PRODUCTDEADLINE,
+			a.PRODUCTREVIEWS,
+			a.THEISSUER,
+			b.NAME THEISSUERNAME,
+			b.IMGURL THEISSUERIMGURL,
+			a.EXPECTISSUANCE,
+			a.INTERESTDISTRIBUTIONSTATE,
+			c.NAME TINTERESTDISTRIBUTIONSTATENAME,
+			a.TRUSTTYPE,
+			d.NAME TRUSTTYPENAME,
+			a.PRODUCTSTATUS,
+			e.NAME PRODUCTSTATUSNAME,
+			a.INVESTMENTSTARTINGSTATE,
+			a.PRODUCTDEADLINESTATE,
+			a.RETURNSBENCHMARKSTATE,
+			a.DETAILS,
+			a.SORT,
+			a.CTDATE,
+			a.UPDATE,
+			a.TYPE
+		from 
+			td_product a 
+			left join td_institution b on a.THEISSUER = b.ID 
+			left join td_conditiontwo c on a.INTERESTDISTRIBUTIONSTATE = c.ID 
+			left join td_conditiontwo d on a.TRUSTTYPE = d.ID 
+			left join td_conditiontwo e on a.PRODUCTSTATUS = e.ID 
+		where 1 = 1 
+			and a.ID = #{ID}
+	</select>
+	<!-- 通过ID获取数据 -->
+	<select id="findByIds" parameterType="java.lang.String" resultType="pd">
+		select
+			a.ID,
+			a.PRODUCTNAME,
+			a.PRODUCTREFERRED,
+			a.RETURNSBENCHMARK,
+			a.RETURNSBENCHMARKMAX,
+			a.INVESTMENTSTARTING,
+			a.PRODUCTDEADLINE,
+			a.PRODUCTREVIEWS,
+			a.THEISSUER,
+			b.NAME THEISSUERNAME,
+			b.IMGURL THEISSUERIMGURL,
+			a.EXPECTISSUANCE,
+			a.INTERESTDISTRIBUTIONSTATE,
+			c.NAME TINTERESTDISTRIBUTIONSTATENAME,
+			a.TRUSTTYPE,
+			d.NAME TRUSTTYPENAME,
+			a.PRODUCTSTATUS,
+			e.NAME PRODUCTSTATUSNAME,
+			a.INVESTMENTSTARTINGSTATE,
+			a.PRODUCTDEADLINESTATE,
+			a.RETURNSBENCHMARKSTATE,
+(select group_concat(n.NAME)  from td_product m left JOIN td_conditiontwo n on FIND_IN_SET(n.ID,m.INVESTMENTSTARTINGSTATE) where m.ID = a.ID) INVESTMENTSTARTINGNAMES,
+(select group_concat(n.NAME)  from td_product m left JOIN td_conditiontwo n on FIND_IN_SET(n.ID,m.PRODUCTDEADLINESTATE) where m.ID = a.ID) PRODUCTDEADLINENAMES,
+(select group_concat(n.NAME)  from td_product m left JOIN td_conditiontwo n on FIND_IN_SET(n.ID,m.RETURNSBENCHMARKSTATE) where m.ID = a.ID) RETURNSBENCHMARKNAMES,
+			a.DETAILS,
+			a.SORT,
+			a.CTDATE,
+			a.UPDATE,
+			a.TYPE,
+			(case    
+				when a.TYPE = '1' then "信托"  
+				when a.TYPE = '2' then "资管"  
+				when a.TYPE = '3' then "契约型"
+				when a.TYPE = '4' then "股权投资" 
+				when a.TYPE = '5' then "政府债" 
+				when a.TYPE = '6' then "对冲•定增"   
+			end) TYPENAME
+		from 
+			td_product a 
+			left join td_institution b on a.THEISSUER = b.ID 
+			left join td_conditiontwo c on a.INTERESTDISTRIBUTIONSTATE = c.ID 
+			left join td_conditiontwo d on a.TRUSTTYPE = d.ID 
+			left join td_conditiontwo e on a.PRODUCTSTATUS = e.ID 
+			where 1 = 1  And a.ID in 
+			 <foreach collection="list" item="item" index="index" open="(" separator="," close=")">  
+                #{item}
+            </foreach>
+	</select>
+	<select id="findByIdStr" parameterType="java.lang.String" resultType="pd">
+		select 
+			a.ID
+		from 
+			td_product a 
+		where 1 = 1 
+			and a.ID = #{productids}
+	</select>
+	<!-- 产品详情 产品列表 -->
+	<select id="findProductInfoList" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.PRODUCTNAME,
+			a.PRODUCTREFERRED,
+			a.RETURNSBENCHMARK,
+			a.RETURNSBENCHMARKMAX,
+			a.INVESTMENTSTARTING,
+			a.PRODUCTDEADLINE,
+			a.PRODUCTREVIEWS,
+			a.THEISSUER,
+			b.NAME THEISSUERNAME,
+			b.IMGURL THEISSUERIMGURL,
+			a.EXPECTISSUANCE,
+			a.INTERESTDISTRIBUTIONSTATE,
+			c.NAME TINTERESTDISTRIBUTIONSTATENAME,
+			a.TRUSTTYPE,
+			d.NAME TRUSTTYPENAME,
+			a.PRODUCTSTATUS,
+			e.NAME PRODUCTSTATUSNAME,
+			a.INVESTMENTSTARTINGSTATE,
+			a.PRODUCTDEADLINESTATE,
+			a.RETURNSBENCHMARKSTATE,
+			a.DETAILS,
+			a.SORT,
+			a.CTDATE,
+			a.UPDATE,
+			a.TYPE
+		from 
+			td_product a 
+			left join td_institution b on a.THEISSUER = b.ID 
+			left join td_conditiontwo c on a.INTERESTDISTRIBUTIONSTATE = c.ID 
+			left join td_conditiontwo d on a.TRUSTTYPE = d.ID 
+			left join td_conditiontwo e on a.PRODUCTSTATUS = e.ID 
+		where 1 = 1
+			<if test="ID != null and ID != ''">
+				AND a.ID != #{ID}
+			</if>
+			<if test="TYPE != null and TYPE != ''">
+				AND a.TYPE != #{TYPE}
+			</if>
+		ORDER BY a.SORT 
+		LIMIT 0,4
+	</select>
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findByParam" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.PRODUCTNAME,
+			a.PRODUCTREFERRED,
+			a.RETURNSBENCHMARK,
+			a.RETURNSBENCHMARKMAX,
+			a.INVESTMENTSTARTING,
+			a.PRODUCTDEADLINE,
+			a.PRODUCTREVIEWS,
+			a.THEISSUER,
+			a.EXPECTISSUANCE,
+			a.INTERESTDISTRIBUTIONSTATE,
+			a.TRUSTTYPE,
+			a.PRODUCTSTATUS,
+			a.INVESTMENTSTARTINGSTATE,
+			a.PRODUCTDEADLINESTATE,
+			a.RETURNSBENCHMARKSTATE,
+			a.DETAILS,
+			a.SORT,
+			a.CTDATE,
+			a.UPDATE,
+			a.TYPE
+		from 
+			td_product a 
+		where 1 = 1 
+		ORDER BY a.CTDATE DESC
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.PRODUCTNAME,
+			a.PRODUCTREFERRED,
+			a.RETURNSBENCHMARK,
+			a.RETURNSBENCHMARKMAX,
+			a.INVESTMENTSTARTING,
+			a.PRODUCTDEADLINE,
+			a.PRODUCTREVIEWS,
+			a.THEISSUER,
+			e.NAME THEISSUERNAME,
+			a.EXPECTISSUANCE,
+			a.INTERESTDISTRIBUTIONSTATE,
+			b.NAME TINTERESTDISTRIBUTIONSTATENAME,
+			a.TRUSTTYPE,
+			c.NAME TRUSTTYPENAME,
+			a.PRODUCTSTATUS,
+			d.NAME PRODUCTSTATUSNAME,
+			a.INVESTMENTSTARTINGSTATE,
+			a.PRODUCTDEADLINESTATE,
+			a.RETURNSBENCHMARKSTATE,
+(select group_concat(n.NAME)  from td_product m left JOIN td_conditiontwo n on FIND_IN_SET(n.ID,m.INVESTMENTSTARTINGSTATE) where m.ID = a.ID) INVESTMENTSTARTINGNAMES,
+(select group_concat(n.NAME)  from td_product m left JOIN td_conditiontwo n on FIND_IN_SET(n.ID,m.PRODUCTDEADLINESTATE) where m.ID = a.ID) PRODUCTDEADLINENAMES,
+(select group_concat(n.NAME)  from td_product m left JOIN td_conditiontwo n on FIND_IN_SET(n.ID,m.RETURNSBENCHMARKSTATE) where m.ID = a.ID) RETURNSBENCHMARKNAMES,
+			a.DETAILS,
+			a.SORT,
+			a.CTDATE,
+			a.UPDATE,
+			a.TYPE,
+			(case    
+				when a.TYPE = '1' then "信托"  
+				when a.TYPE = '2' then "资管"  
+				when a.TYPE = '3' then "契约型"
+				when a.TYPE = '4' then "股权投资" 
+				when a.TYPE = '5' then "政府债" 
+				when a.TYPE = '6' then "对冲•定增"   
+			end) TYPENAME
+		from 
+			td_product a left join td_conditiontwo b on a.INTERESTDISTRIBUTIONSTATE = b.ID 
+			left join td_conditiontwo c on a.TRUSTTYPE = c.ID
+			left join td_conditiontwo d on a.PRODUCTSTATUS = d.ID
+			left join td_institution  e on a.THEISSUER = e.ID
+			where 1 = 1 
+			<if test="pd.INTERESTDISTRIBUTIONSTATE != null and pd.INTERESTDISTRIBUTIONSTATE != ''">
+				AND a.INTERESTDISTRIBUTIONSTATE = #{pd.INTERESTDISTRIBUTIONSTATE}
+			</if>
+			<if test="pd.TRUSTTYPE != null and pd.TRUSTTYPE != ''">
+				AND a.TRUSTTYPE = #{pd.TRUSTTYPE}
+			</if>
+			<if test="pd.TYPE != null and pd.TYPE != ''">
+				AND a.TYPE = #{pd.TYPE}
+			</if>
+			<if test="pd.PRODUCTSTATUS != null and pd.PRODUCTSTATUS != ''">
+				AND a.PRODUCTSTATUS = #{pd.PRODUCTSTATUS}
+			</if>
+			<if test="pd.INVESTMENTSTARTINGSTATES != null and pd.INVESTMENTSTARTINGSTATES != ''"> 
+			
+				<foreach item="item" index="index" collection="pd.INVESTMENTSTARTINGSTATES" open="and " separator="and" close=" ">
+				  find_in_set("${item}",a.INVESTMENTSTARTINGSTATE)
+				</foreach>
+			</if>
+			<if test="pd.PRODUCTDEADLINESTATES != null and pd.PRODUCTDEADLINESTATES != ''">
+				<foreach item="item" index="index" collection="pd.PRODUCTDEADLINESTATES" open="and " separator="and" close=" ">
+				  find_in_set("${item}",a.PRODUCTDEADLINESTATE)
+				</foreach>
+			</if>
+			<if test="pd.RETURNSBENCHMARKSTATES != null and pd.RETURNSBENCHMARKSTATES != ''">
+			<foreach item="item" index="index" collection="pd.RETURNSBENCHMARKSTATES" open="and " separator="and" close=" ">
+				  find_in_set("${item}",a.RETURNSBENCHMARKSTATE)
+				</foreach>
+			</if>
+			ORDER BY a.CTDATE DESC
+	</select>
+	
+	<!-- 列表 -->
+	<select id="applistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.PRODUCTNAME,
+			a.PRODUCTREFERRED,
+			a.RETURNSBENCHMARK,
+			a.RETURNSBENCHMARKMAX,
+			a.INVESTMENTSTARTING,
+			a.PRODUCTDEADLINE,
+			a.PRODUCTREVIEWS,
+			a.THEISSUER,
+			b.NAME THEISSUERNAME,
+			b.IMGURL THEISSUERIMGURL,
+			a.EXPECTISSUANCE,
+			a.INTERESTDISTRIBUTIONSTATE,
+			c.NAME TINTERESTDISTRIBUTIONSTATENAME,
+			a.TRUSTTYPE,
+			d.NAME TRUSTTYPENAME,
+			a.PRODUCTSTATUS,
+			e.NAME PRODUCTSTATUSNAME,
+			a.INVESTMENTSTARTINGSTATE,
+			a.PRODUCTDEADLINESTATE,
+			a.RETURNSBENCHMARKSTATE,
+			a.DETAILS,
+			a.SORT,
+			a.CTDATE,
+			a.UPDATE,
+			a.TYPE
+		from 
+			td_product a 
+			left join td_institution b on a.THEISSUER = b.ID 
+			left join td_conditiontwo c on a.INTERESTDISTRIBUTIONSTATE = c.ID 
+			left join td_conditiontwo d on a.TRUSTTYPE = d.ID 
+			left join td_conditiontwo e on a.PRODUCTSTATUS = e.ID 
+			where 1 = 1 
+			<if test="pd.TYPE != null and pd.TYPE != ''">
+				AND a.TYPE = #{pd.TYPE}
+			</if>
+			<if test="pd.SEARCHNAME != null and pd.SEARCHNAME != ''">
+				AND a.PRODUCTREFERRED  LIKE CONCAT(CONCAT('%', #{pd.SEARCHNAME}),'%')
+			</if>
+			<if test="pd.SEARCHINGNAME != null and pd.SEARCHINGNAME != ''">
+				AND (a.PRODUCTNAME LIKE CONCAT(CONCAT('%', #{pd.SEARCHINGNAME}),'%')
+				OR  a.PRODUCTREFERRED LIKE CONCAT(CONCAT('%', #{pd.SEARCHINGNAME}),'%')
+				OR  b.NAME LIKE CONCAT(CONCAT('%', #{pd.SEARCHINGNAME}),'%'))
+			</if>
+			<if test="pd.INTERESTDISTRIBUTIONSTATE != null and pd.INTERESTDISTRIBUTIONSTATE != ''">
+				AND a.INTERESTDISTRIBUTIONSTATE = #{pd.INTERESTDISTRIBUTIONSTATE}
+			</if>
+			<if test="pd.TRUSTTYPE != null and pd.TRUSTTYPE != ''">
+				AND a.TRUSTTYPE = #{pd.TRUSTTYPE}
+			</if>
+			<if test="pd.PRODUCTSTATUS != null and pd.PRODUCTSTATUS != ''">
+				AND a.PRODUCTSTATUS = #{pd.PRODUCTSTATUS}
+			</if>
+			<if test="pd.INVESTMENTSTARTINGSTATE != null and pd.INVESTMENTSTARTINGSTATE != ''">
+				AND a.INVESTMENTSTARTINGSTATE LIKE CONCAT(CONCAT('%', #{pd.INVESTMENTSTARTINGSTATE}),'%')
+			</if>
+			<if test="pd.PRODUCTDEADLINESTATE != null and pd.PRODUCTDEADLINESTATE != ''">
+				AND a.PRODUCTDEADLINESTATE LIKE CONCAT(CONCAT('%', #{pd.PRODUCTDEADLINESTATE}),'%')
+			</if>
+			<if test="pd.RETURNSBENCHMARKSTATE != null and pd.RETURNSBENCHMARKSTATE != ''">
+				AND a.RETURNSBENCHMARKSTATE LIKE CONCAT(CONCAT('%', #{pd.RETURNSBENCHMARKSTATE}),'%')
+			</if>
+			ORDER BY a.SORT,a.CTDATE DESC
+	</select>
+	
+	<!-- 热推列表上 -->
+	<select id="applistPushTop" parameterType="page" resultType="pd">
+		select * from (
+		SELECT
+			p.ID,
+			p.PRODUCTREFERRED,
+			p.PRODUCTDEADLINE,
+			p.RETURNSBENCHMARK,
+			p.RETURNSBENCHMARKMAX,
+			p.CTDATE,
+			p.SORT,
+			p.INVESTMENTSTARTING,
+			b.NAME THEISSUERNAME,
+			b.IMGURL THEISSUERIMGURL,
+			c.NAME TRUSTTYPENAME,
+			d.NAME TINTERESTDISTRIBUTIONSTATENAME,
+			DATE_FORMAT(p.CTDATE,'%Y-%m-%d') YMH,
+			(case    
+				when p.TYPE = '1' then "信托"  
+				when p.TYPE = '2' then "资管"  
+				when p.TYPE = '3' then "契约"
+			end) TYPENAME,
+			'1' PRODUCTTYPE,
+			p.EXPECTISSUANCE,
+			p.PRODUCTREVIEWS
+		FROM
+			td_product p 
+			left join td_institution b on p.THEISSUER = b.ID
+			left join td_conditiontwo c on p.TRUSTTYPE = c.ID 
+			left join td_conditiontwo d on p.INTERESTDISTRIBUTIONSTATE = d.ID 
+		<!-- where SORT is not null -->
+	UNION
+	SELECT
+			p.ID,
+			p.PRODUCTREFERRED,
+			p.PRODUCTDEADLINE,
+			p.RETURNSBENCHMARK,
+			p.RETURNSBENCHMARKMAX,
+			p.CTDATE,
+			p.SORT,
+			p.INVESTMENTSTARTING,
+			b.NAME THEISSUERNAME,
+			b.IMGURL THEISSUERIMGURL,
+			c.NAME TRUSTTYPENAME,
+			d.NAME TINTERESTDISTRIBUTIONSTATENAME,
+			DATE_FORMAT(p.CTDATE,'%Y-%m-%d') YMH,
+			(case    
+				when p.TYPE = '1' then "私募" 
+				when p.TYPE = '2' then "政府债" 
+				when p.TYPE = '3' then "对冲•定增"   
+			end) TYPENAME,
+			'2' PRODUCTTYPE,
+			p.EXPECTISSUANCE,
+			p.PRODUCTREVIEWS
+		FROM
+			td_product_stable p 
+			left join td_institution b on p.THEISSUER = b.ID
+			left join td_conditiontwo c on p.TRUSTTYPE = c.ID 
+			left join td_conditiontwo d on p.INTERESTDISTRIBUTIONSTATE = d.ID 
+		<!-- where SORT is not null --> )p 
+		<!-- ORDER BY p.SORT   -->
+		<!-- ORDER BY p.CTDATE  -->
+		order by IF(p.sort is null ,1,0),p.SORT ASC ,p.CTDATE DESC
+		limit 0,4
+	</select>
+	
+	
+	<!-- 热推列表下 -->
+	<select id="applistPushBelow" parameterType="page" resultType="pd">
+		SELECT * FROM (
+					(SELECT 
+					a.ID,
+					a.PRODUCTNAME,
+					a.RETURNSBENCHMARK,
+					a.RETURNSBENCHMARKMAX,
+					a.PRODUCTDEADLINE,
+					a.EXPECTISSUANCE,
+					a.PRODUCTREVIEWS,
+					a.TYPE 
+				FROM td_product a WHERE a.TYPE = 1 AND a.SORT=1 LIMIT 1)
+				UNION
+					(SELECT 
+					b.ID,
+					b.PRODUCTNAME,
+					b.RETURNSBENCHMARK,
+					b.RETURNSBENCHMARKMAX,
+					b.PRODUCTDEADLINE,
+					b.EXPECTISSUANCE,
+					b.PRODUCTREVIEWS,
+					b.TYPE 
+				FROM td_product b WHERE b.TYPE = 2 AND b.SORT = 1 LIMIT 1)
+				 UNION
+					(SELECT 
+					c.ID,
+					c.PRODUCTNAME,
+					c.RETURNSBENCHMARK,
+					c.RETURNSBENCHMARKMAX,
+					c.PRODUCTDEADLINE,
+					c.EXPECTISSUANCE,
+					c.PRODUCTREVIEWS,
+					c.TYPE 
+				FROM td_product c WHERE c.TYPE = 3 AND c.SORT = 1 LIMIT 1)
+		) as abc
+	</select>
+	
+	<!-- 固定收益信托右 -->
+	<select id="applistTrustRight" parameterType="page" resultType="pd">
+		SELECT  a.ID,
+				a.PRODUCTNAME,
+				a.RETURNSBENCHMARK,
+				a.RETURNSBENCHMARKMAX,
+				a.PRODUCTDEADLINE,
+				a.INVESTMENTSTARTING,
+				a.THEISSUER,
+				a.PRODUCTREVIEWS,
+				a.EXPECTISSUANCE,
+				a.TYPE 
+ 		FROM td_product a WHERE a.TYPE = 1 ORDER BY a.SORT LIMIT 4
+	</select>
+	
+	<!-- 固定收益信托左 -->
+	<select id="applistTrustLeft" parameterType="pd" resultType="pd">
+		SELECT  
+				a.ID,
+				b.NAME THEISSUERNAME,
+				b.IMGURL THEISSUERIMGURL,
+				a.PRODUCTREVIEWS,
+				a.PRODUCTREFERRED,
+				a.PRODUCTDEADLINE,
+				a.EXPECTISSUANCE,
+				a.RETURNSBENCHMARK,
+				a.RETURNSBENCHMARKMAX,
+				a.INVESTMENTSTARTING,
+				"1" PRODUCTTYPE,
+				c.NAME TRUSTTYPENAME
+ 		FROM td_product a 
+		left join td_institution b on a.THEISSUER = b.ID
+		left join td_conditiontwo c on a.TRUSTTYPE = c.ID 
+		WHERE 1=1 
+		<if test="TYPE != null and TYPE != ''">
+			AND a.TYPE = #{TYPE} 
+		</if>		
+		<!-- ORDER BY a.CTDATE LIMIT 0,5 -->
+		order by IF(a.sort is null ,1,0),a.SORT ASC ,a.CTDATE DESC 
+		LIMIT 0,5 
+	</select>
+	
+	<!-- 固定收益信托左 -->
+	<select id="countNumber" parameterType="pd" resultType="Int">
+		SELECT count(*) number FROM td_product a 
+	</select>
+	
+	
+	<!-- 信托首页列表 -->
+	<select id="appTrustList" parameterType="page" resultType="pd">
+		SELECT  a.ID,
+				a.PRODUCTREFERRED,
+				a.PRODUCTREFERRED,
+				a.RETURNSBENCHMARK,
+				a.RETURNSBENCHMARKMAX,
+				a.INVESTMENTSTARTING,
+				a.PRODUCTDEADLINE,
+				a.TRUSTTYPE,
+				a.THEISSUER
+ 		FROM td_product a WHERE a.TYPE='1' LIMIT 5
+	</select>
+	
+	<!-- 资管首页列表 -->
+	<select id="appMISList" parameterType="page" resultType="pd">
+		SELECT  a.ID,
+				a.PRODUCTREFERRED,
+				a.PRODUCTREFERRED,
+				a.RETURNSBENCHMARK,
+				a.RETURNSBENCHMARKMAX,
+				a.INVESTMENTSTARTING,
+				a.PRODUCTDEADLINE,
+				a.TRUSTTYPE,
+				a.THEISSUER
+ 		FROM td_product a WHERE a.TYPE='2' LIMIT 5
+	</select>
+	
+	<!-- 契约首页列表 -->
+	<select id="appCovenantList" parameterType="page" resultType="pd">
+		SELECT  a.ID,
+				a.PRODUCTREFERRED,
+				a.PRODUCTREFERRED,
+				a.RETURNSBENCHMARK,
+				a.RETURNSBENCHMARKMAX,
+				a.INVESTMENTSTARTING,
+				a.PRODUCTDEADLINE,
+				a.TRUSTTYPE,
+				a.THEISSUER
+ 		FROM td_product a WHERE a.TYPE='3' LIMIT 5
+	</select>
+	
+	<!-- 私募首页列表 -->
+	<select id="appPrivateList" parameterType="page" resultType="pd">
+		SELECT  a.ID,
+				a.PRODUCTNAME,
+				a.PRODUCTREVIEWS,
+				a.EXPECTISSUANCE,
+				a.PRODUCTDEADLINE,
+				a.TRUSTTYPE,
+				a.PRODUCTSTATUS,
+				a.INVESTMENTSTARTING
+ 		FROM td_product a WHERE a.TYPE='4' LIMIT 5
+	</select>
+	
+	<!-- 政府债首页列表 -->
+	<select id="appSetincreaseList" parameterType="page" resultType="pd">
+		SELECT  a.ID,
+				a.PRODUCTNAME,
+				a.PRODUCTREVIEWS,
+				a.EXPECTISSUANCE,
+				a.PRODUCTDEADLINE,
+				a.TRUSTTYPE,
+				a.PRODUCTSTATUS,
+				a.INVESTMENTSTARTING
+ 		FROM td_product a WHERE a.TYPE='5' LIMIT 5
+	</select>
+	
+	<!-- 对冲•定增首页列表 -->
+	<select id="appOffsetList" parameterType="page" resultType="pd">
+		SELECT  a.ID,
+				a.PRODUCTNAME,
+				a.PRODUCTREVIEWS,
+				a.EXPECTISSUANCE,
+				a.PRODUCTDEADLINE,
+				a.TRUSTTYPE,
+				a.PRODUCTSTATUS,
+				a.INVESTMENTSTARTING
+ 		FROM td_product a WHERE a.TYPE='6' LIMIT 5
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+			a.ID,
+			a.PRODUCTNAME,
+			a.PRODUCTREFERRED,
+			a.RETURNSBENCHMARK,
+			a.RETURNSBENCHMARKMAX,
+			a.INVESTMENTSTARTING,
+			a.PRODUCTDEADLINE,
+			a.PRODUCTREVIEWS,
+			a.THEISSUER,
+			a.EXPECTISSUANCE,
+			a.INTERESTDISTRIBUTIONSTATE,
+			a.TRUSTTYPE,
+			a.PRODUCTSTATUS,
+			a.INVESTMENTSTARTINGSTATE,
+			a.PRODUCTDEADLINESTATE,
+			a.RETURNSBENCHMARKSTATE,
+			a.DETAILS,
+			a.SORT,
+			a.CTDATE,
+			a.UPDATE,
+			a.TYPE
+		from 
+			td_product a 
+			where 1 = 1 
+			ORDER BY a.CTDATE DESC
+	</select>
+	
+	
+	<!-- 通过ID获取详情 -->
+	<select id="applistById" parameterType="pd" resultType="pd">
+		select
+			a.ID,
+			a.PRODUCTNAME,
+			a.PRODUCTREFERRED,
+			a.RETURNSBENCHMARK,
+			a.RETURNSBENCHMARKMAX,
+			a.INVESTMENTSTARTING,
+			a.PRODUCTDEADLINE,
+			a.PRODUCTREVIEWS,
+			a.THEISSUER,
+			a.EXPECTISSUANCE,
+			a.INTERESTDISTRIBUTIONSTATE,
+			a.TRUSTTYPE,
+			a.PRODUCTSTATUS,
+			a.INVESTMENTSTARTINGSTATE,
+			a.PRODUCTDEADLINESTATE,
+			a.RETURNSBENCHMARKSTATE,
+			a.DETAILS,
+			a.SORT,
+			a.CTDATE,
+			a.UPDATE,
+			a.TYPE
+		from 
+			td_product a 
+			where 1 = 1 
+			and a.ID = #{ID}
+	</select>
+	
+	
+	<!-- 最新上线前4条 -->
+	<select id="applistNewProduct" parameterType="pd" resultType="pd">
+				select * from (
+		SELECT
+			p.ID,
+			p.PRODUCTREFERRED,
+			p.PRODUCTDEADLINE,
+			p.RETURNSBENCHMARK,
+			p.RETURNSBENCHMARKMAX,
+			p.CTDATE,
+			p.SORT,
+			p.EXPECTISSUANCE,
+			b.NAME THEISSUERNAME,
+			b.IMGURL THEISSUERIMGURL,
+			c.NAME TRUSTTYPENAME,
+			d.NAME TINTERESTDISTRIBUTIONSTATENAME,
+			DATE_FORMAT(p.CTDATE,'%Y-%m-%d') YMH,
+			(case    
+				when p.TYPE = '1' then "信托"  
+				when p.TYPE = '2' then "资管"  
+				when p.TYPE = '3' then "契约"
+			end) TYPENAME,
+			'1' PRODUCTTYPE
+		FROM
+			td_product p 
+			left join td_institution b on p.THEISSUER = b.ID
+			left join td_conditiontwo c on p.TRUSTTYPE = c.ID 
+			left join td_conditiontwo d on p.INTERESTDISTRIBUTIONSTATE = d.ID 
+		<!-- where SORT is not null -->
+	UNION
+	SELECT
+			p.ID,
+			p.PRODUCTREFERRED,
+			p.PRODUCTDEADLINE,
+			p.RETURNSBENCHMARK,
+			p.RETURNSBENCHMARKMAX,
+			p.CTDATE,
+			p.SORT,
+			p.EXPECTISSUANCE,
+			b.NAME THEISSUERNAME,
+			b.IMGURL THEISSUERIMGURL,
+			c.NAME TRUSTTYPENAME,
+			d.NAME TINTERESTDISTRIBUTIONSTATENAME,
+			DATE_FORMAT(p.CTDATE,'%Y-%m-%d') YMH,
+			(case    
+				when p.TYPE = '1' then "私募" 
+				when p.TYPE = '2' then "政府债" 
+				when p.TYPE = '3' then "对冲•定增"   
+			end) TYPENAME,
+			'2' PRODUCTTYPE
+		FROM
+			td_product_stable p 
+			left join td_institution b on p.THEISSUER = b.ID
+			left join td_conditiontwo c on p.TRUSTTYPE = c.ID 
+			left join td_conditiontwo d on p.INTERESTDISTRIBUTIONSTATE = d.ID 
+		<!-- where SORT is not null  -->
+		)p 
+		<!-- ORDER BY p.CTDATE DESC   -->
+		order by IF(p.sort is null ,1,0),p.SORT ASC ,p.CTDATE DESC  
+		limit 0,12
+	</select>
+	
+	<!-- app首页 20条-->
+	<select id="appIndexlistNewProduct" parameterType="pd" resultType="pd">
+				select * from (
+		SELECT
+			p.ID,
+			p.PRODUCTREFERRED,
+			p.PRODUCTDEADLINE,
+			p.RETURNSBENCHMARK,
+			p.RETURNSBENCHMARKMAX,
+			p.CTDATE,
+			p.SORT,
+			p.EXPECTISSUANCE,
+			b.NAME THEISSUERNAME,
+			b.IMGURL THEISSUERIMGURL,
+			c.NAME TRUSTTYPENAME,
+			d.NAME TINTERESTDISTRIBUTIONSTATENAME,
+			DATE_FORMAT(p.CTDATE,'%Y-%m-%d') YMH,
+			(case    
+				when p.TYPE = '1' then "信托"  
+				when p.TYPE = '2' then "资管"  
+				when p.TYPE = '3' then "契约"
+			end) TYPENAME,
+			'1' PRODUCTTYPE
+		FROM
+			td_product p 
+			left join td_institution b on p.THEISSUER = b.ID
+			left join td_conditiontwo c on p.TRUSTTYPE = c.ID 
+			left join td_conditiontwo d on p.INTERESTDISTRIBUTIONSTATE = d.ID 
+		<!-- where SORT is not null -->
+	UNION
+	SELECT
+			p.ID,
+			p.PRODUCTREFERRED,
+			p.PRODUCTDEADLINE,
+			p.RETURNSBENCHMARK,
+			p.RETURNSBENCHMARKMAX,
+			p.CTDATE,
+			p.SORT,
+			p.EXPECTISSUANCE,
+			b.NAME THEISSUERNAME,
+			b.IMGURL THEISSUERIMGURL,
+			c.NAME TRUSTTYPENAME,
+			d.NAME TINTERESTDISTRIBUTIONSTATENAME,
+			DATE_FORMAT(p.CTDATE,'%Y-%m-%d') YMH,
+			(case    
+				when p.TYPE = '1' then "私募" 
+				when p.TYPE = '2' then "政府债" 
+				when p.TYPE = '3' then "对冲•定增"   
+			end) TYPENAME,
+			'2' PRODUCTTYPE
+		FROM
+			td_product_stable p 
+			left join td_institution b on p.THEISSUER = b.ID
+			left join td_conditiontwo c on p.TRUSTTYPE = c.ID 
+			left join td_conditiontwo d on p.INTERESTDISTRIBUTIONSTATE = d.ID 
+		<!-- where SORT is not null  -->
+		)p 
+		<!-- ORDER BY p.CTDATE DESC   -->
+		order by IF(p.sort is null ,1,0),p.SORT ASC ,p.CTDATE DESC  
+		limit 0,20
+	</select>
+	
+	
+	<select id="appfindProductsListBySearchName" parameterType="pd" resultType="pd">
+	select * from (
+		SELECT
+			p.ID,
+			p.PRODUCTREFERRED,
+			p.PRODUCTDEADLINE,
+			p.RETURNSBENCHMARK,
+			p.RETURNSBENCHMARKMAX,
+			p.CTDATE,
+			p.SORT,
+			p.EXPECTISSUANCE,
+			b.NAME THEISSUERNAME,
+			b.IMGURL THEISSUERIMGURL,
+			c.NAME TRUSTTYPENAME,
+			d.NAME TINTERESTDISTRIBUTIONSTATENAME,
+			DATE_FORMAT(p.CTDATE,'%Y-%m-%d') YMH,
+			(case    
+				when p.TYPE = '1' then "信托"  
+				when p.TYPE = '2' then "资管"  
+				when p.TYPE = '3' then "契约"
+			end) TYPENAME,
+			'1' PRODUCTTYPE
+			FROM
+			td_product p 
+			left join td_institution b on p.THEISSUER = b.ID
+			left join td_conditiontwo c on p.TRUSTTYPE = c.ID 
+			left join td_conditiontwo d on p.INTERESTDISTRIBUTIONSTATE = d.ID 
+		<!-- where SORT is not null -->
+	UNION
+	SELECT
+			p.ID,
+			p.PRODUCTREFERRED,
+			p.PRODUCTDEADLINE,
+			p.RETURNSBENCHMARK,
+			p.RETURNSBENCHMARKMAX,
+			p.CTDATE,
+			p.SORT,
+			p.EXPECTISSUANCE,
+			b.NAME THEISSUERNAME,
+			b.IMGURL THEISSUERIMGURL,
+			c.NAME TRUSTTYPENAME,
+			d.NAME TINTERESTDISTRIBUTIONSTATENAME,
+			DATE_FORMAT(p.CTDATE,'%Y-%m-%d') YMH,
+			(case    
+				when p.TYPE = '1' then "私募" 
+				when p.TYPE = '2' then "政府债" 
+				when p.TYPE = '3' then "对冲•定增"   
+			end) TYPENAME,
+			'2' PRODUCTTYPE
+		FROM
+			td_product_stable p 
+			left join td_institution b on p.THEISSUER = b.ID
+			left join td_conditiontwo c on p.TRUSTTYPE = c.ID 
+			left join td_conditiontwo d on p.INTERESTDISTRIBUTIONSTATE = d.ID 
+		<!-- where SORT is not null  -->
+		)p where p.PRODUCTREFERRED LIKE CONCAT('%',#{pd.searchName} ,'%') 
+		<!-- ORDER BY p.CTDATE DESC   -->
+		order by  p.PRODUCTREFERRED
+		limit 0,20
+	</select>
+	
+	<!-- 列表 -->
+	<select id="countSearchlistPage" parameterType="page" resultType="pd">
+		select
+			a.*,
+			b.NAME THEISSUERNAME,
+			b.IMGURL THEISSUERIMGURL,
+			c.NAME TINTERESTDISTRIBUTIONSTATENAME,
+			d.NAME TRUSTTYPENAME,
+			e.NAME PRODUCTSTATUSNAME
+		from 
+			td_product a 
+			left join td_institution b on a.THEISSUER = b.ID 
+			left join td_conditiontwo c on a.INTERESTDISTRIBUTIONSTATE = c.ID 
+			left join td_conditiontwo d on a.TRUSTTYPE = d.ID 
+			left join td_conditiontwo e on a.PRODUCTSTATUS = e.ID 
+			where 1 = 1 
+			<if test="pd.TYPE != null and pd.TYPE != ''">
+				AND a.TYPE = #{pd.TYPE}
+			</if>
+			<if test="pd.NAME != null and pd.NAME != ''">
+				AND (
+						a.PRODUCTNAME LIKE CONCAT(CONCAT('%',#{pd.NAME},'%')) or  
+						a.PRODUCTREFERRED LIKE CONCAT(CONCAT('%',#{pd.NAME},'%')) or  
+						a.PRODUCTREVIEWS LIKE CONCAT(CONCAT('%',#{pd.NAME},'%')) or  
+						a.DETAILS LIKE CONCAT(CONCAT('%',#{pd.NAME},'%')) or  
+						b.NAME LIKE CONCAT(CONCAT('%',#{pd.NAME},'%')) or  
+						c.NAME LIKE CONCAT(CONCAT('%',#{pd.NAME},'%')) or   
+						d.NAME LIKE CONCAT(CONCAT('%',#{pd.NAME},'%')) or  
+						e.NAME LIKE CONCAT(CONCAT('%',#{pd.NAME},'%')) 
+					)
+			</if>
+			ORDER BY a.SORT,a.CTDATE DESC
+	</select>
+	
+	<select id="countAllSearchlistPage"  parameterType="page" resultType="pd">
+		select a.*, b.NAME THEISSUERNAME, b.IMGURL THEISSUERIMGURL, c.NAME TINTERESTDISTRIBUTIONSTATENAME, d.NAME TRUSTTYPENAME, e.NAME PRODUCTSTATUSNAME 
+			from (
+			SELECT 
+				ID,PRODUCTNAME,PRODUCTREFERRED,RETURNSBENCHMARK,RETURNSBENCHMARKMAX,INVESTMENTSTARTING,PRODUCTDEADLINE,PRODUCTREVIEWS,THEISSUER,EXPECTISSUANCE,INTERESTDISTRIBUTIONSTATE,TRUSTTYPE,PRODUCTSTATUS,DETAILS,SORT,CTDATE,`UPDATE`,TYPE 
+			FROM td_product_stable 
+			UNION ALL 
+			SELECT 
+				ID,PRODUCTNAME,PRODUCTREFERRED,RETURNSBENCHMARK,RETURNSBENCHMARKMAX,INVESTMENTSTARTING,PRODUCTDEADLINE,PRODUCTREVIEWS,THEISSUER,EXPECTISSUANCE,INTERESTDISTRIBUTIONSTATE,TRUSTTYPE,PRODUCTSTATUS,DETAILS,SORT,CTDATE,`UPDATE`,TYPE 
+			FROM td_product) a 
+			left join td_institution b on a.THEISSUER = b.ID
+			left join td_conditiontwo c on a.INTERESTDISTRIBUTIONSTATE = c.ID 
+			left join td_conditiontwo d on a.TRUSTTYPE = d.ID 
+			left join td_conditiontwo e on a.PRODUCTSTATUS = e.ID 
+			where 1 = 1 
+			AND a.TYPE = #{pd.TYPE}
+			AND ( 
+				a.PRODUCTNAME LIKE CONCAT(CONCAT('%',#{pd.NAME},'%')) 
+				or a.PRODUCTREFERRED LIKE CONCAT(CONCAT('%',#{pd.NAME},'%')) 
+				or a.PRODUCTREVIEWS LIKE CONCAT(CONCAT('%',#{pd.NAME},'%')) 
+				or a.DETAILS LIKE CONCAT(CONCAT('%',#{pd.NAME},'%')) 
+				or b.NAME LIKE CONCAT(CONCAT('%',#{pd.NAME},'%')) 
+				or c.NAME LIKE CONCAT(CONCAT('%',#{pd.NAME},'%')) 
+				or d.NAME LIKE CONCAT(CONCAT('%',#{pd.NAME},'%')) 
+				or e.NAME LIKE CONCAT(CONCAT('%',#{pd.NAME},'%')) 
+			) 
+		ORDER BY a.SORT,a.CTDATE DESC
+	</select>
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from td_product
+		where 
+			ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	<select id="findAllBookingProduct"  resultType="pd">
+		select 
+			a.ID,
+			a.PRODUCTNAME,
+			a.PRODUCTREFERRED,
+			a.RETURNSBENCHMARK,
+			a.RETURNSBENCHMARKMAX,
+			a.INVESTMENTSTARTING,
+			a.PRODUCTDEADLINE,
+			a.PRODUCTREVIEWS,
+			a.THEISSUER,
+			b.NAME THEISSUERNAME,
+			b.IMGURL THEISSUERIMGURL,
+			a.EXPECTISSUANCE,
+			a.INTERESTDISTRIBUTIONSTATE,
+			c.NAME TINTERESTDISTRIBUTIONSTATENAME,
+			a.TRUSTTYPE,
+			d.NAME TRUSTTYPENAME,
+			a.PRODUCTSTATUS,
+			e.NAME PRODUCTSTATUSNAME,
+			a.INVESTMENTSTARTINGSTATE,
+			a.PRODUCTDEADLINESTATE,
+			a.RETURNSBENCHMARKSTATE,
+			a.DETAILS,
+			a.SORT,
+			a.CTDATE,
+			a.UPDATE,
+			a.TYPE
+		from 
+			td_product a 
+			left join td_institution b on a.THEISSUER = b.ID 
+			left join td_conditiontwo c on a.INTERESTDISTRIBUTIONSTATE = c.ID 
+			left join td_conditiontwo d on a.TRUSTTYPE = d.ID 
+			left join td_conditiontwo e on a.PRODUCTSTATUS = e.ID 
+		where 1 = 1 and e.ID = '2a0ae66cc3704b2388b19800122236c4'
+	</select>
+</mapper>

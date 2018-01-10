@@ -1,0 +1,64 @@
+.icon-car-count {
+    margin-top:2px;
+    float: right;
+    min-width: 14px;
+    text-align: center;
+    line-height: 14px;
+    display: inline-block;
+    background: red;
+    color: #fff;
+    border-radius: 17px;
+    padding: 6px;
+    font-size: 16px;
+    transform: scale(.7);
+    font-family: Tahoma!important;
+    cursor: pointer;
+    float:none;
+    font-size: 18px;
+}
+
+#nav .first_ul_li{ 
+	 background-color:#FFF;
+	 line-height:40px; 
+	 border:1px solid #CCC; 
+	 border-top:0px; 
+	 cursor:pointer;
+	 text-align:left; 
+	 padding-left:40px; 
+	 height:40px;
+	 width:120px;
+	 position: relative;
+	 clear:both;
+	 font-size: 16px;"
+	
+}
+
+#nav .second_ul{
+	display:none;
+	position:absolute;
+	left:160px;
+	top:-10px;
+	z-index: 9999;
+}
+
+#nav .second_ul_li{
+	background-color:#FFF;
+	line-height:35px; 
+	border:1px solid #ccc; 
+	float:none;
+	height:35px;
+	width:176px;
+	text-align: left;
+	text-indent:10px;
+}
+#nav .second_ul_li_a{
+	font-size:13px;
+}
+
+.list_account{
+	 margin-left:70px;
+	 top:30px;
+	 display:none; 
+	 position:absolute;
+	 box-shadow: 0px 4px 5px #CCCCCC;
+}

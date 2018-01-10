@@ -1,0 +1,408 @@
+/*信托资管-首页*/
+
+/*banner*/
+
+
+
+
+/*产品tab、信托优势*/
+#index_Tab {
+	FONT-SIZE: 14px; MARGIN: 0px auto; WIDTH: 875px; height:40px;
+}
+#index_Tab ul{ margin:0px; padding:0px;}
+#index_Tab .tagsIndexMore{ WIDTH: 50px; height:40px; line-height:40px; text-align:center; float:left;}
+#tagsIndex {
+	margin:0px auto; WIDTH: 825px; height:40px; text-align:center; float:left;
+}
+#tagsIndex li {
+	 FLOAT: left; liST-STYLE-TYPE: none;
+}
+#tagsIndex .tagsIndexBg0 {
+	BACKGROUND: url(../images/img_trust_index_tab_01.jpg) no-repeat right top; width:125px; height: 40px; color:#333333;
+}
+#tagsIndex .tagsIndexBg1 {
+	BACKGROUND: url(../images/img_trust_index_tab_02.jpg) no-repeat right top; width:125px; height: 40px; color:#333333;
+}
+#tagsIndex .tagsIndexBg2 {
+	BACKGROUND: url(../images/img_trust_index_tab_03.jpg) no-repeat right top;; width:125px; height: 40px; color:#333333;
+}
+#tagsIndex .tagsIndexBg3 {
+	BACKGROUND: url(../images/img_trust_index_tab_04.jpg) no-repeat right top; width:125px; height: 40px; 
+}
+#tagsIndex .selectTag0 {
+	BACKGROUND-POSITION: left top; POSITION: relative; BACKGROUND: url(../images/img_trust_index_bluetab_01.jpg) no-repeat center top; height: 40px;  width:125px;
+}
+#tagsIndex .selectTag1 {
+	BACKGROUND-POSITION: left top; POSITION: relative; BACKGROUND: url(../images/img_trust_index_bluetab_02.jpg) no-repeat center top; height: 40px; width:125px;
+}
+#tagsIndex .selectTag2 {
+	BACKGROUND-POSITION: left top; POSITION: relative; BACKGROUND: url(../images/img_trust_index_bluetab_03.jpg) no-repeat center top; height: 40px; width:125px;
+}
+#tagsIndex .selectTag3 {
+	BACKGROUND-POSITION: left top; POSITION: relative; BACKGROUND: url(../images/img_trust_index_bluetab_04.jpg) no-repeat center top; height: 40px; width:125px; 
+}
+#tabAllindex_Tabtent{
+	
+}
+#tagindex_Tabtent {
+	 BACKGROUND-COLOR: #fff; WIDTH: 875px; margin:0px auto;
+}
+.tagindex_Tabtent {
+	 DISPLAY: none; 
+}
+#tagindex_Tabtent div.selectTag {
+	DISPLAY: block
+}
+.index_fl{ float:left}
+.index_fr{ float:right}
+.index_trust_Product{ width:875px;}
+.index_trust_Product .index_trust_ul{ width:875px;}
+.index_trust_Product .index_trust_ul .index_trust_li{ width:873px; height:138px; display:block; padding:30px 0px; line-height:24px;border:1px solid #ebebeb; background:#fff; }
+.index_trust_Product .index_trust_ul .index_trust_li_cover{ width:871px; height:136px; display:block; padding:30px 0px; line-height:24px; border:2px solid #3a8eff;}
+.index_trust_Product .index_trust_ul .index_trust_li .trust_index_product_btn{ background:url(../images/img_trust_index_productbtn_yellow.jpg) no-repeat; width:16px; height:16px; }
+.index_trust_Product .index_trust_ul .index_trust_li .trust_index_product_btn_over{ background:url(../images/img_trust_index_productbtn_blue.jpg) no-repeat; width:16px; height:16px; }
+
+
+/*知名信托机构*/
+#trust_index_jigou{}
+#trust_index_jigou .trust_index_jigou_li{}
+#trust_index_jigou .trust_index_jigou_li .trust_index_jigou_999{ color:#999999;}
+#trust_index_jigou .trust_index_jigou_li .trust_index_jigou_999_over{ color:#ffffff;}
+#trust_index_jigou .trust_index_jigou_li .trust_index_jigou_333{ color:#333333;}
+#trust_index_jigou .trust_index_jigou_li .trust_index_jigou_333_over{ color:#ffffff;}
+#trust_index_jigou .trust_index_jigou_li .trust_index_jigou_bg{ background:#00aeff;}
+#trust_index_jigou .trust_index_jigou_li .trust_index_jigou_bg_over{ background:#fdf401;}
+#trust_index_jigou .trust_index_jigou_li .trust_index_jigou_a{ color:#fff;}
+#trust_index_jigou .trust_index_jigou_li .trust_index_jigou_a_over{ color:#000;}
+
+/*信托资讯*/
+#index_Tab_News {
+	FONT-SIZE: 14px; MARGIN: 0px auto; WIDTH: 1200px; height:275px;
+}
+#index_Tab_News ul{ margin:0px; padding:0px;}
+#tagsIndexNews {
+	margin:0px auto; WIDTH: 1200px; height:40px; text-align:center; float:left;
+}
+#tagsIndexNews li {
+	 FLOAT: left; liST-STYLE-TYPE: none;
+}
+#tagsIndexNews .tagsIndexNewsBg0 {
+	width:110px; height: 40px;
+}
+#tagsIndexNews .tagsIndexNewsBg0 a {
+	width:110px; height: 40px; font-size:18px; font-weight:bold; line-height:40px; display:block; color:#000;
+}
+#tagsIndexNews .tagsIndexNewsBg1 {
+	width:110px; height: 40px; color:#000;
+}
+#tagsIndexNews .tagsIndexNewsBg1 a {
+	width:110px; height: 40px; font-size:18px; font-weight:bold; line-height:40px; display:block; color:#000;
+}
+#tagsIndexNews .tagsIndexNewsBg2 {
+	width:110px; height: 40px; color:#000;
+}
+#tagsIndexNews .tagsIndexNewsBg2 a {
+	width:110px; height: 40px; font-size:18px; font-weight:bold; line-height:40px; display:block; color:#000;
+}
+
+#tagsIndexNews .selectTag0 {
+	BACKGROUND-POSITION: left top; POSITION: relative; height: 40px; color:#3a8eff;
+}
+#tagsIndexNews .selectTag0 a {
+	width:110px; height: 40px; font-size:18px; font-weight:bold; line-height:40px; display:block; color:#3a8eff; border-bottom:2px solid #3a8eff;
+}
+#tagsIndexNews .selectTag1 {
+	width:110px; height: 40px; color:#3a8eff;
+}
+#tagsIndexNews .selectTag1 a {
+	width:110px; height: 40px; font-size:18px; font-weight:bold; line-height:40px; display:block; color:#3a8eff; border-bottom:2px solid #3a8eff;
+}
+#tagsIndexNews .selectTag2 {
+	width:110px; height: 40px; color:#3a8eff;
+}
+#tagsIndexNews .selectTag2 a {
+	width:110px; height: 40px; font-size:18px; font-weight:bold; line-height:40px; display:block; color:#3a8eff; border-bottom:2px solid #3a8eff;
+}
+#tabAllindexNews_Tabtent
+{
+    height:235px;
+}
+#tagindexNews_Tabtent {
+	 BACKGROUND-COLOR: #fff; WIDTH: 1200px; margin:0px auto;
+}
+.tagindexNews_Tabtent {
+	 DISPLAY: none; 
+}
+#tagindexNews_Tabtent div.selectTag {
+	DISPLAY: block
+}
+.index_Trust_News{ width:1198px; height:233px; border:1px solid #e7e7e7;}
+.index_Trust_News .index_Trust_News_ul{ width:1198px; height:235px;}
+.index_Trust_News .index_Trust_News_ul .index_Trust_News_li{ width:238px; height:195px; margin:20px 0px; line-height:24px;}
+
+/*信托学堂*/
+#trust_index_school{ height:300px;}
+#trust_index_school .trust_index_school_li{ padding:20px 20px; width:358px; height:190px;}
+
+
+
+
+
+/*信托资管-产品中心*/
+
+/*产品搜索*/
+#trust_ProductCenter_Search{ background:#fafafa;}
+#trust_ProductCenter_Search .trust_ProductCenter_Search_Condition{ border:1px solid #dedede; background:#fff; }
+#trust_ProductCenter_Search .trust_ProductCenter_Search_Condition .trust_ProductCenter_Search_ul{ padding:0px 10px; }
+#trust_ProductCenter_Search .trust_ProductCenter_Search_Condition .trust_ProductCenter_Search_ul ul{ }
+#trust_ProductCenter_Search .trust_ProductCenter_Search_Condition .trust_ProductCenter_Search_ul ul li{ float:left; margin-left:30px; margin-top:4px; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; cursor:pointer;}
+#trust_ProductCenter_Search .trust_ProductCenter_Search_Condition .trust_ProductCenter_Search_ClearCondition{ }
+#trust_ProductCenter_Search .trust_ProductCenter_Search_Condition .trust_ProductCenter_Search_ClearCondition a{ float:left; margin-left:10px;}
+#trust_ProductCenter_Search .trust_ProductCenter_Search_Condition .trust_ProductCenter_Search_ClearCondition a.checked_item{ padding-left:7px; border:1px solid #f60; border-radius:4px; font-size:14px; color:#f60; cursor:pointer;}
+#trust_ProductCenter_Search .trust_ProductCenter_Search_Condition .trust_ProductCenter_Search_ClearCondition a.checked_item:hover{ padding-left:7px; border:1px solid #f60; border-radius:4px; font-size:14px; color:#fff; background:#f60; cursor:pointer;}
+#trust_ProductCenter_Search .trust_ProductCenter_Search_Condition .trust_ProductCenter_Search_bg{ background:#fff; padding:0px 10px;}
+#trust_ProductCenter_Search .trust_ProductCenter_Search_Condition .trust_ProductCenter_Search_bg a{ color:#666666;}
+#trust_ProductCenter_Search .trust_ProductCenter_Search_Condition .trust_ProductCenter_Search_bg_over{ background:#f49703; padding:0px 10px; color:#fff;}
+#trust_ProductCenter_Search .trust_ProductCenter_Search_Condition .trust_ProductCenter_Search_bg_over a{ color:#fff;}
+
+#trust_ProductCenter_Search .trust_ProductCenter_Search_list{}
+#trust_ProductCenter_Search .trust_ProductCenter_Search_list table{ border:1px solid #dedede; background:#fff; }
+#trust_ProductCenter_Search .trust_ProductCenter_Search_list table tr{ height:60px; line-height:60px; }
+#trust_ProductCenter_Search .trust_ProductCenter_Search_list table tr td{ text-align:center; }
+#trust_ProductCenter_Search .trust_ProductCenter_Search_list table tr td.rightline{ border-right:1px solid #dedede; }
+#trust_ProductCenter_Search .trust_ProductCenter_Search_list table tr td.bottomline{ border-bottom:1px solid #dedede; }
+#trust_ProductCenter_Search .trust_ProductCenter_Search_list table tr td.list_tal30{ text-align:left; padding-left:30px;}
+#trust_ProductCenter_Search .trust_ProductCenter_Search_list table tr td.list_tal20{ text-align:left; padding-left:20px;}
+#trust_ProductCenter_Search .trust_ProductCenter_Search_list .list_bottom{ border-bottom:1px solid #dedede;}
+#trust_ProductCenter_Search .trust_ProductCenter_Search_list .list_bg_over{ background:#f2f8ff;}
+#trust_ProductCenter_Search .trust_ProductCenter_Search_list .list_btn_over{ }/*border:1px solid #ff6c00; color:#ff6c00;*/
+
+#index_Tab_Trust {
+	FONT-SIZE: 14px; MARGIN: 0px auto; WIDTH: 1200px;
+}
+#index_Tab_Trust ul{ margin:0px; padding:0px;}
+#tagsIndexTrust {
+	margin:0px auto; WIDTH: 1200px; height:40px; text-align:center; float:left;
+}
+#tagsIndexTrust li {
+	 FLOAT: left; liST-STYLE-TYPE: none;
+}
+#tagsIndexTrust .tagsIndexTrustBg0 {
+	width:110px; height: 40px;
+}
+#tagsIndexTrust .tagsIndexTrustBg0 a {
+	width:110px; height: 40px; font-size:18px; font-weight:bold; line-height:40px; display:block; color:#000;
+}
+#tagsIndexTrust .tagsIndexTrustBg1 {
+	width:110px; height: 40px; color:#000;
+}
+#tagsIndexTrust .tagsIndexTrustBg1 a {
+	width:110px; height: 40px; font-size:18px; font-weight:bold; line-height:40px; display:block; color:#000;
+}
+
+#tagsIndexTrust .selectTag0 {
+	BACKGROUND-POSITION: left top; POSITION: relative; height: 40px; color:#3a8eff;
+}
+#tagsIndexTrust .selectTag0 a {
+	width:110px; height: 40px; font-size:18px; font-weight:bold; line-height:40px; display:block; color:#3a8eff;
+}
+#tagsIndexTrust .selectTag1 {
+	width:110px; height: 40px; color:#3a8eff;
+}
+#tagsIndexTrust .selectTag1 a {
+	width:110px; height: 40px; font-size:18px; font-weight:bold; line-height:40px; display:block; color:#3a8eff;
+}
+#tabAllindexTrust_Tabtent{
+	
+}
+#tagindexTrust_Tabtent {
+	 BACKGROUND-COLOR: #fff; WIDTH: 1200px; margin:0px auto;
+}
+.tagindexTrust_Tabtent {
+	 DISPLAY: none; 
+}
+#tagindexTrust_Tabtent div.selectTag {
+	DISPLAY: block
+}
+
+
+/*信托资管-公司列表*/
+
+/*全部信托公司*/
+#trust_company_list{}
+#trust_company_list .trust_company_table{ border-top:3px solid #3d9fe1;}
+#trust_company_list .trust_company_table table{ border:1px solid #e2e2e2; color:#666666; }
+#trust_company_list .trust_company_table table a{ color:#666666; }
+#trust_company_list .trust_company_table table a:hover{ color:#3d9fe1; }
+#trust_company_list .trust_company_table table tr{ height:48px; line-height:48px; }
+#trust_company_list .trust_company_table table tr td{  text-align:center; }
+#trust_company_list .trust_company_table .list_bottom{ border-bottom:1px solid #e2e2e2;}
+#trust_company_list .trust_company_table .list_tal30{ text-align:left; padding-left:30px;}
+#trust_company_list .trust_company_table .list_tal20{ text-align:left; padding-left:20px;}
+#trust_company_list .trust_company_table .list_bg_over{ background:#f2f8ff;}
+
+
+
+/*信托资管-公司详情*/
+
+/*简述*/
+#trust_companydetail_sketch{}
+#trust_companydetail_sketch .trust_companydetail_t{ border:1px solid #0098ff; border-top:3px solid #0098ff; background:#fff;}
+#trust_companydetail_sketch .trust_companydetail_t .trust_companydetail_sketch_title{ color:#0098ff;}
+
+
+.trust_companydetail_intro{}
+.trust_companydetail_title{ border-bottom:2px solid #0098ff;}
+.trust_companydetail_intro .trust_companydetail_table{}
+.trust_companydetail_intro .trust_companydetail_table tr{ height:52px; line-height:52px;}
+.trust_companydetail_intro .trust_companydetail_table tr td{ border:1px solid #e1e1e1; height:52px; line-height:52px; text-align:center;}
+.trust_companydetail_intro .trust_companydetail_table tr td p{ line-height:28px;}
+
+
+
+/*信托资管-产品详情*/
+
+/*简述*/
+.trust_productdetail_sketch{ border:1px solid #e1e1e1; border-top:5px solid #f49703; background:#fff;}
+.trust_productdetail_sketch .trust_productdetail_sketch_title{ color:#666666;}
+.trust_productdetail_input_bg{ background:#fff; width:210px; height:40px; color:#999999; padding-left:10px;}
+.trust_companydetail_newslist{}
+.trust_companydetail_newslist ul{ margin-left:12px; padding:12px 0px;}
+.trust_companydetail_newslist ul li{ height:32px; line-height:32px;}
+.trust_companydetail_newslist ul li a{ color:#999999;}
+
+/*20170829+*/
+.product_box{
+	width:1100px;
+	height:230px;
+	background:#FFF;
+	margin-top:20px;
+	padding:20px 50px;
+	box-shadow: 0px 4px 5px #CCCCCC;
+}
+
+.product_box:hover{
+	border:1px solid #f49703 ;
+}
+
+.product_box_Title{
+	width:1100px;
+	height:35px;
+	border-bottom:1px solid #c6c6c6;
+	
+	
+}
+
+.product_box_Title img{
+	float:left;
+}
+
+
+.product_box_Title h3 , .product_box_Title .zt{
+	height:30px;
+	line-height:30px;
+	float:left;
+	margin-left:20px;
+	font-weight:500;
+	font-size:18px;
+}
+
+.product_box_Title a:hover{
+	color:#f49703;
+}
+
+.product_box_Title .ys{
+	font-size:16px;
+	color:#F00;
+}
+
+.product_box_Title .sq{
+	font-size:16px;
+	color:#999;
+}
+
+.con_1 ,.con_2{
+	width:200px;
+	height:100px;
+	margin:30px;
+	margin-left:0px;
+	float:left;
+	
+}
+
+.con_1{
+	margin-left:35px;
+}
+
+.con_2{
+		border-right:1px solid #c6c6c6;
+}
+
+.con_1 li , .con_2 li{
+	margin-top:20px;
+}
+
+
+.gray{
+	color:#999;
+	margin-right:20px;
+}
+
+.yellow{
+	color:#f49703;
+	font-size:35px;
+
+}
+
+.con_3{
+	width:150px;
+	height:100px;
+	margin:30px 10px;
+	margin-left:0px;
+	float:left;
+	display:inline-block;
+}
+
+.con_4{
+	width:240px;
+	height:100px;
+	margin:30px 0px;
+	border-right:1px solid #c6c6c6;
+	float:left;
+	overflow:hidden;
+	display:inline-block;
+	line-height:35px;
+}
+
+
+.con_5{
+	width:150px;
+	height:140px;
+	margin:10px 25px;
+	float:left;
+}
+
+.but{
+	width: 130px;
+	text-align: center;
+	background-color:#f49703;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+	border-radius: 10px;
+	font-size: 14px;
+	margin-top:13px;
+	cursor:pointer;
+}
+
+
+.product_box_bottom{
+	width:1100px;
+	height:35px;
+	line-height:35px;
+	border-top:1px solid #c6c6c6;
+	overflow:hidden;
+	color:#666;
+}
+
+

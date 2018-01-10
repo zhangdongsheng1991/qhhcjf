@@ -1,0 +1,120 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,button,strong {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+	border:none;
+	font-weight:normal;
+}
+
+
+.new_biaoti{
+	width:100%;
+	height:70px;
+	line-height:70px;
+	background:#FFF;
+	margin-bottom:10px;	
+}
+
+.new_biaoti li{
+	width:20%;
+	text-align:center;
+	float:left;
+	cursor:pointer;
+	
+}
+
+.new_biaoti .xuanzhong{
+	color:#ff9700;
+}
+
+
+.new_con{
+	background:#FFF;
+	padding:10px 20px;
+	margin-bottom:10px;
+	cursor:pointer;
+	overflow:hidden;
+}
+
+.new_con .box_img{
+	float:left;
+	width:30%;
+	margin-right:10px;
+}
+
+.new_con img{
+	width:100%;
+	min-height:60px;
+	max-height:80px;
+}
+
+
+.new_con dd{
+	width:64%;
+	line-height:20px;
+	font-weight:bold;
+	overflow:hidden;
+	float:right;
+	color: #404040;
+
+}
+
+.new_con dt{
+	float:right;
+	color: #888;
+}
+
+
+.new_box{
+	width:100%;
+	padding:20px;
+	box-sizing:border-box;
+	background:#FFF;
+}
+
+.new_box h3{
+	font-size:24px;
+	margin-bottom:20px;
+	line-height:30px;
+}
+
+.new_box .info{
+	font-size: 16px;
+	font-weight: 400;
+	color: #888;
+}
+
+
+.new_box .info .source {
+    padding-left: 20px;
+}
+
+
+.new_box_con img{
+	width:100%; 
+	margin:10px auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

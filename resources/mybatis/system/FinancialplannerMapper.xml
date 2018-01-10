@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="FinancialplannerMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd" useGeneratedKeys="true" keyProperty="ID">
+		insert into td_financialplanner(
+			ID	
+		<if test="NAME !=null">
+			,NAME
+		</if>
+		<if test="POSITION !=null">
+			,POSITION
+		</if>
+		<if test="IMGURL !=null">
+			,IMGURL
+		</if>
+		<if test="CTDATE !=null">
+			,CTDATE
+		</if>
+		<if test="SORT != ''">
+			,SORT
+		</if>
+		<if test="INFO != ''">
+			,INFO
+		</if>
+		<if test="XUEWEI != ''">
+			,XUEWEI
+		</if>
+		<if test="NUMBER != ''">
+			,NUMBER
+		</if>
+		) values (
+			#{ID}
+			<if test="NAME !=null">
+			,#{NAME}
+			</if>
+			<if test="POSITION !=null">
+			,#{POSITION}
+			</if>
+			<if test="IMGURL !=null">
+			,#{IMGURL}
+			</if>
+			<if test="CTDATE !=null">
+			,#{CTDATE}
+			</if>
+			<if test="SORT != ''">
+			,#{SORT}
+			</if>
+			<if test="INFO != ''">
+			,#{INFO}
+			</if>
+			<if test="XUEWEI != ''">
+			,#{XUEWEI}
+			</if>
+			<if test="NUMBER != ''">
+			,#{NUMBER}
+			</if>
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from td_financialplanner
+		where 
+			ID = #{ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  td_financialplanner a
+		<set>
+			<if test="NAME != null">
+				a.NAME = #{NAME},
+			</if>
+			<if test="POSITION != null">
+				a.POSITION = #{POSITION},
+			</if>
+			<if test="IMGURL != null">
+				a.IMGURL = #{IMGURL},
+			</if>
+			<if test="CTDATE != null">
+				a.CTDATE = #{CTDATE},
+			</if>
+			<if test="SORT != ''">
+				a.SORT = #{SORT},
+			</if>
+			<if test="INFO != ''">
+				a.INFO = #{INFO},
+			</if>
+			<if test="XUEWEI != ''">
+				a.XUEWEI = #{XUEWEI},
+			</if>
+			<if test="NUMBER != ''">
+				a.NUMBER = #{NUMBER},
+			</if>
+		</set>
+			where 
+				a.ID = #{ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.NAME,
+			a.POSITION,
+			a.IMGURL,
+			a.CTDATE,
+			a.SORT,
+			a.INFO,
+			a.XUEWEI,
+			a.NUMBER
+		from 
+			td_financialplanner a
+		where 1 = 1 
+			and a.ID = #{ID}
+	</select>
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findByParam" parameterType="pd" resultType="pd">
+		select 
+			a.ID,
+			a.NAME,
+			a.POSITION,
+			a.IMGURL,
+			a.CTDATE,
+			a.SORT,
+			a.INFO,
+			a.XUEWEI,
+			a.NUMBER
+		from 
+			td_financialplanner a 
+			where 1=1
+			<if test="ID != null and ID != ''">
+				and a.ID = #{ID}
+			</if>
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.POSITION,
+			a.IMGURL,
+			a.CTDATE,
+			a.SORT,
+			a.INFO,
+			a.XUEWEI,
+			a.NUMBER
+		from 
+			td_financialplanner a 
+			where 1=1
+			<if test="pd.NAME != null and pd.NAME != ''">
+				and a.NAME LIKE CONCAT(CONCAT('%', #{pd.NAME}),'%')
+			</if>
+			order by a.CTDATE DESC
+	</select>
+	
+	<!-- 列表 -->
+	<select id="applistPage" parameterType="page" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.POSITION,
+			a.IMGURL,
+			a.CTDATE,
+			a.SORT,
+			a.INFO,
+			a.XUEWEI,
+			a.NUMBER
+		from 
+			td_financialplanner a 
+			where 1=1
+			order by a.CTDATE DESC
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+			a.ID,
+			a.NAME,
+			a.POSITION,
+			a.IMGURL,
+			a.CTDATE,
+			a.SORT,
+			a.INFO,
+			a.XUEWEI,
+			a.NUMBER
+		from 
+			td_financialplanner a 
+			where 1=1
+	</select>
+	
+	
+	<!-- 列表(全部) -->
+	<select id="applistChoose" parameterType="pd" resultType="pd">
+		SELECT 
+			a.ID,
+			a.`NAME`,
+			a.POSITION,
+			a.IMGURL,
+			a.SORT,
+			a.INFO,
+			a.XUEWEI,
+			a.NUMBER
+		FROM td_financialplanner a ORDER BY a.SORT ASC LIMIT 0,4
+	</select>
+	
+	<!-- 详情推荐理财 -->
+	<select id="appDetailsChoose" parameterType="pd" resultType="pd">
+		SELECT 
+			a.ID,
+			a.NAME,
+			a.POSITION,
+			a.IMGURL,
+			a.SORT,
+			a.INFO,
+			a.XUEWEI,
+			a.NUMBER 
+		FROM td_financialplanner a ORDER BY a.SORT ASC LIMIT 4
+	</select>
+	
+	<!-- 核心团队取排序前四 -->
+	<select id="appMainChoose" parameterType="pd" resultType="pd">
+		SELECT 
+			a.ID,
+			a.`NAME`,
+			a.POSITION,
+			a.IMGURL,
+			a.SORT,
+			a.INFO,
+			a.XUEWEI,
+			a.NUMBER 
+		FROM td_financialplanner a where 1=1 ORDER BY a.SORT ASC 
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from td_financialplanner
+		where 
+			ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

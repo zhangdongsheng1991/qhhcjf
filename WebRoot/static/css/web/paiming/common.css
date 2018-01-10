@@ -1,0 +1,76 @@
+.uc_boxhd_search {
+    
+	float: left;
+    
+	margin-top: 8px;
+
+}
+
+.uc_boxhd_search.skin_1 {
+    
+	background: url(box_search_bg_1.png) no-repeat;
+
+}
+
+.uc_boxhd_search {
+    
+width: 178px;
+    
+height: 20px;
+    
+padding: 5px 12px;
+    
+background: url(box_search_bg.png) no-repeat;
+}
+
+button, input, select, textarea {
+    
+font: normal 14px/1.5 '\5FAE\8F6F\96C5\9ED1',tahoma,arial;
+        
+line-height: 1.5;
+    
+color: #525252;
+
+}
+button, input, select, textarea {
+    
+background: 0 0;
+    
+font-size: 100%;
+    
+outline: 0;
+
+}
+
+a {
+    
+text-decoration: none;
+    
+color: #3d9fe1;
+
+}
+
+a {
+    
+text-decoration: none;
+
+}
+
+a, abbr, acronym, address, applet, b, big, blockquote, body, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, u, ul, var 
+{
+    
+margin: 0;
+    
+padding: 0;
+    
+border: 0;
+    
+outline: 0;
+    
+font-size: 100%;
+    
+vertical-align: baseline;
+    
+background: 0 0;
+
+}

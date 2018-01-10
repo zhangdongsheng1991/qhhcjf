@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CollectionMapper">
+	<update id="delHistory" parameterType="pd">
+		update td_operationrecords 
+		 <set>
+            status='1'
+        </set>
+        where 1=1
+        <if test="productid!=null">
+        	and productid=#{productid}
+        </if> 
+        <if test="operation_staff!=null">
+        	and operation_staff=#{operation_staff}
+        </if>
+        <if test="operating_time!=null"> 
+        	and DATE(operating_time)=#{operating_time}
+        </if>
+	</update>
+	<insert id="insertCollection" parameterType="pd">
+		insert into td_collection (
+			ID,
+			COLLECTION_TIME,
+			COLLECTION_PRODUCTID,
+			COLLECTION_USER,
+			PRODUCT_TYPE) values
+		(
+			#{id},
+			#{ctdate},
+			#{productId},
+			#{phone},
+			#{product_type}
+		)
+	</insert>
+	<delete id="deleteCollection" parameterType="pd">
+		delete from td_collection 
+			where COLLECTION_USER=#{phone}  
+			and COLLECTION_PRODUCTID=#{productId}
+	</delete>
+	
+	<select id="listcollection" parameterType="pd" resultType="pd">
+		select * from td_collection where COLLECTION_USER = #{phone} order by COLLECTION_TIME desc
+	</select>
+	
+	<select id="findHistory" parameterType="java.util.Map" resultType="com.fh.entity.system.OperationRecords">
+		SELECT * FROM td_operationrecords 
+		where operation_staff=#{phone} and status='0' and operate like '%产品详情%' and
+		<![CDATA[ DATE_SUB(sysdate(), INTERVAL #{interval} DAY) <= date(OPERATING_TIME) ]]>
+		order by   OPERATING_TIME desc
+	</select>
+		
+</mapper>
