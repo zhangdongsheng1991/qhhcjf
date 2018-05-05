@@ -101,10 +101,10 @@ public class UserLoginLogAOP extends BaseController{
 			//获取参数名称和值  
 			Object[] args = pjp.getArgs();
 			System.out.println(getRequest().getContextPath());
-			PropertiesUtils.getInstance();
+			//PropertiesUtils.getInstance();
 			//获取数据
 			String id = get32UUID();
-			String operate = PropertiesUtils.getVal(clazzName+"."+methodName);
+			//String operate = PropertiesUtils.getVal(clazzName+"."+methodName);
 			Date operating_time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(Tools.date2Str(new Date()));
 			String operation_staff =  userloginlog.getU_phone();
 			Integer logincount = userloginlog.getLogincount();
@@ -113,7 +113,7 @@ public class UserLoginLogAOP extends BaseController{
 			records.setId(id);
 			records.setOperation_staff(operation_staff);
 			records.setOperating_time(operating_time);
-			records.setOperate(operate);
+			//records.setOperate(operate);
 			records.setLogincount(logincount);
 			records.setComment(comment);
 			records.setProductid(productid);
